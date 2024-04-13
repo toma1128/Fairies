@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /root/share
+mysql -u root -p
