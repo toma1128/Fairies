@@ -1,3 +1,9 @@
+<?php
+require_once "./index.php";
+require_once "./phpinfo.php";
+
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
