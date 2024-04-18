@@ -34,4 +34,4 @@ logsf:
 
 .PHONY:
 mysql-root:
-	$(dc) exec -it mysql bash -c "mysql -u root -proot"  
+	$(dc) exec -it mysql bash -c "mysql -u root -proot"
