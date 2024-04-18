@@ -9,8 +9,16 @@ down:
 	$(dc) down
 
 .PHONY:
+stop:
+	$(dc) stop
+
+.PHONY:
 restart:
 	$(dc) restart
+
+.PHONY:
+build:
+	docker compose up -d --build
 
 .PHONY:
 ps:
