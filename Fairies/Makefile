@@ -25,5 +25,5 @@ logsf:
 	$(dc) logs -f
 
 .PHONY:
-mysql2:
+mysql-root:
 	$(dc) exec -it mysql bash -c "mysql -u root -proot"  
