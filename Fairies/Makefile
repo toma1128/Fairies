@@ -1,37 +1,25 @@
 dc := docker-compose -f ./docker-compose.yml
 
 .PHONY:
-up:
+up:		#コンテナ立ち上げ
 	$(dc) up -d	
 
 .PHONY:
-down:
+down:	#コンテナ削除
 	$(dc) down
 
-.PHONY:
+.PHONY:	#コンテナ停止
 stop:
 	$(dc) stop
 
 .PHONY:
-restart:
+restart:	#コンテナリスタート
 	$(dc) restart
 
 .PHONY:
-build:
+build:	#コンテナ構築
 	docker compose up -d --build
 
 .PHONY:
-ps:
-	$(dc) ps
-
-.PHONY:
-logs:
-	$(dc) logs
-
-.PHONY:
-logsf:
-	$(dc) logs -f
-
-.PHONY:
-mysql-root:
+mysql-root:	#mysqlのrootログインコマンド
 	$(dc) exec -it mysql bash -c "mysql -u root -proot"
