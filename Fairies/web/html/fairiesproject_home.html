@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="fairiesproject_home.css">
+    <title>ホーム画面</title>
+</head>
+<body>
+    <form>
+        <header>
+            <h1>
+                <img src="images/fairieshome.png" alt="ロゴ" width="230">
+            </h1>
+        </header>
+        <main>
+            <h2><a class="form_link" href="">情報フォーム</a></h2>  <!--情報画面に移動-->
+            <div id="naviWrap">
+                 <ul id="categoryNavi"></ul> <!-- 右立のやつ-->
+                    <li><a herf="#category-1"> 従業員一覧</a></li>
+                    <li><a herf="#category-2">お客様一覧</a></li>
+                </ul>
+            </div>
+            <div id="categoryWrap">
+                <!-- <div id="categoryWrap"> -->
+                    <div id="category-1" class="category"> <!--従業員一覧かお客様一覧の表示-->
+                        <h2>従業員一覧</h2>
+                    </div>
+                    <div id="category-2" class="category">
+                        <h2>お客様一覧</h2>
+                    </div>
+                <!-- </div> -->
+                <input type="search" id="query" name="q" placeholder="Search...">
+                <button>検索</button>
+                <div>
+                    <label for="department">部署</label>            <!--部署名まだ書いてません-->
+                    <select name="department" id="department">
+                        <option value="1">A</option>
+                        <option value="2">B</option>
+                        <option value="3">C</option>
+                        <option value="4">D</option>
+                        <option value="5">E</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="date">期限</label>
+                    <select name="date" id="date">
+                        <option value="1">一週間以内</option>
+                        <option value="2">一か月以内</option>
+                        <option value="3">半年以内</option>
+                        <option value="4">一年以上</option>
+                        <option value="5">未定</option>
+                        <option value="6">全て</option>
+                    </select>
+                </div>
+            </div>
+            <div id="contentWrap">          <!--情報データが入るところ？-->
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </form>
+</body>
+</html>
