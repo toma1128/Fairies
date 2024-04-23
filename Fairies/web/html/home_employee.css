@@ -1,19 +1,19 @@
-/* Resetting default margin and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #e80b0b;
 }
 
 header {
   text-align: center;
-  padding: 20px 0;
-  background-color: #fff;
+  /* padding: 20px 0; */
+  background-color: blue;
 }
 
 header img {
@@ -41,7 +41,7 @@ input[type="search"] {
   flex: 1;
   padding: 10px;
   margin-right: 10px;
-  border: 10px solid #ccc;
+  border: 10px solid #333;
   border-radius: 5px;
 }
 
@@ -49,7 +49,7 @@ select {
   flex: 1;
   padding: 10px;
   margin-right: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ad2424;
   border-radius: 5px;
 }
 
@@ -69,36 +69,32 @@ table {
 
 table td {
   padding: 10px;
-  border: 1px #ccc;
+  border: 1px #ad2424;
   text-align: center;
 }
 
 #contentWrap {
-  background-color: #fff;
+  background-color: pink;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* Adjust as needed */
   align-items: center;
-  /* Adjust as needed */
 }
 
 #contentWrap div {
   margin-right: 10px;
-  /* Adjust spacing between elements */
 }
 
 
 #categoryNavi {
-  position: absolute;
-  top: 0;
+  top: 20px;
   left: 0;
   width: 15vw;
   min-width: 180px;
-  background: #fff;
+  background: pink;
   padding: 5px;
   border: 1px solid #4abbc1;
   transition: .7s .5s cubic-bezier(0, 1.55, 1, .99);
@@ -137,13 +133,6 @@ table td {
   margin-right: 10px;
 }
 
-
-
-
-/* #categoryWrap {
-  width: 75vw;
-  min-width: 320px;
-} */
 
 .category h2 {
   font-size: 1.5rem;
