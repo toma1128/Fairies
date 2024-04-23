@@ -7,13 +7,13 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #e80b0b;
+
 }
 
 header {
   text-align: center;
   /* padding: 20px 0; */
-  background-color: blue;
+  background-color: #F8FEFE;
 }
 
 header img {
@@ -22,10 +22,14 @@ header img {
 }
 
 main {
-  height: 80%;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #B0DAFF;
+  padding: 100px;
+  background-color: blue;
+}
+
+footer {
+  padding: 100px;
+  background-color: pink;
 }
 
 h2 {
@@ -56,7 +60,6 @@ select {
 
 button {
   padding: 10px 20px;
-  /* background-color: #007bff; */
   color: #ad2424;
   border: none;
   border-radius: 5px;
@@ -89,38 +92,47 @@ table td {
   margin-right: 10px;
 }
 
-
-#categoryNavi {
+/* 横の従業員一覧の設定 */
+#naviWrap {
   top: 20px;
   left: 0;
-  width: 15vw;
+  width: 20%;
+  margin: 0 auto;
   min-width: 180px;
-  background: pink;
+  background: #146C94;
   padding: 5px;
   border: 1px solid #4abbc1;
-  transition: .7s .5s cubic-bezier(0, 1.55, 1, .99);
+  float: left;
 }
 
-#categoryNavi>ul {
+#naviWrap>ul {
   background: #4abbc1;
+  padding-left: 0
 }
 
-#categoryNavi>ul>li {
+#naviWrap>ul>li {
   font-size: .9rem;
+  list-style: none;
 }
 
-#categoryNavi>ul>li a {
+#naviWrap>ul>li a {
   display: block;
   color: #fff;
   padding: 1rem;
 }
 
-#categoryNavi>ul>li a:hover {
+#naviWrap>ul>li a:hover {
   background: #078890;
 }
 
-#categoryNavi>ul>li.active {
+#naviWrap>ul>li.active {
   background: #078890;
+}
+
+/* 従業員一覧の情報 */
+#employee_about {
+  float: right;
+  width: 80%;
 }
 
 #categoryWrap {
