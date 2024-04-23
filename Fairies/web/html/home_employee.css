@@ -36,26 +36,6 @@ h2 {
   color: #333;
 }
 
-/* .option_bar {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.option_bar li {
-  padding: 10px 20px;
-  background-color: #ccc;
-  border-radius: 5px;
-} */
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 /* Search input styles */
 input[type="search"] {
   flex: 1;
@@ -91,11 +71,6 @@ table td {
   padding: 10px;
   border: 1px #ccc;
   text-align: center;
-}
-
-#categoryWrap1 {
-  width: 75vw;
-  min-width: 320px;
 }
 
 #contentWrap {
@@ -154,16 +129,12 @@ table td {
 #categoryWrap {
   display: flex;
   flex-wrap: nowrap;
-  /* Prevent wrapping */
   overflow-x: auto;
-  /* Enable horizontal scrolling if needed */
 }
 
 .category {
   flex: 0 0 auto;
-  /* Allow items to shrink and don't grow */
   margin-right: 10px;
-  /* Adjust spacing between categories */
 }
 
 
