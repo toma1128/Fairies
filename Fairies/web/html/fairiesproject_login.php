@@ -3,19 +3,13 @@ $dsn='mysql:host=localhost;dbname=SPIC_WEB;charset=utf8mb4';
 define('DB_USER','root');//ユーザ名
 define('DB_PASS','root');//パスワード
 
-// $result = [
-//   "status"  => true,
-//   "message" => null,
-//   "result"  => null,
-// ];
-
 $userId_employee = filter_input(INPUT_POST,"userId_employee");
 $password_employee = filter_input(INPUT_POST,"password_employee", FILTER_VALIDATE_INT);
 $userId_customer = filter_input(INPUT_POST,"userId_customer");
 $password_customer = filter_input(INPUT_POST,"password_customer", FILTER_VALIDATE_INT);
 
 
-if(isset($_POST["#submitBtn1"])){
+if(isset($_POST["submitBtn1"])){
   try{
 
       $db = new PDO($dsn, DB_USER, DB_PASS);
@@ -35,15 +29,14 @@ if(isset($_POST["#submitBtn1"])){
         //値のバインド
         $stmt->bindParam(':COMPANY EMPLOYEES NUMBER', $userId_employee, PDO::PARAM_INT);
         $stmt->bindParam(':PASSWORD', $password_employee, PDO::PARAM_STR);
-        $result["message"] = "ログインに成功しました";
       }else{
-        $result["message"] = "ログインに失敗しました";
       }
       //SQL実行
       $stmt->execute();
 
-      while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $result[] = $rows;
+      if($stmt->rowCount() > 0){
+        header('Location home_employee.php');
+        exit();
       }
 
       // echo '<pre>';
@@ -59,7 +52,7 @@ if(isset($_POST["#submitBtn1"])){
       $stmt = null;
       $db = null;
     }
-}else if(isset($_POST["#submitBtn2"])){
+}else if(isset($_POST["submitBtn2"])){
   try{
 
     $db = new PDO($dsn, DB_USER, DB_PASS);
@@ -77,18 +70,15 @@ if(isset($_POST["#submitBtn1"])){
       //値のバインド
       $stmt->bindParam(':CUSTOMER NUMBER', $userId_customer, PDO::PARAM_INT);
       $stmt->bindParam(':PASSWORD', $password_customer, PDO::PARAM_STR);
-      // $result["message"] = "ログインに成功しました";
     }else{
-      // $result["message"] = "ログインに失敗しました";
     }
     //SQL実行
     $stmt->execute();
 
-    while($rows = $stmt->fetch(PDO::FETCH_ASSOC)){
-      $result[] = $rows;
+    if($stmt->rowCount() > 0){
+      header('Location customerform.php');
+      exit;
     }
-
-
 
   }catch(PDOException $e){
     echo'error:'.$e->getMessage();
@@ -109,7 +99,7 @@ if(isset($_POST["#submitBtn1"])){
     <title>従業員画面</title>
 </head>
 <body>
-    <form>
+  <form method="POST">
         <header>
             <h1>
                 <img src="images/fairieshome.png" alt="ロゴ" width="280">
@@ -123,7 +113,6 @@ if(isset($_POST["#submitBtn1"])){
                   <button id="loginBtn2">お客様はこちら</button>
             </nav>
         </main>
-    </form>
     <dialog id="loginDialog_employee">
         <div id="loginWrapper">
           <header id="loginHeader">
@@ -139,7 +128,7 @@ if(isset($_POST["#submitBtn1"])){
             <input type="password" placeholder="パスワード入力してください" name="password_employee" id="password_employee">
           </div>
           <div><a href="#">新規登録はこちら</a></div>       <!--新規作成画面に移動-->
-          <button type="submit" id="submitBtn1">ログイン</button>
+          <button type="submit" id="submitBtn1" name="submitBtn1">ログイン</button>
         </div>
     </dialog>           <!--従業員用ダイアログ-->
     <dialog id="loginDialog_customer">
@@ -157,9 +146,10 @@ if(isset($_POST["#submitBtn1"])){
             <input type="password" placeholder="パスワード入力してください" name="password_customer" id="password_customer">
           </div>
           <div><a href="#">新規登録はこちら</a></div>       <!--新規作成画面に移動-->
-          <button type="submit" id="submitBtn2">ログイン</button>
+          <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>
         </div>
       </dialog>            <!--お客様用ダイアログ-->
       <script src="fairiesproject_login.js"></script>
+  </form>
 </body>
 </html>

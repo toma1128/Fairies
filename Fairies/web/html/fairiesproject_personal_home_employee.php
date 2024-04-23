@@ -1,3 +1,9 @@
+<?php
+if(isset($_POST["logoutBtn"])){
+    header('Location: fairiesproject_login.php');
+    //exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -5,13 +11,14 @@
         <title>個人情報画面</title>
     </head>
     <body>
+        <form method="POST">
         <header>
             <h1>
                 <img src="images/fairieshome.png" alt="ロゴ" width="280">
             </h1>
             <nav>
                 <ul class="nav-menu">
-                <li id="logoutBtn">ログアウト</li>
+                <li><button id="logoutBtn" name="logoutBtn" >ログアウト</button></li>
                 </ul>
             </nav>
         </header>
@@ -33,6 +40,7 @@
                 </div>
             </div>
         </main>    
+        </form>
     </body>
 </html>
 
