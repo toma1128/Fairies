@@ -22,9 +22,10 @@ header img {
 }
 
 main {
-  /* max-width: 800px; */
+  height: 80%;
   margin: 0 auto;
   padding: 20px;
+  background-color: #B0DAFF;
 }
 
 h2 {
@@ -41,7 +42,7 @@ input[type="search"] {
   flex: 1;
   padding: 10px;
   margin-right: 10px;
-  border: 10px solid #333;
+  border: 3px solid #333;
   border-radius: 5px;
 }
 
@@ -126,6 +127,7 @@ table td {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  background-color: #F8FEFE;
 }
 
 .category {
