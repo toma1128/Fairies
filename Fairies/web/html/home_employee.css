@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+header {
+  text-align: center;
+  /* padding: 20px 0; */
+  background-color: #F8FEFE;
+}
+
+header img {
+  display: block;
+  margin-right: auto;
+}
+
+main {
+  margin: 0 auto;
+  padding: 100px;
+  background-color: blue;
+}
+
+footer {
+  padding: 100px;
+  background-color: pink;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.form_link {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Search input styles */
+input[type="search"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 3px solid #333;
+  border-radius: 5px;
+}
+
+select {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ad2424;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  color: #ad2424;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td {
+  padding: 10px;
+  border: 1px #ad2424;
+  text-align: center;
+}
+
+#contentWrap {
+  background-color: pink;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contentWrap div {
+  margin-right: 10px;
+}
+
+/* 横の従業員一覧の設定 */
+#naviWrap {
+  top: 20px;
+  left: 0;
+  width: 20%;
+  margin: 0 auto;
+  min-width: 180px;
+  background: #146C94;
+  padding: 5px;
+  border: 1px solid #4abbc1;
+  float: left;
+}
+
+#naviWrap>ul {
+  background: #4abbc1;
+  padding-left: 0
+}
+
+#naviWrap>ul>li {
+  font-size: .9rem;
+  list-style: none;
+}
+
+#naviWrap>ul>li a {
+  display: block;
+  color: #fff;
+  padding: 1rem;
+}
+
+#naviWrap>ul>li a:hover {
+  background: #078890;
+}
+
+#naviWrap>ul>li.active {
+  background: #078890;
+}
+
+/* 従業員一覧の情報 */
+#employee_about {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+#categoryWrap {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  background-color: #F8FEFE;
+}
+
+.category {
+  flex: 0 0 calc(50% - 10px);
+  /* 2列にするための幅の計算 */
+  margin-right: 10px;
+  margin-bottom: 10px;
+  /* 要素の下部に余白を追加 */
+}
+
+
+.category h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #4abbc1;
+  color: white;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
