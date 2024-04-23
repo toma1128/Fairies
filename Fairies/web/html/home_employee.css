@@ -18,7 +18,7 @@ header {
 
 header img {
   display: block;
-  margin: right;
+  margin-right: auto;
 }
 
 main {
@@ -131,20 +131,24 @@ table td {
 
 /* 従業員一覧の情報 */
 #employee_about {
-  float: right;
   width: 80%;
+  display: flex;
+  flex-direction: column;
 }
 
 #categoryWrap {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   overflow-x: auto;
   background-color: #F8FEFE;
 }
 
 .category {
-  flex: 0 0 auto;
+  flex: 0 0 calc(50% - 10px);
+  /* 2列にするための幅の計算 */
   margin-right: 10px;
+  margin-bottom: 10px;
+  /* 要素の下部に余白を追加 */
 }
 
 
