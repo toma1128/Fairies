@@ -109,7 +109,7 @@ if(isset($_POST["#submitBtn1"])){
     <title>従業員画面</title>
 </head>
 <body>
-    <form method="POST">
+    <form>
         <header>
             <h1>
                 <img src="images/fairieshome.png" alt="ロゴ" width="280">
@@ -123,6 +123,7 @@ if(isset($_POST["#submitBtn1"])){
                   <button id="loginBtn2">お客様はこちら</button>
             </nav>
         </main>
+    </form>
     <dialog id="loginDialog_employee">
         <div id="loginWrapper">
           <header id="loginHeader">
@@ -137,7 +138,7 @@ if(isset($_POST["#submitBtn1"])){
             <label for="password_employee">パスワード:</label>
             <input type="password" placeholder="パスワード入力してください" name="password_employee" id="password_employee">
           </div>
-          <div><a href="fairiesproject_register.php">新規登録はこちら</a></div>       <!--新規作成画面に移動-->
+          <div><a href="#">新規登録はこちら</a></div>       <!--新規作成画面に移動-->
           <button type="submit" id="submitBtn1">ログイン</button>
         </div>
     </dialog>           <!--従業員用ダイアログ-->
@@ -160,6 +161,5 @@ if(isset($_POST["#submitBtn1"])){
         </div>
       </dialog>            <!--お客様用ダイアログ-->
       <script src="fairiesproject_login.js"></script>
-      </form>
 </body>
 </html>
