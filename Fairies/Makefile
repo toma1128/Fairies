@@ -23,3 +23,4 @@ build:	#コンテナ構築
 .PHONY:
 mysql-root:	#mysqlのrootログインコマンド
 	$(dc) exec -it mysql bash -c "mysql -u root -p -D feya"
+	
