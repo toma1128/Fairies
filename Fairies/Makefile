@@ -1,4 +1,4 @@
-dc := docker-compose -f ./docker-compose.yml
+dc := docker compose -f ./docker-compose.yaml
 
 .PHONY:
 up:		#コンテナ立ち上げ
@@ -22,4 +22,5 @@ build:	#コンテナ構築
 
 .PHONY:
 mysql-root:	#mysqlのrootログインコマンド
-	$(dc) exec -it mysql bash -c "mysql -u root -proot"
+	$(dc) exec -it mysql bash -c "mysql -u root -p -D feya"
+	

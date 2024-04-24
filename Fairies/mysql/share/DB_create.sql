@@ -1,7 +1,9 @@
 -- ログインユーザー名とパスワード
-CREATE USER 'fairies'@'localhost' IDENTIFIED BY 'daimonia';
+CREATE USER 'fairies'@'%' IDENTIFIED BY 'daimonia';
 CREATE DATABASE feya;
 GRANT ALL PRIVILEGES ON feya.* TO 'fairies'@'localhost';
+
+USE feya;
 
 CREATE TABLE EMPLOYEES (
     DEPARTMENT_ID INT(2) NOT NULL,
@@ -47,6 +49,15 @@ CREATE TABLE GENERIC_MASTER(
     SEGMENT_ID INT NOT NULL,
     OPTIONS VARCHAR(20) 
 );
+
+--部署の初期登録
+INSERT INTO DEPARTMENTS (ID, NAME) VALUES
+(1, '○○部'),
+(2, '××部'),
+(3, '□□部'),
+(4, '△△部'),
+(5, '◇◇部');
+
 -- 質問：変数名
 -- ラジオボタンで送られてくるデータがVALUEなのかINTなのか（PHPと相談
 -- HTMLCSS側と直書きか正規化したデータをデータベースで管理するか（HTML側と相談
