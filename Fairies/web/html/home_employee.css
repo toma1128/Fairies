@@ -54,7 +54,7 @@ header ul {
   justify-content: space-around;
   /* 中央ぞろえ */
   align-items: center;
-  
+
 
 }
 
@@ -76,7 +76,7 @@ header ul li {
   /*枠線・右*/
   border-left: solid 1px #19A7CE;
   /*枠線・左*/
-  
+
   margin-right: 15px;
 
 }
@@ -84,7 +84,7 @@ header ul li {
 /* mainのスタイル */
 main {
   /* 背景カラー */
-  background-color: blue;
+  background-color: #B0DAFF;
   /* 高さ */
   height: 90%;
   /* 横並びにする */
@@ -115,10 +115,11 @@ input[type="search"] {
   /* 内側の余白 */
   margin-right: 10px;
   /* 右側との距離を指定 */
-  border: 3px solid #333;
+  border: 3px solid #19A7CE;
   /* 周りの線の指定 */
-  border-radius: 5px;
+  border-radius: 3px;
   /* 周りの線の角を指定 */
+  font-size: 30px;
 }
 
 /* selectタグのスタイル */
@@ -129,7 +130,7 @@ select {
   /* 内側の余白の指定 */
   margin-right: 10px;
   /* 右側との距離を指定 */
-  border: 1px solid #ad2424;
+  border: 1px solid #19A7CE;
   /* 周りの線の指定 */
   border-radius: 5px;
   /* 周りの線の角を指定 */
@@ -139,7 +140,7 @@ select {
 button {
   padding: 10px 20px;
   /* 内側の余白の指定 */
-  color: #ad2424;
+  color: #19A7CE;
   /* テキストカラー */
   border: none;
   /* 周りの線をなくす */
@@ -147,6 +148,7 @@ button {
   /* 周りの線の角を指定 */
   cursor: pointer;
   /* カーソルの形状をポインターに指定 */
+  font-size: larger ;
 }
 
 /* テーブルのスタイル */
@@ -165,14 +167,16 @@ table td {
   /* 周りの線の色と太さの指定 */
   text-align: center;
   /* テキストを中央揃えに */
+  font-size: 25px;
+
 }
 
 /* 従業員一覧のスタイル */
 #contentWrap {
-
-  background-color: pink;
+  
+  background-color: #F8FEFE;
   /* 背景色を指定 */
-  padding: 20px;
+  padding: 20px;  
   /* 内側の余白の指定 */
   border-radius: 5px;
   /* 周りの線の角を指定 */
@@ -180,12 +184,13 @@ table td {
   /* 影のスタイルを指定 */
   display: flex;
   /* フレックスコンテナとして指定 */
-  flex-direction: row;
+  flex-direction: column;
   /* 行方向にフレックスアイテムを配置 */
   justify-content: space-between;
   /* アイテム間の均等なスペースを配置 */
   align-items: center;
   /* アイテムを中央揃えに配置 */
+  overflow: scroll; 
 }
 
 /* 従業員一覧のdiv */
@@ -271,6 +276,11 @@ table td {
   /* 水平方向のオーバーフローを許可 */
   background-color: #F8FEFE;
   /* 背景色 */
+  /* 均等に */
+  justify-content: space-around;
+  /* 中央ぞろえ */
+  align-items: center;
+
 }
 
 .category {
@@ -291,12 +301,13 @@ table td {
   /* 背景色を指定 */
   color: #000;
   /* テキストの色を指定 */
-    padding-left: 15px;
-    /* 左側のパディングを指定 */
-    padding-bottom: 10px;
-    /* 下側のパディングを指定 */
-    padding-right: 15px;
-    /* 右側のパディングを指定 */
-    padding-top: 15px;
-    /* 上側のパディングを指定 */
+  padding-left: 15px;
+  /* 左側のパディングを指定 */
+  padding-bottom: 10px;
+  /* 下側のパディングを指定 */
+  padding-right: 15px;
+  /* 右側のパディングを指定 */
+  padding-top: 15px;
+  /* 上側のパディングを指定 */
 }
+
