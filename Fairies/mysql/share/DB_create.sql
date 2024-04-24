@@ -1,7 +1,9 @@
 -- ログインユーザー名とパスワード
-CREATE USER 'fairies'@'localhost' IDENTIFIED BY 'daimonia';
+CREATE USER 'fairies'@'%' IDENTIFIED BY 'daimonia';
 CREATE DATABASE feya;
 GRANT ALL PRIVILEGES ON feya.* TO 'fairies'@'localhost';
+
+USE feya;
 
 CREATE TABLE EMPLOYEES (
     DEPARTMENT_ID INT(2) NOT NULL,

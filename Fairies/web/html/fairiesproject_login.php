@@ -1,13 +1,26 @@
 <?php
-$dsn='mysql:host=localhost;dbname=SPIC_WEB;charset=utf8mb4';
-define('DB_USER','root');//ユーザ名
-define('DB_PASS','root');//パスワード
+define('DB_USER','fairies');//ユーザ名
+define('DB_PASS','daimonia');//パスワード
 
-$userId_employee = filter_input(INPUT_POST,"userId_employee");
-$password_employee = filter_input(INPUT_POST,"password_employee", FILTER_VALIDATE_INT);
-$userId_customer = filter_input(INPUT_POST,"userId_customer");
-$password_customer = filter_input(INPUT_POST,"password_customer", FILTER_VALIDATE_INT);
+// $userId_employee = filter_input(INPUT_POST,"userId_employee");
+// $password_employee = filter_input(INPUT_POST,"password_employee", FILTER_VALIDATE_INT);
+// $userId_customer = filter_input(INPUT_POST,"userId_customer");
+// $password_customer = filter_input(INPUT_POST,"password_customer", FILTER_VALIDATE_INT);
 
+/**
+ * 入力が空白でないか確認する
+ *
+ * @param string $str
+ * @return bool
+ */
+function is_not_space(?string $str): bool {
+  $str = preg_replace("/( |　)/", "", $str);
+  if ($str == "") {
+      return FALSE;
+  } else {
+      return TRUE;
+  }
+}
 
 if(isset($_POST["submitBtn1"])){
   try{
@@ -105,7 +118,7 @@ if(isset($_POST["submitBtn1"])){
                 <img src="images/fairieshome.png" alt="ロゴ" width="280">
             </h1>
         </header> 
-        <main>       
+        <main>
             <h2>災害連絡掲示板</h2>
             <nav>
                 <div class="nav-menu">
@@ -127,29 +140,29 @@ if(isset($_POST["submitBtn1"])){
             <label for="password_employee">パスワード:</label>
             <input type="password" placeholder="パスワード入力してください" name="password_employee" id="password_employee">
           </div>
-          <div><a href="#">新規登録はこちら</a></div>       <!--新規作成画面に移動-->
+          <div><a href="./fairiesproject_register.php">新規登録はこちら</a></div>       <!--新規作成画面に移動-->
           <button type="submit" id="submitBtn1" name="submitBtn1">ログイン</button>
         </div>
     </dialog>           <!--従業員用ダイアログ-->
     <dialog id="loginDialog_customer">
-        <div id="loginWrapper">
-          <header id="loginHeader">
-            <h2>ログイン画面</h2>
-            <button type="button" id="closeBtn2">x</button>
-          </header>
-          <div>
-            <label for="userId_customer">お客様番号:</label>
-            <input type="text" placeholder="お客様番号を入力してください" name="userId_customer" id="userId_customer">
-          </div>
-          <div>
-            <label for="password_customer">パスワード:</label>
-            <input type="password" placeholder="パスワード入力してください" name="password_customer" id="password_customer">
-          </div>
-          <div><a href="#">新規登録はこちら</a></div>       <!--新規作成画面に移動-->
-          <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>
+      <div id="loginWrapper">
+        <header id="loginHeader">
+          <h2>ログイン画面</h2>
+          <button type="button" id="closeBtn2">x</button>
+        </header>
+        <div>
+          <label for="userId_customer">お客様番号:</label>
+          <input type="text" placeholder="お客様番号を入力してください" name="userId_customer" id="userId_customer">
         </div>
-      </dialog>            <!--お客様用ダイアログ-->
-      <script src="fairiesproject_login.js"></script>
+        <div>
+          <label for="password_customer">パスワード:</label>
+          <input type="password" placeholder="パスワード入力してください" name="password_customer" id="password_customer">
+        </div>
+        <div><a href="./fairiesproject_register.php">新規登録はこちら</a></div>       <!--新規作成画面に移動-->
+        <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>
+      </div>
+    </dialog>            <!--お客様用ダイアログ-->
+    <script src="fairiesproject_login.js"></script>
   </form>
 </body>
 </html>

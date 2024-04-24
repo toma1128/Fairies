@@ -19,15 +19,11 @@ services:
         volumes:
             - ./mysql/mysql:/var/lib/mysql
             - ./mysql/config/my.cnf:/etc/mysql/conf.d/my.cnf
-            - ./mysql/share:/root/share
-            - ./mysql/share/login:/usr/bin/mlogin
+            - ./mysql/share:/docker-entrypoint-initdb.d
         environment:
             - MYSQL_ROOT_PASSWORD=root #適切に変更
-            - MYSQL_DATABASE=test_db #適切に変更
-            - MYSQL_USER=test_user #適切に変更
-            - MYSQL_PASSWORD=test_password #適切に変更
         ports:
-            - ${MYSQL_PORT}:3306
+            - MYSQL_PORT:3306
 
     phpmyadmin:
         build:
@@ -35,8 +31,7 @@ services:
             dockerfile: ./Dockerfile
         environment:
             PMA_HOST: "mysql"
-            PMA_USER: "test_user" #適切に変更
-            PMA_PASSWORD: "test_password" #適切に変更
+           
         ports:
             - ${PMA_PORT}:80
         
