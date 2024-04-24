@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
 
-
 }
 
 /* bodyのスタイル */
@@ -18,13 +17,17 @@ body {
 
 /* headerのスタイル */
 header {
-  text-align: center;
   /* 中央ぞろえ */
+  text-align: center;
   background-color: #F8FEFE;
   /* 縦 */
   height: 10%;
   /* 横並びに */
   display: flex;
+  /* 要素を横並びに配置 */
+  justify-content: space-between;
+  /* 中央揃えに変更 */
+  align-items: center;
 }
 
 /* headerの画像のスタイル */
@@ -32,25 +35,47 @@ header img {
   /* 右側の余白を自動で設定 */
   margin: auto;
   /* 高さ */
-  height: 4.5vw;
+  height: 4.5rem;
   /* 横幅 */
   width: 35vh;
 }
 
 /* ヘッダー内のul */
 header ul {
-  font-size: 0; /* フォントサイズを0にする */
+  /* リストアイテムを均等に配置 */
+  justify-content: space-around;
+  /* リストアイテムを中央揃えに配置 */
+  align-items: center;
+  /* 横並びに */
+  display: flex;
+  /* 均等に */
+  justify-content: space-around;
+  /* 中央ぞろえ */
+  align-items: center;
+  
+
 }
 
 /* 従業員一覧のliタグ */
 header ul li {
-   /* テキストサイズ */
-  font-size: 1.8vw;
+  /* テキストサイズ */
+  font-size: 1.8rem;
   /* 黒丸を消す */
   list-style: none;
-  /* 横並びに */
-  display: inline;
+  padding: 10px 20px;
+  /*余白*/
+  background: #e3f6f5;
+  /*背景色*/
+  border-top: solid 1px #19A7CE;
+  /*枠線・上*/
+  border-bottom: solid 1px #19A7CE;
+  /*枠線・下*/
+  border-right: solid 1px #19A7CE;
+  /*枠線・右*/
+  border-left: solid 1px #19A7CE;
+  /*枠線・左*/
   
+  margin-right: 15px;
 
 }
 
@@ -66,8 +91,8 @@ main {
 
 /* h2タグのスタイル */
 h2 {
-  margin-bottom: 20px;
   /* 下の要素との距離を指定 */
+  margin-bottom: 20px;
 }
 
 /* form_linkのスタイル */
@@ -76,6 +101,7 @@ h2 {
   /* リンクの下の線を削除 */
   color: #333;
   /* テキストカラー */
+
 }
 
 /* 検索入力のスタイル */
@@ -140,7 +166,7 @@ table td {
 
 /* 従業員一覧のスタイル */
 #contentWrap {
-  
+
   background-color: pink;
   /* 背景色を指定 */
   padding: 20px;
@@ -167,30 +193,23 @@ table td {
 
 /* 横の従業員一覧の設定 */
 #naviWrap {
-  /* 下との距離 */
-  bottom: 50px;
   /* 横幅の距離 */
   width: 20%;
-  /* 縦 */
-  /* 左との距離感を設定*/
-  margin: 10px;
   /* 最小幅を指定 */
   min-width: 180px;
   /* 背景色 */
   background: #146C94;
   /* 内側の余白の指定 */
   padding: 5px;
-  /* 周りの線の指定 */
-  border: 1px solid #4abbc1;
-  
+
+
 }
 
 /* 従業員一覧のulタグ */
 #naviWrap>ul {
   background: #4abbc1;
-   /* 左寄せ */
+  /* 左寄せ */
   padding-left: 0
-   
 }
 
 /* 従業員一覧のliタグ */
@@ -269,4 +288,3 @@ table td {
   padding-top: 15px;
   /* 上側のパディングを指定 */
 }
-
