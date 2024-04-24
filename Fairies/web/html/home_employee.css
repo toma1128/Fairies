@@ -1,3 +1,4 @@
+/* 全体の処理 */
 * {
   margin: 0;
   padding: 0;
@@ -5,138 +6,155 @@
 
 
 }
-
+/* bodyのスタイル */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  height: 100%;
-  background-color: green;
+  font-family: Arial, Helvetica, sans-serif; /* フォント */
+  height: 100vh;                              /* 高さ　*/
+  background-color: green;      
 }
 
+/* headerのスタイル */
 header {
-  text-align: center;
+  text-align: center;                        /* 中央ぞろえ */
   background-color: #F8FEFE;
 }
 
+/* headerの画像のスタイル */
 header img {
-  display: block;
-  margin-right: auto;
+  display: block;                            /* 画像をブロック要素とする */
+  margin-right: auto;                        /* 右側の余白を自動で設定 */
 }
 
+/* mainのスタイル */
 main {
-  margin: 0 auto;
-  padding: 100px;
-  background-color: blue;
-  height: 100%;
+  margin: 0 auto;                            /* 左右の余白を自動で設定 */
+  padding: 100px;                            /* 要素内の余白 */
+  background-color: blue;                  /* 背景カラー */
+  height: 100%;                              /* 高さ */
 }
 
+/* h2タグのスタイル */
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 20px;                       /* 下の要素との距離を指定 */
 }
 
+/* form_linkのスタイル */
 .form_link {
-  text-decoration: none;
-  color: #333;
+  text-decoration: none;                     /* リンクの下の線を削除 */
+  color: #333;                             /* テキストカラー */
 }
 
+/* 検索入力のスタイル */
 input[type="search"] {
-  flex: 1;
-  padding: 10px;
-  margin-right: 10px;
-  border: 3px solid #333;
-  border-radius: 5px;
+  flex: 1;                                    /*水平方向の伸縮性*/
+  padding: 10px;                              /* 内側の余白 */
+  margin-right: 10px;                         /* 右側との距離を指定 */
+  border: 3px solid #333;                   /* 周りの線の指定 */
+  border-radius: 5px;                         /* 周りの線の角を指定 */
 }
 
+/* selectタグのスタイル */
 select {
-  flex: 1;
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid #ad2424;
-  border-radius: 5px;
+  flex: 1;                                    /* 水平方向の伸縮性の指定 */
+  padding: 10px;                              /* 内側の余白の指定 */
+  margin-right: 10px;                         /* 右側との距離を指定 */
+  border: 1px solid #ad2424;                /* 周りの線の指定 */
+  border-radius: 5px;                         /* 周りの線の角を指定 */
 }
 
+/* ボタンのスタイル */
 button {
-  padding: 10px 20px;
-  color: #ad2424;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px;                         /* 内側の余白の指定 */
+  color: #ad2424;                           /* テキストカラー */
+  border: none;                               /* 周りの線をなくす */
+  border-radius: 5px;                         /* 周りの線の角を指定 */
+  cursor: pointer;                            /* カーソルの形状をポインターに指定 */
 }
 
+/* テーブルのスタイル */
 table {
-  width: 100%;
-  border-collapse: collapse;
+  width: 100%;                                /*横幅を指定*/
+  border-collapse: collapse;                  /* セルの境界線を結合 */
 }
 
+/* テーブルタグのtdタグ */
 table td {
-  padding: 10px;
-  border: 1px #ad2424;
-  text-align: center;
+  padding: 10px;                              /* 内側の余白の指定 */
+  border: 1px #ad2424;                      /* 周りの線の色と太さの指定 */
+  text-align: center;                         /* テキストを中央揃えに */
 }
 
+/* 従業員一覧のスタイル */
 #contentWrap {
-  background-color: pink;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  background-color: pink;                   /* 背景色を指定 */
+  padding: 20px;                              /* 内側の余白の指定 */
+  border-radius: 5px;                         /* 周りの線の角を指定 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* 影のスタイルを指定 */
+  display: flex;                              /* フレックスコンテナとして指定 */
+  flex-direction: row;                        /* 行方向にフレックスアイテムを配置 */
+  justify-content: space-between;             /* アイテム間の均等なスペースを配置 */
+  align-items: center;                        /* アイテムを中央揃えに配置 */
 }
 
+/* 従業員一覧のdiv */
 #contentWrap div {
-  margin-right: 10px;
+  margin-right: 10px;                         /* 右側との距離を指定 */
 }
 
 /* 横の従業員一覧の設定 */
 #naviWrap {
-  top: 20px;
-  left: 0;
-  width: 20%;
-  margin: 0 auto;
-  min-width: 180px;
-  background: #146C94;
-  padding: 5px;
-  border: 1px solid #4abbc1;
-  float: left;
+  top: 20px;                                  /* 上と距離の指定 */
+  left: 0;                                    /* 左との距離 */
+  width: 20%;                                 /* 横幅の距離 */
+  margin: 0 auto;                             /* 左との距離感を自動 */
+  min-width: 180px;                           /* 最小幅を指定 */
+  background: #146C94;                      /* 背景色 */
+  padding: 5px;                               /* 内側の余白の指定 */
+  border: 1px solid #4abbc1;                /* 周りの線の指定 */
+  float: left;                                /* 左寄せ */
 }
 
+/* 従業員一覧のulタグ */
 #naviWrap>ul {
   background: #4abbc1;
-  padding-left: 0
+  padding-left: 0                              /* 左寄せ */
 }
 
+/* 従業員一覧のliタグ */
 #naviWrap>ul>li {
-  font-size: .9rem;
-  list-style: none;
+  font-size: .9rem;                            /* テキストサイズ */
+  list-style: none;                            /* 黒丸を消す */
 }
 
+/* 従業員一覧のaタグのスタイル */
 #naviWrap>ul>li a {
-  display: block;
-  color: #fff;
-  padding: 1rem;
+  display: block;                              /* ブロック要素とする */
+  color: #fff;                               /* テキストカラー */
+  padding: 1rem;                               /* 内側の余白の指定 */
 }
 
+/* マウスカーソルを合わせたときの処理 */
 #naviWrap>ul>li a:hover {
   background: #078890;
 }
 
+/* liタグの中のクラスの処理 */
 #naviWrap>ul>li.active {
   background: #078890;
 }
 
 /* 従業員一覧の情報 */
 #employee_about {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
+  width: 80%;                                   /* 横幅 */
+  display: flex;                                /* flex要素 */
+  flex-direction: column;                       /* 列方向にフレックスアイテムを配置 */
 }
 
 #categoryWrap {
-  display: flex;
-  flex-wrap: wrap;
-  overflow-x: auto;
-  background-color: #F8FEFE;
+  display: flex;                                /* フレックスコンテナとして表示 */
+  flex-wrap: wrap;                              /* 要素を折り返して配置 */
+  overflow-x: auto;                             /* 水平方向のオーバーフローを許可 */
+  background-color: #F8FEFE;                  /* 背景色 */
 }
 
 .category {
@@ -149,12 +167,12 @@ table td {
 
 
 .category h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  background-color: #4abbc1;
-  color: white;
-  padding-left: 15px;
-  padding-bottom: 10px;
-  padding-right: 15px;
-  padding-top: 15px;
+  font-size: 1.5rem;                             /* フォントサイズを指定 */
+  font-weight: bold;                             /* フォントの太さを指定 */
+  background-color: #4abbc1;                   /* 背景色を指定 */
+  color: white;                                /* テキストの色を指定 */
+  padding-left: 15px;                            /* 左側のパディングを指定 */
+  padding-bottom: 10px;                          /* 下側のパディングを指定 */
+  padding-right: 15px;                           /* 右側のパディングを指定 */
+  padding-top: 15px;                             /* 上側のパディングを指定 */
 }
