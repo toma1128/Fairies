@@ -28,6 +28,8 @@ header {
   justify-content: space-between;
   /* 中央揃えに変更 */
   align-items: center;
+  box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
+  /* 影のスタイルを指定 ひとまず*/
 }
 
 /* headerの画像のスタイル */
@@ -87,6 +89,7 @@ main {
   height: 90%;
   /* 横並びにする */
   display: flex;
+  top: 50 px;
 }
 
 /* h2タグのスタイル */
@@ -214,7 +217,7 @@ table td {
 
 /* 従業員一覧のliタグ */
 #naviWrap>ul>li {
-  font-size: .9rem;
+  font-size: 1.5rem;
   /* テキストサイズ */
   list-style: none;
   /* 黒丸を消す */
@@ -224,15 +227,24 @@ table td {
 #naviWrap>ul>li a {
   display: block;
   /* ブロック要素とする */
-  color: #fff;
+  color: #000;
   /* テキストカラー */
   padding: 1rem;
   /* 内側の余白の指定 */
+  border-top: solid 1px #19A7CE;
+  /*枠線・上*/
+  border-bottom: solid 1px #19A7CE;
+  /*枠線・下*/
+  border-right: solid 1px #19A7CE;
+  /*枠線・右*/
+  border-left: solid 1px #19A7CE;
+  /*枠線・左*/
 }
 
 /* マウスカーソルを合わせたときの処理 */
 #naviWrap>ul>li a:hover {
   background: #078890;
+  text-decoration: none;
 }
 
 /* liタグの中のクラスの処理 */
@@ -262,29 +274,29 @@ table td {
 }
 
 .category {
-  flex: 0 0 calc(50% - 10px);
+  flex: 0 0 calc(30% - 10px);
   /* 2列にするための幅の計算 */
-  margin-right: 10px;
+  margin-right: 5px;
   margin-bottom: 10px;
   /* 要素の下部に余白を追加 */
 }
 
 
 .category h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   /* フォントサイズを指定 */
   font-weight: bold;
   /* フォントの太さを指定 */
   background-color: #4abbc1;
   /* 背景色を指定 */
-  color: white;
+  color: #000;
   /* テキストの色を指定 */
-  padding-left: 15px;
-  /* 左側のパディングを指定 */
-  padding-bottom: 10px;
-  /* 下側のパディングを指定 */
-  padding-right: 15px;
-  /* 右側のパディングを指定 */
-  padding-top: 15px;
-  /* 上側のパディングを指定 */
+    padding-left: 15px;
+    /* 左側のパディングを指定 */
+    padding-bottom: 10px;
+    /* 下側のパディングを指定 */
+    padding-right: 15px;
+    /* 右側のパディングを指定 */
+    padding-top: 15px;
+    /* 上側のパディングを指定 */
 }
