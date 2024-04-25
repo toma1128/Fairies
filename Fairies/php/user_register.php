@@ -91,11 +91,12 @@
 
     </header>
     <main>
-        <div>
+        <div id="screen">
             <div class="select">
                 <h2>新規作成（従業員用）</h2>
             </div>
             <form id="registrationForm" action="fairiesproject_register.php" method="POST" class="w-1/2 mx-8">
+                
                 <div class="container" class="select">
                     <label for="team">所属門又はチーム:</label>
                     <p>半角数字で入力してください。</p>

@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    height: 10%;
+    height: 10vh;
     text-align: center;
     background-color: #F8FEFE;
     padding: 20px 0;
@@ -68,12 +68,26 @@ header ul li {
 }
 
 main {
-    max-width: 400px;
+    max-width: 70%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #B0DAFF;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* 新しいスタイル */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    /* 画面の高さいっぱいに表示 */
+}
+
+
+#screen {
+    width: 70%;
+    background-color: #fff;
+    padding: 30px;
 }
 
 form {
