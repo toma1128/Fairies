@@ -2,14 +2,64 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; 
+    background-color: #B0DAFF;
 }
 
 header {
+    /* 中央ぞろえ */
     text-align: center;
-    background-color: #49ada1;
-    color: #fff;
-    padding: 20px 0;
+    background-color: #F8FEFE;
+    /* 横並びに */
+    display: flex;
+    /* 要素を横並びに配置 */
+    justify-content: space-between;
+    /* 中央揃えに変更 */
+    align-items: center;
+    box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
+    /* 影のスタイルを指定 ひとまず*/
+    padding: 10px 0;
+}
+
+/* ヘッダー内のul */
+header ul {
+    /* リストアイテムを均等に配置 */
+    justify-content: space-around;
+    /* リストアイテムを中央揃えに配置 */
+    align-items: center;
+
+}
+
+/* 従業員一覧のliタグ */
+header ul li {
+    /* テキストサイズ */
+    font-size: 1.6rem;
+    /* 黒丸を消す */
+    list-style: none;
+    padding: 10px 20px;
+    /*余白*/
+    background: #e3f6f5;
+    /*背景色*/
+    border-top: solid 1px #19A7CE;
+    /*枠線・上*/
+    border-bottom: solid 1px #19A7CE;
+    /*枠線・下*/
+    border-right: solid 1px #19A7CE;
+    /*枠線・右*/
+    border-left: solid 1px #19A7CE;
+    /*枠線・左*/
+
+    margin-right: 15px;
+
+}
+
+/* headerの画像のスタイル */
+header img {
+    /* 右側の余白を自動で設定 */
+    margin: auto;
+    /* 高さ */
+    height: 4.5rem;
+    /* 横幅 */
+    width: 35vh;
 }
 
 main {
@@ -36,17 +86,17 @@ input[type="password"],
 input[type="number"],
 input[type="date"] {
     padding: 10px;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    
+
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus {
-    border-color: #49ada1; 
+    border-color: #49ada1;
 }
 
 button {
@@ -58,7 +108,5 @@ button {
 }
 
 button:hover {
-    background-color: #3eabab; 
+    background-color: #3eabab;
 }
-
-

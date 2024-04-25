@@ -13,6 +13,7 @@ body {
   height: 100vh;
   /* 高さ　*/
   background-color: green;
+  margin-top: 0;
 }
 
 /* headerのスタイル */
@@ -52,9 +53,6 @@ header ul {
   display: flex;
   /* 均等に */
   justify-content: space-around;
-  /* 中央ぞろえ */
-  align-items: center;
-
 
 }
 
@@ -87,9 +85,17 @@ main {
   background-color: #B0DAFF;
   /* 高さ */
   height: 90%;
+}
+
+form {
+  height: 100%;
+}
+
+
+#screen {
   /* 横並びにする */
   display: flex;
-  top: 50 px;
+  height: 100%
 }
 
 /* h2タグのスタイル */
@@ -148,7 +154,7 @@ button {
   /* 周りの線の角を指定 */
   cursor: pointer;
   /* カーソルの形状をポインターに指定 */
-  font-size: larger ;
+  font-size: larger;
 }
 
 /* テーブルのスタイル */
@@ -157,6 +163,14 @@ table {
   /*横幅を指定*/
   border-collapse: collapse;
   /* セルの境界線を結合 */
+  border-top: solid 1px #19A7CE;
+  /*枠線・上*/
+  border-bottom: solid 1px #19A7CE;
+  /*枠線・下*/
+  border-right: solid 1px #19A7CE;
+  /*枠線・右*/
+  border-left: solid 1px #19A7CE;
+  /*枠線・左*/
 }
 
 /* テーブルタグのtdタグ */
@@ -173,10 +187,10 @@ table td {
 
 /* 従業員一覧のスタイル */
 #contentWrap {
-  
+
   background-color: #F8FEFE;
   /* 背景色を指定 */
-  padding: 20px;  
+  padding: 20px;
   /* 内側の余白の指定 */
   border-radius: 5px;
   /* 周りの線の角を指定 */
@@ -190,7 +204,7 @@ table td {
   /* アイテム間の均等なスペースを配置 */
   align-items: center;
   /* アイテムを中央揃えに配置 */
-  overflow: scroll; 
+  overflow: scroll;
 }
 
 /* 従業員一覧のdiv */
@@ -201,6 +215,7 @@ table td {
 
 /* 横の従業員一覧の設定 */
 #naviWrap {
+
   /* 横幅の距離 */
   width: 20%;
   /* 最小幅を指定 */
@@ -209,6 +224,7 @@ table td {
   background: #146C94;
   /* 内側の余白の指定 */
   padding: 5px;
+
 
 
 }
@@ -310,4 +326,3 @@ table td {
   padding-top: 15px;
   /* 上側のパディングを指定 */
 }
-
