@@ -25,7 +25,7 @@ if (isset($_POST["logoutBtn"])) {
             </ul>
         </header>
         <main>
-            <Form method="POST">
+            <form method="POST">
                 <div id="naviWrap">
                     <ul id="categoryNavi"> <!-- 右立のやつ-->
                         <li><a href="#category-1"> 従業員一覧</a></li>
@@ -91,7 +91,7 @@ if (isset($_POST["logoutBtn"])) {
                         </table>
                     </div>
                 </div>
-            </Form>
+            </form>
         </main>
     </form>
 </body>

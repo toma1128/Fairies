@@ -52,9 +52,6 @@ header ul {
   display: flex;
   /* 均等に */
   justify-content: space-around;
-  /* 中央ぞろえ */
-  align-items: center;
-
 
 }
 
@@ -148,7 +145,7 @@ button {
   /* 周りの線の角を指定 */
   cursor: pointer;
   /* カーソルの形状をポインターに指定 */
-  font-size: larger ;
+  font-size: larger;
 }
 
 /* テーブルのスタイル */
@@ -173,10 +170,10 @@ table td {
 
 /* 従業員一覧のスタイル */
 #contentWrap {
-  
+
   background-color: #F8FEFE;
   /* 背景色を指定 */
-  padding: 20px;  
+  padding: 20px;
   /* 内側の余白の指定 */
   border-radius: 5px;
   /* 周りの線の角を指定 */
@@ -190,7 +187,7 @@ table td {
   /* アイテム間の均等なスペースを配置 */
   align-items: center;
   /* アイテムを中央揃えに配置 */
-  overflow: scroll; 
+  overflow: scroll;
 }
 
 /* 従業員一覧のdiv */
@@ -310,4 +307,3 @@ table td {
   padding-top: 15px;
   /* 上側のパディングを指定 */
 }
-
