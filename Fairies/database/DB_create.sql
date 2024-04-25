@@ -58,11 +58,6 @@ INSERT INTO DEPARTMENTS (ID, NAME) VALUES
 (4, '△△部'),
 (5, '◇◇部');
 
-
-INSERT INTO EMPLOYEES (DEPARTMENT_ID, NAMBER, NAME, PASSWORD, HIREDATE) VALUES (1, '38511', 'テスト','test','2024-1-1');
-INSERT INTO EMPLOYEE_FORMS (ID, NAMBER, POSSIBLE, PERIOD, REASON, MESSAGE) VALUES (1,'38511',1,1,2,'テスト');
-
-
 -- 質問：変数名
 -- ラジオボタンで送られてくるデータがVALUEなのかINTなのか（PHPと相談
 -- HTMLCSS側と直書きか正規化したデータをデータベースで管理するか（HTML側と相談
