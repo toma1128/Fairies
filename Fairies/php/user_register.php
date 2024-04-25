@@ -1,70 +1,70 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=SPIC_WEB;charset=utf8mb4';
-define('DB_USER', 'root'); //ユーザ名
-define('DB_PASS', 'root'); //パスワード
+// $dsn = 'mysql:host=localhost;dbname=SPIC_WEB;charset=utf8mb4';
+// define('DB_USER', 'root'); //ユーザ名
+// define('DB_PASS', 'root'); //パスワード
 
-$result = [
-    "register"  => true,
-    "message" => null,
-    "result"  => null,
-];
+// $result = [
+//     "register"  => true,
+//     "message" => null,
+//     "result"  => null,
+// ];
 
-$name = filter_input(INPUT_POST, "name");
-$ruby = filter_input(INPUT_POST, "ruby");
-$password = filter_input(INPUT_POST, "password");
-$confirmpassword = filter_input(INPUT_POST, "confirmPassword");
-$number = filter_input(INPUT_POST, "number", FILTER_VALIDATE_INT);
-$birthday = filter_input(INPUT_POST, "birthday", FILTER_VALIDATE_INT);
-
-
-if ($result["register"]) {
-    try {
-        $db = new PDO($dsn, DB_USER, DB_PASS);
-        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
-
-        $sql = "INSERT INTO apparel_products VALUES(:product_id, :product_name, :price, :size, :color, :stock)";
-
-        $stmt = $db->prepare($sql);
+// $name = filter_input(INPUT_POST, "name");
+// $ruby = filter_input(INPUT_POST, "ruby");
+// $password = filter_input(INPUT_POST, "password");
+// $confirmpassword = filter_input(INPUT_POST, "confirmPassword");
+// $number = filter_input(INPUT_POST, "number", FILTER_VALIDATE_INT);
+// $birthday = filter_input(INPUT_POST, "birthday", FILTER_VALIDATE_INT);
 
 
-        //値のバインド
-        $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
-        $stmt->bindParam(':product_name', $product_name, PDO::PARAM_STR);
-        $stmt->bindParam(':price', $price, PDO::PARAM_STR);
-        $stmt->bindParam(':size', $size, PDO::PARAM_INT);
-        $stmt->bindParam(':color', $color, PDO::PARAM_INT);
-        $stmt->bindParam(':stock', $stock, PDO::PARAM_STR);
+// if ($result["register"]) {
+//     try {
+//         $db = new PDO($dsn, DB_USER, DB_PASS);
+//         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+//         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//         $db->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
 
-        //SQL実行
-        $stmt->execute();
+//         $sql = "INSERT INTO apparel_products VALUES(:product_id, :product_name, :price, :size, :color, :stock)";
 
-        //結果を格納する配列宣言
-        $result["result"] = $stmt->rowCount();
+//         $stmt = $db->prepare($sql);
 
-        if ($result["result"] === 1) {
-            $db->commit();
-            $result["message"] = "データの登録に成功しました";
-        } else {
-            $db->rollback();
-            $result["message"] = "データの登録に失敗しました";
-        }
-        echo '<pre>';
-        var_dump($result);
-        echo '</pre>';
-        header("Location: fairiesproject_login.php");
-        exit; // リダイレクト後にスクリプトが継続されないようにする
-    } catch (PDOException $e) {
-        echo 'error:' . $e->getMessage();
-    } finally {
-        // 接続切断処理
-        $stmt = null;
-        $db = null;
-    }
-} else {
-    echo "<script>const status = false;</script>";
-}
+
+//         //値のバインド
+//         $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+//         $stmt->bindParam(':product_name', $product_name, PDO::PARAM_STR);
+//         $stmt->bindParam(':price', $price, PDO::PARAM_STR);
+//         $stmt->bindParam(':size', $size, PDO::PARAM_INT);
+//         $stmt->bindParam(':color', $color, PDO::PARAM_INT);
+//         $stmt->bindParam(':stock', $stock, PDO::PARAM_STR);
+
+//         //SQL実行
+//         $stmt->execute();
+
+//         //結果を格納する配列宣言
+//         $result["result"] = $stmt->rowCount();
+
+//         if ($result["result"] === 1) {
+//             $db->commit();
+//             $result["message"] = "データの登録に成功しました";
+//         } else {
+//             $db->rollback();
+//             $result["message"] = "データの登録に失敗しました";
+//         }
+//         echo '<pre>';
+//         var_dump($result);
+//         echo '</pre>';
+//         header("Location: fairiesproject_login.php");
+//         exit; // リダイレクト後にスクリプトが継続されないようにする
+//     } catch (PDOException $e) {
+//         echo 'error:' . $e->getMessage();
+//     } finally {
+//         // 接続切断処理
+//         $stmt = null;
+//         $db = null;
+//     }
+// } else {
+//     echo "<script>const status = false;</script>";
+// }
 ?>
 
 <!-- 
