@@ -163,6 +163,14 @@ table {
   /*横幅を指定*/
   border-collapse: collapse;
   /* セルの境界線を結合 */
+  border-top: solid 1px #19A7CE;
+  /*枠線・上*/
+  border-bottom: solid 1px #19A7CE;
+  /*枠線・下*/
+  border-right: solid 1px #19A7CE;
+  /*枠線・右*/
+  border-left: solid 1px #19A7CE;
+  /*枠線・左*/
 }
 
 /* テーブルタグのtdタグ */
