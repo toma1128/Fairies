@@ -8,7 +8,34 @@
 <body>
     <header><h2>災害安否確認フォーム（従業員用）</h2></header>
     <main>
-        
+        <form>
+            <div>
+                <p>出勤可能ですか？</p>
+                <input type="radio" id="answer1" name="yesnochoice" value="1">
+                <label for="answer1">可能</label>
+            </div>
+            <div>
+                <p>出勤出来ない期限を選択してください。</p>
+                <input type="radio" id="answer2" name="datechoice" value="1" >
+                <label for="answer2">一週間以内</label>
+            </div>
+            <div>
+                <p>出社出来ない理由を選択してください。</p>
+                <input type="radio" id="answer3" name="reason" value="1" >
+                <label for="answer3">怪我</label>
+            </div>
+            <div>
+                <p>連絡事項等あればお書きください。</p>
+                <textarea name="options" id="options" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <p>お間違いなければ登録、変更する場合は変更を押してください。</p>
+            </div>
+            <div class="buttons">
+                <button type="submit" id="submit">登録</button>
+                <button type="button" id="edit">変更</button>
+            </div>
+        </form>
     </main>
 </body>
 </html>
