@@ -91,7 +91,7 @@ if ($result["register"]) {
 
     </header>
     <main>
-        <div>
+        <div id="screen">
             <div class="select">
                 <h2>新規作成（従業員用）</h2>
             </div>

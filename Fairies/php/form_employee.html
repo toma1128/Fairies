@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./form_employee.css">
     <title>ホーム画面</title>
 </head>
+
 <body>
-    <header><h2>フォーム画面</h2></header>
+    <header>
+        <h1 class="logo">
+            <img src="images/fairieshome.png" alt="ロゴ" width="230">
+        </h1>
+        <ul>
+            <li><a class="form_link" href="">ログアウト</a></li>
+        </ul>
+
+    </header>
     <main>
+
+
         <form>
-            <div id="myForm" >
+            <div>
+                <h2>フォーム画面</h2>
+            </div>
+            <div id="myForm">
                 <p>出勤可能ですか？</p>
-                <input type="radio" id="yes" name="yesnochoice" value="1" >
+                <input type="radio" id="yes" name="yesnochoice" value="1">
                 <label for="yes">可能</label>
-                <input type="radio" id="no" name="yesnochoice" value="2" >
+                <input type="radio" id="no" name="yesnochoice" value="2">
                 <label for="no">不可</label>
             </div>
             <div>
                 <p>出勤出来ない期限を選択してください。</p>
-                <input type="radio" id="datechoice1" name="datechoice" value="1" >
+                <input type="radio" id="datechoice1" name="datechoice" value="1">
                 <label for="datechoice1">一週間以内</label>
-                <input type="radio" id="datechoice2" name="datechoice" value="2" >
+                <input type="radio" id="datechoice2" name="datechoice" value="2">
                 <label for="datechoice2">一か月以内</label>
-                <input type="radio" id="datechoice3" name="datechoice" value="3" >
+                <input type="radio" id="datechoice3" name="datechoice" value="3">
                 <label for="datechoice3">半年以内</label>
-                <input type="radio" id="datechoice4" name="datechoice" value="4" >
+                <input type="radio" id="datechoice4" name="datechoice" value="4">
                 <label for="datechoice4">一年以上</label>
-                <input type="radio" id="datechoice5" name="datechoice" value="5" >
+                <input type="radio" id="datechoice5" name="datechoice" value="5">
                 <label for="datechoice5">未定</label>
             </div>
             <div>
                 <p>出社出来ない理由を選択してください。</p>
-                <input type="radio" id="reason1" name="reason" value="1" >
+                <input type="radio" id="reason1" name="reason" value="1">
                 <label for="reason1">怪我</label>
-                <input type="radio" id="reason2" name="reason" value="2" >
+                <input type="radio" id="reason2" name="reason" value="2">
                 <label for="reason2">家族</label>
-                <input type="radio" id="reason3" name="reason" value="3" >
+                <input type="radio" id="reason3" name="reason" value="3">
                 <label for="reason3">家</label>
-                <input type="radio" id="reason4" name="reason" value="4" >
-                <label for="reason4" >交通機関</label>
-                <input type="radio" id="reason5" name="reason" value="5" >
+                <input type="radio" id="reason4" name="reason" value="4">
+                <label for="reason4">交通機関</label>
+                <input type="radio" id="reason5" name="reason" value="5">
                 <label for="reason5">その他</label>
             </div>
             <div>
@@ -50,4 +65,5 @@
         </form>
     </main>
 </body>
+
 </html>
