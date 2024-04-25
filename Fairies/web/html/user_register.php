@@ -76,7 +76,7 @@ if ($result["register"]) {
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="fairiesproject_register.css">
+    <link rel="stylesheet" href="user_register.css">
     <title>新規作成画面</title>
 </head>
 
