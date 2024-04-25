@@ -14,18 +14,19 @@ if (isset($_POST["logoutBtn"])) {
 </head>
 
 <body>
-    <form method="POST">
-        <header>
-            <h1 class="logo">
-                <img src="images/fairieshome.png" alt="ロゴ" width="230">
-            </h1>
-            <ul>
-                <li><a class="form_link" href="">安否報告</a></li>
-                <li><a class="form_link" href="">ログアウト</a></li>
-            </ul>
-        </header>
-        <main>
-            <form method="POST">
+
+    <header>
+        <h1 class="logo">
+            <img src="images/fairieshome.png" alt="ロゴ" width="230">
+        </h1>
+        <ul>
+            <li><a class="form_link" href="">安否報告</a></li>
+            <li><a class="form_link" href="">ログアウト</a></li>
+        </ul>
+    </header>
+    <main>
+        <form method="POST">
+            <div id="screen">
                 <div id="naviWrap">
                     <ul id="categoryNavi"> <!-- 右立のやつ-->
                         <li><a href="#category-1"> 従業員一覧</a></li>
@@ -91,9 +92,10 @@ if (isset($_POST["logoutBtn"])) {
                         </table>
                     </div>
                 </div>
-            </form>
-        </main>
-    </form>
+            </div>
+        </form>
+    </main>
+
 </body>
 
 </html>
