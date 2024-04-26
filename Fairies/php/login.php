@@ -124,7 +124,7 @@ if (isset($_POST["submitBtn1"])) {
       <div class="title">
         <img src="images/title_img.png" alt="title">
       </div>
-      <h2>災害連絡掲示板</h2>
+      <h2 class="title">災害連絡掲示板</h2>
       <nav>
         <div class="nav-menu">
           <button id="loginBtn1">従業員の方</button>
