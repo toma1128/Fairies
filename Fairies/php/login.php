@@ -116,20 +116,21 @@ if (isset($_POST["submitBtn1"])) {
 <body>
   <form method="POST">
     <header>
-
       <img src="images/fairieshome.png" alt="ロゴ" width="280">
-
     </header>
     <main>
       <div class="title">
         <img src="images/title_img.png" alt="title">
+        <p>災害連絡掲示板</p>
       </div>
-      <h2 class="title">災害連絡掲示板</h2>
-      <nav>
-        <div class="nav-menu">
-          <button id="loginBtn1">従業員の方</button>
-          <button id="loginBtn2">お客様はこちら</button>
-      </nav>
+      <div>
+        <nav>
+          <div class="nav-menu">
+            <button id="loginBtn1">従業員の方</button>
+            <button id="loginBtn2">お客様はこちら</button>
+        </nav>
+      </div>
+
       <div><a href="./fairiesproject_register.php">新規登録はこちら</a></div> <!--新規作成画面に移動-->
       <div id="loginWrapper">
         <div>

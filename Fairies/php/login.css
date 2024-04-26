@@ -12,104 +12,43 @@ header {
     box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
 }
 
-h2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: xxx-large;
+.title {
+
+    position: relative;
+    align-items: center;
     text-align: center;
-    border-bottom: 10px solid #B0DAFF;
+    height: 60px;
 }
 
-.nav-menu {
-    display: flex;
-    flex-wrap: wrap;
+.title img {
+    width: 70%;
+
+}
+
+.title p {
+    /* 重ねる */
+    position: absolute;
     font-weight: bold;
+    font-size: large;
     text-align: center;
 }
 
-.nav-menu button {
-    margin: 0 250px;
-    font-size: xx-large;
-}
 
-#loginBtn1,
-#loginBtn2 {
-    margin-top: 10px;
-    color: black;
-    cursor: pointer;
-    background-color: #B0DAFF;
-    padding: 20px;
-}
 
-#loginDialog {
-    width: 30%;
-    margin: auto;
-    border: 0;
-    border-radius: 0.25rem;
-    box-shadow: 0 0 1em black;
-}
 
-#loginDialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.4);
-}
 
-#loginWrapper {
-    width: 100%;
-}
 
-#loginHeader {
-    background-color: lawngreen;
-    padding: 5px 10px;
-    border-bottom: none;
-}
 
-#loginHeader h2 {
-    font-size: 1em;
-    margin: 0;
-    border-bottom: none;
-}
 
-#loginHeader button {
-    font-size: 1.5em;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0 5px;
-}
 
-#loginWrapper div {
-    width: 80%;
-    margin: 10px auto;
-}
 
-#loginWrapper input {
-    width: 100%;
-    height: 1.5em;
-    font-size: 1.2em;
-}
 
-#loginWrapper button[type=submit] {
-    display: block;
-    width: 80%;
-    margin: 10px auto;
-    padding: 5px 0;
-    font-size: 1.2em;
-    background-color: lawngreen;
-    border: none;
-    border-radius: 0.5em;
-    cursor: pointer;
-}
 
-#loginDialog_employee,
-#loginDialog_customer {
-    width: 30%;
-    margin: 10;
-    border: 0;
-    border-radius: 0.2rem;
-    box-shadow: 0 0 1em black;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
+
+
+
+
+
+
+
