@@ -110,7 +110,7 @@ if (isset($_POST["submitBtn1"])) {
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./login.css">
-  <title>従業員画面</title>
+  <title>ログイン画面</title>
 </head>
 
 <body>
