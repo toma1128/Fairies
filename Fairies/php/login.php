@@ -121,42 +121,43 @@ if (isset($_POST["submitBtn1"])) {
     <main>
       <div class="title">
         <img src="images/title_img.png" alt="title">
-        <p>災害連絡掲示板</p>
+        <p >災害連絡掲示板</p>
       </div>
-      <div>
-        <nav>
-          <div class="nav-menu">
-            <button id="loginBtn1">従業員の方</button>
-            <button id="loginBtn2">お客様はこちら</button>
-        </nav>
-      </div>
-
-      <div><a href="./fairiesproject_register.php">新規登録はこちら</a></div> <!--新規作成画面に移動-->
-      <div id="loginWrapper">
+      <div class="main">
         <div>
-          <label for="userId_employee">社員番号:</label>
-          <input type="text" placeholder="社員番号入力してください" name="userId_employee" id="userId_employee">
-        </div>
-        <div>
-          <label for="password_employee">パスワード:</label>
-          <input type="password" placeholder="パスワード入力してください" name="password_employee" id="password_employee">
+          <nav>
+            <div class="nav-menu">
+              <button id="loginBtn1">従業員の方</button>
+              <button id="loginBtn2">お客様はこちら</button>
+          </nav>
         </div>
 
-        <button type="submit" id="submitBtn1" name="submitBtn1">ログイン</button>
-      </div>
-      <div id="loginWrapper">
+        <div><a href="./fairiesproject_register.php">新規登録はこちら</a></div> <!--新規作成画面に移動-->
+        <div id="loginWrapper">
+          <div>
+            <label for="userId_employee">社員番号:</label>
+            <input type="text" placeholder="社員番号入力してください" name="userId_employee" id="userId_employee">
+          </div>
+          <div>
+            <label for="password_employee">パスワード:</label>
+            <input type="password" placeholder="パスワード入力してください" name="password_employee" id="password_employee">
+          </div>
 
-        <div>
-          <label for="userId_customer">お客様番号:</label>
-          <input type="text" placeholder="お客様番号を入力してください" name="userId_customer" id="userId_customer">
+          <button type="submit" id="submitBtn1" name="submitBtn1">ログイン</button>
         </div>
-        <div>
-          <label for="password_customer">パスワード:</label>
-          <input type="password" placeholder="パスワード入力してください" name="password_customer" id="password_customer">
-        </div>
-        <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>
-      </div>
+        <div id="loginWrapper">
 
+          <div>
+            <label for="userId_customer">お客様番号:</label>
+            <input type="text" placeholder="お客様番号を入力してください" name="userId_customer" id="userId_customer">
+          </div>
+          <div>
+            <label for="password_customer">パスワード:</label>
+            <input type="password" placeholder="パスワード入力してください" name="password_customer" id="password_customer">
+          </div>
+          <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>
+        </div>
+      </div>
     </main>
 
 
