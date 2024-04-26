@@ -116,9 +116,9 @@ if (isset($_POST["submitBtn1"])) {
 <body>
   <form method="POST">
     <header>
-      <h1>
-        <img src="images/fairieshome.png" alt="ロゴ" width="280">
-      </h1>
+
+      <img src="images/fairieshome.png" alt="ロゴ" width="280">
+
     </header>
     <main>
       <div class="title">
