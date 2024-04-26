@@ -9,10 +9,7 @@ body {
 }
 
 header {
-    width: 100%;
-    position: sticky;
-    top: 0;
-    border-bottom: 10px solid #B0DAFF;
+    box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
 
 }
 
