@@ -133,7 +133,10 @@ if (isset($_POST["submitBtn1"])) {
           </nav>
         </div>
 
-        <div><a href="./user_register.php">新規登録はこちら</a></div> <!--新規作成画面に移動-->
+        <div class="emp_register">
+          <p>新規登録は</p>
+          <a href="./user_register.php">こちら</a>
+        </div> <!--新規作成画面に移動-->
 
         <!-- 従業員のログイン表示-->
         <div class="employee">
@@ -150,8 +153,10 @@ if (isset($_POST["submitBtn1"])) {
               <input type="password" placeholder="eccComp2024" name="password_employee">
             </div>
           </div>
+          <div class="button">
+            <button type="submit" id="empBtn" name="submitBtn1">ログイン</button>
+          </div>
 
-          <button type="submit" id="submitBtn1" name="submitBtn1">ログイン</button>
         </div>
 
         <!-- お客様のログイン表示 -->
@@ -165,7 +170,7 @@ if (isset($_POST["submitBtn1"])) {
             <p>パスワード入力してください</p>
             <input type="password" placeholder="eccComp2024" name="password_customer">
           </div>
-          <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>
+          <button type="submit" id="cusBtn" name="submitBtn2">ログイン</button>
         </div>
       </div>
     </main>

@@ -107,6 +107,19 @@ header {
 
 }
 
+.emp_register {
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+
+
+.button {
+    text-align: center;
+    margin: 30px;
+}
 
 
 /* 入力タグの親 */
@@ -123,14 +136,14 @@ header {
     /*枠線*/
     border: 2px solid #19A7CE;
     background-color: #B0DAFF;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .emp_number p,
 .emp_pass p {
     font-size: xx-large;
     margin-left: 20%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 
@@ -152,6 +165,16 @@ header {
 
 }
 
+#empBtn {
+    font-size: xx-large;
+    /*枠線*/
+    border: 2px solid #19A7CE;
+    background-color: #B0DAFF;
+    /*ボックス角の丸み*/
+    border-radius: 10px;
+    padding: auto;
+}
+
 
 
 /* お客様のログイン表示 */
@@ -161,9 +184,6 @@ header {
 .employee {
     /* display: none; */
     width: 100%;
-
-
-
 
 }
 
