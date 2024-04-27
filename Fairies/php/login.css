@@ -36,5 +36,73 @@ header {
     /* 文字フォント */
     font-weight: bold;
     font-size: large;
-    font-size: 30px;
+    font-size: 3vw;
+}
+
+/* タイトルより下 */
+.main_login {
+    margin-top: 30px;
+}
+
+/* 従業員とお客様の選択 */
+.select_job {
+    border-bottom: 5px solid #19A7CE;
+}
+
+/*  */
+.nav-menu {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.nav-menu button {
+    font-size: xx-large;
+}
+
+/* 従業員 */
+#loginBtn1 {
+    padding: 1rem;
+    /* 内側の余白の指定 */
+    border-top: solid 2px #B0DAFF;
+    /*枠線・上*/
+    border-bottom: solid 2px #B0DAFF;
+    /*枠線・下*/
+    border-right: solid 2px #B0DAFF;
+    /*枠線・右*/
+    border-left: solid 2px #B0DAFF;
+    /*枠線・左*/
+    background-color: #B0DAFF;
+    /* 周りの線の角を指定 */
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+
+    padding-right: 100px;
+    padding-left: 100px;
+
+}
+
+/* お客様 */
+#loginBtn2 {
+    padding: 1rem;
+    /* 内側の余白の指定 */
+    border-top: solid 2px #E5E5E5;
+    /*枠線・上*/
+    border-bottom: solid 2px #E5E5E5;
+    /*枠線・下*/
+    border-right: solid 2px #E5E5E5;
+    /*枠線・右*/
+    border-left: solid 2px #E5E5E5;
+    /*枠線・左*/
+    background-color: #E5E5E5;
+    /* 周りの線の角を指定 */
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+
+    padding-right: 100px;
+    padding-left: 100px;
+
 }
