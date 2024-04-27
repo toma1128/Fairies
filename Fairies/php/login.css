@@ -49,14 +49,12 @@ header {
     border-bottom: 5px solid #19A7CE;
 }
 
-/*  */
 .nav-menu {
 
     display: flex;
     text-align: center;
     justify-content: center;
     gap: 20px;
-
 }
 
 .nav-menu button {
@@ -107,7 +105,15 @@ header {
 
 }
 
+/* 新規登録 */
 .emp_register {
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.cus_register {
     margin: 5%;
     display: flex;
     justify-content: center;
@@ -177,18 +183,64 @@ header {
 
 
 
-/* お客様のログイン表示 */
 
+
+
+/* お客様のログイン表示 */
+.cus_number input,
+.cus_pass input {
+    font-size: xx-large;
+    /*ボックス角の丸み*/
+    border-radius: 10px;
+    /*枠線*/
+    border: 2px solid #E9B824;
+    background-color: #FFFCA8;
+    margin-bottom: 20px;
+}
+
+.cus_number p,
+.cus_pass p {
+    font-size: xx-large;
+    margin-left: 20%;
+    margin-bottom: 20px;
+}
+
+#userId_customer,
+#password_customer {
+    width: 10%;
+    /*親要素いっぱい広げる*/
+    padding: 10px 15px;
+    /*ボックスを大きくする*/
+    font-size: 16px;
+    /*ボックス角の丸み*/
+    border-radius: 5px;
+    /*枠線*/
+    border: 5px solid #E9B824;
+    /*横幅の解釈をpadding, borderまでとする*/
+    box-sizing: border-box;
+    background-color: #FFFCA8;
+
+}
+
+#cusBtn {
+    font-size: xx-large;
+    /*枠線*/
+    border: 2px solid #E9B824;
+    background-color: #FFFCA8;
+    /*ボックス角の丸み*/
+    border-radius: 10px;
+    padding: auto;
+}
 
 /* 表示切替 */
 .employee {
-    /* display: none; */
+    display: none;
     width: 100%;
 
 }
 
 .customer {
-    display: none;
+    /* display: none; */
     width: 100%;
 
 }

@@ -133,13 +133,14 @@ if (isset($_POST["submitBtn1"])) {
           </nav>
         </div>
 
-        <div class="emp_register">
-          <p>新規登録は</p>
-          <a href="./user_register.php">こちら</a>
-        </div> <!--新規作成画面に移動-->
-
         <!-- 従業員のログイン表示-->
         <div class="employee">
+
+          <div class="emp_register">
+            <p>新規登録は</p>
+            <a href="./user_register.php">こちら</a>
+          </div> <!--新規作成画面に移動-->
+
           <div class="emp_number">
             <p>社員番号を入力してください</p>
             <div class="text_space">
@@ -162,15 +163,25 @@ if (isset($_POST["submitBtn1"])) {
         <!-- お客様のログイン表示 -->
         <div class="customer">
 
+          <div class="cus_register">
+            <p>新規登録は</p>
+            <a href="./user_register.php">こちら</a>
+          </div> <!--新規作成画面に移動-->
           <div class="cus_number">
             <p>お客様番号を入力してください</p>
-            <input type="text" placeholder="12345" name="userId_customer">
+            <div class="text_space">
+              <input type="text" placeholder="12345" name="userId_customer">
+            </div>
           </div>
           <div class="cus_pass">
             <p>パスワード入力してください</p>
-            <input type="password" placeholder="eccComp2024" name="password_customer">
+            <div class="text_space">
+              <input type="password" placeholder="eccComp2024" name="password_customer">
+            </div>
           </div>
-          <button type="submit" id="cusBtn" name="submitBtn2">ログイン</button>
+          <div class="button">
+            <button type="submit" id="cusBtn" name="submitBtn2">ログイン</button>
+          </div>
         </div>
       </div>
     </main>
