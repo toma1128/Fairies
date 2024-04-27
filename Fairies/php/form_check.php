@@ -78,9 +78,6 @@
         <h1 class="logo">
             <img src="images/fairieshome.png" alt="ロゴ" width="230">
         </h1>
-        <ul>
-            <li><a class="form_link" href="">ログアウト</a></li>
-        </ul>
     </header>
     <div>
         <h2>フォーム画面</h2>
