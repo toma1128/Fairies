@@ -108,11 +108,12 @@ header {
 }
 
 /* 従業員のログイン表示 */
-.employee_number,
-.employee_pass {
+.emp_number,
+.emp_pass {
     font-size: xx-large;
     justify-content: center;
-
+    display: flex;
+    margin: 10%;
 }
 
 #userId_employee,
@@ -129,17 +130,21 @@ header {
     /*横幅の解釈をpadding, borderまでとする*/
     box-sizing: border-box;
     background-color: #B0DAFF;
+
 }
 
 
 
 /* お客様のログイン表示 */
 
+
 /* 表示切替 */
 .employee {
     /* display: none; */
     width: 100%;
     text-align: center;
+
+
 
 }
 
