@@ -109,19 +109,20 @@ if (isset($_POST["submitBtn1"])) {
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./login.css">
-  <title>ログイン画面</title>
+  <link rel="stylesheet" href="./fairiesproject_login.css">
+  <title>従業員画面</title>
 </head>
 
 <body>
   <form method="POST">
     <header>
-      <img src="images/fairieshome.png" alt="ロゴ" width="280">
+      <h1>
+        <img src="images/fairieshome.png" alt="ロゴ" width="280">
+      </h1>
     </header>
     <main>
       <div class="title">
         <img src="images/title_img.png" alt="title">
-        <p>災害連絡掲示板</p>
       </div>
       <div class="main_login">
         <div id="select_job">
@@ -184,6 +185,19 @@ if (isset($_POST["submitBtn1"])) {
           </div>
         </div>
       </div>
+      <div id="loginWrapper">
+
+        <div>
+          <label for="userId_customer">お客様番号:</label>
+          <input type="text" placeholder="お客様番号を入力してください" name="userId_customer" id="userId_customer">
+        </div>
+        <div>
+          <label for="password_customer">パスワード:</label>
+          <input type="password" placeholder="パスワード入力してください" name="password_customer" id="password_customer">
+        </div>
+        <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>
+      </div>
+
     </main>
 
   </form>
