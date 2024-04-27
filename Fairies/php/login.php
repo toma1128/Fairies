@@ -140,7 +140,6 @@ if (isset($_POST["submitBtn1"])) {
           <label for="password_employee">パスワード:</label>
           <input type="password" placeholder="パスワード入力してください" name="password_employee" id="password_employee">
         </div>
-
         <button type="submit" id="submitBtn1" name="submitBtn1">ログイン</button>
       </div>
       <div id="loginWrapper">

@@ -1,8 +1,32 @@
 <?php
-if (isset($_POST["logoutBtn"])) {
-    header('Location: fairiesproject_login.php');
-    //exit();
-}
+// if (isset($_POST["logoutBtn"])) {
+//     header('Location: fairiesproject_login.php');
+//     //exit();
+// }
+
+$employee_no = filter_input(INPUT_POST,"EMPLOYEE_NO");
+
+// $dsn = "mysql:host=localhost;dbname=feya;charset=utf8mb4";
+// try{
+//     $db = new PDO($dsn, "fairies", "daimonia");
+//     //PDOの動作オプションを指定
+//     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); //静的プレースホルダの設定
+//     //SQLの準備
+//     $sql = "SELECT D.NAME, E.NAME, EF.POSSIBLE, EF.PERIOD, EF.REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER);";
+//     //SQLの実行
+//     $sql->execute();
+//     //SQL実行結果
+//     while ($rows = $sql->fetch(PDO::FETCH_ASSOC)) {
+//       $result[] = $rows;
+//     }
+//     //db切断
+//     $sql = null;
+//     $db = null;
+//     }catch(PDOException $poe){
+//       exit("DBエラー".$poe->getMessage());
+//     }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -19,7 +43,7 @@ if (isset($_POST["logoutBtn"])) {
             <img src="images/fairieshome.png" alt="ロゴ" width="230">
         </h1>
         <ul>
-            <li><a class="form_link" href="">安否報告</a></li>
+            <li><a class="form_link" href="./form_employee.php?number=<?=$employee_no?>">安否報告</a></li>
             <li><a class="form_link" href="">ログアウト</a></li>
         </ul>
     </header>
@@ -68,13 +92,16 @@ if (isset($_POST["logoutBtn"])) {
                     <div id="contentWrap"> <!--情報データが入るところ-->
                         <table>
                             <tbody>
-                                <tr>
-                                    <td>ECC部署</td>
-                                    <td>田中太郎</td>
-                                    <td>出社不可</td>
-                                    <td>一か月以内</td>
-                                    <td>怪我</td>
-                                </tr>
+                                <!-- <?php foreach($result as $r): ?> 中途半端なのでコメントアウト
+                                    <tr>
+                                    <a class="btn btn-primary" href="./form_employee.php?=<?=$employee_no?>
+                                    <td><?=h($r["D.NAME"]) ?></td>
+                                    <td><?=h($r["E.NAME"]) ?></td>
+                                    <td><?=h($r["EF.POSSIBLE"]) ?></td>
+                                    <td><?=h($r["EF.PERIOD"]) ?></td>
+                                    <td><?=h($r["EF.REASON"]) ?></td>
+                                    </tr>
+                                <?php endforeach ?> -->
                             </tbody>
                         </table>
                         <table>
