@@ -106,3 +106,26 @@ header {
     padding-left: 100px;
 
 }
+
+/* 従業員のログイン表示 */
+.employee_number,
+.employee_pass {
+    font-size: xx-large;
+
+}
+
+/* お客様のログイン表示 */
+
+/* 表示切替 */
+.employee {
+    /* display: none; */
+    width: 100%;
+    text-align: center;
+
+}
+
+.customer {
+    display: none;
+    width: 100%;
+
+}
