@@ -91,11 +91,11 @@
                 <p><?= $data["period"]["$period"] ?></p>
             </div>
             <div>
-                <p>出社出来ない理由を選択してください。</p>
+                <p>出社出来ない理由</p>
                 <p><?=$data["reason"]["$reason"] ?></p>
             </div>
             <div>
-                <p>連絡事項等あればお書きください。</p>
+                <p>連絡事項等</p>
                 <textarea name="options" id="options" cols="30" rows="10" value=""><?=$message ?></textarea>
             </div>
             <button type="submit" id="submit" onclick="location.href='./form_check.php'">送信</button>
