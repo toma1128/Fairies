@@ -138,13 +138,17 @@ if (isset($_POST["submitBtn1"])) {
         <!-- 従業員のログイン表示-->
         <div class="employee">
           <div class="emp_number">
-            <label for="employee_number">社員番号を入力してください</label>
-            <input type="text" placeholder="12345" name="userId_employee">
+            <p>社員番号を入力してください</p>
+            <div class="text_space">
+              <input type="text" placeholder="12345" name="userId_employee">
+            </div>
           </div>
 
           <div class="emp_pass">
-            <label for="employee_pass">パスワードを入力してください</label>
-            <input type="password" placeholder="eccComp2024" name="password_employee">
+            <p>パスワードを入力してください</p>
+            <div class="text_space">
+              <input type="password" placeholder="eccComp2024" name="password_employee">
+            </div>
           </div>
 
           <button type="submit" id="submitBtn1" name="submitBtn1">ログイン</button>
@@ -154,11 +158,11 @@ if (isset($_POST["submitBtn1"])) {
         <div class="customer">
 
           <div class="cus_number">
-            <label for="customer_number">お客様番号を入力してください</label>
+            <p>お客様番号を入力してください</p>
             <input type="text" placeholder="12345" name="userId_customer">
           </div>
           <div class="cus_pass">
-            <label for="customer_pass">パスワード入力してください</label>
+            <p>パスワード入力してください</p>
             <input type="password" placeholder="eccComp2024" name="password_customer">
           </div>
           <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>

@@ -107,14 +107,33 @@ header {
 
 }
 
-/* 従業員のログイン表示 */
-.emp_number,
-.emp_pass {
-    font-size: xx-large;
-    justify-content: center;
-    display: flex;
-    margin: 10%;
+
+
+/* 入力タグの親 */
+.text_space {
+    text-align: center;
 }
+
+/* 従業員のログイン表示 */
+.emp_number input,
+.emp_pass input {
+    font-size: xx-large;
+    /*ボックス角の丸み*/
+    border-radius: 10px;
+    /*枠線*/
+    border: 2px solid #19A7CE;
+    background-color: #B0DAFF;
+    margin-bottom: 10px;
+}
+
+.emp_number p,
+.emp_pass p {
+    font-size: xx-large;
+    margin-left: 20%;
+    margin-bottom: 10px;
+}
+
+
 
 #userId_employee,
 #password_employee {
@@ -142,7 +161,7 @@ header {
 .employee {
     /* display: none; */
     width: 100%;
-    text-align: center;
+
 
 
 
