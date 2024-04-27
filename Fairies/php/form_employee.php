@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./form_employee.css">
-    <title>ホーム画面</title>
+    <title>フォーム画面</title>
 </head>
 
 <body>
@@ -12,18 +12,12 @@
         <h1 class="logo">
             <img src="images/fairieshome.png" alt="ロゴ" width="230">
         </h1>
-        <ul>
-            <li><a class="form_link" href="">ログアウト</a></li>
-        </ul>
-
     </header>
     <main>
-
-
-        <form>
             <div>
                 <h2>フォーム画面</h2>
             </div>
+        <form action="./form_check.php" method="POST">
             <div id="myForm">
                 <p>出勤可能ですか？</p>
                 <input type="radio" id="yes" name="yesnochoice" value="1">
@@ -59,9 +53,9 @@
             </div>
             <div>
                 <p>連絡事項等あればお書きください。</p>
-                <textarea name="options" id="options" cols="30" rows="10"></textarea>
+                <textarea name="options" id="options" cols="30" rows="10" value=""></textarea>
             </div>
-            <button type="submit" id="submit">送信</button>
+            <button type="submit" id="submit" onclick="location.href='./form_check.php'">送信</button>
         </form>
     </main>
 </body>

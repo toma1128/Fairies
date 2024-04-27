@@ -132,7 +132,6 @@ if (isset($_POST["submitBtn1"])) {
             </div>
           </nav>
         </div>
-
         <div><a href="./user_register.php">新規登録はこちら</a></div> <!--新規作成画面に移動-->
         <div id="loginWrapper">
           <div>
