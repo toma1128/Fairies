@@ -124,7 +124,7 @@ if (isset($_POST["submitBtn1"])) {
         <p>災害連絡掲示板</p>
       </div>
       <div class="main_login">
-        <div class="select_job">
+        <div id="select_job">
           <nav>
             <div class="nav-menu">
               <button id="loginBtn1">従業員はこちら</button>
@@ -134,7 +134,7 @@ if (isset($_POST["submitBtn1"])) {
         </div>
 
         <!-- 従業員のログイン表示-->
-        <div class="employee">
+        <div id="employee">
 
           <div class="emp_register">
             <p>新規登録は</p>
@@ -161,7 +161,7 @@ if (isset($_POST["submitBtn1"])) {
         </div>
 
         <!-- お客様のログイン表示 -->
-        <div class="customer">
+        <div id="customer">
 
           <div class="cus_register">
             <p>新規登録は</p>
@@ -186,8 +186,9 @@ if (isset($_POST["submitBtn1"])) {
       </div>
     </main>
 
-
   </form>
+  <script src="./login.js"></script>
 </body>
+
 
 </html>

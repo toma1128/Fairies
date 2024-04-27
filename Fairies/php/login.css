@@ -45,7 +45,7 @@ header {
 }
 
 /* 従業員とお客様の選択 */
-.select_job {
+#select_job {
     border-bottom: 5px solid #19A7CE;
 }
 
@@ -233,14 +233,14 @@ header {
 }
 
 /* 表示切替 */
-.employee {
+#employee {
     display: none;
     width: 100%;
 
 }
 
-.customer {
-    /* display: none; */
+#customer {
+    display: none;
     width: 100%;
 
 }
