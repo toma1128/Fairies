@@ -111,9 +111,27 @@ header {
 .employee_number,
 .employee_pass {
     font-size: xx-large;
-    
+    justify-content: center;
 
 }
+
+#userId_employee,
+#password_employee {
+    width: 10%;
+    /*親要素いっぱい広げる*/
+    padding: 10px 15px;
+    /*ボックスを大きくする*/
+    font-size: 16px;
+    /*ボックス角の丸み*/
+    border-radius: 5px;
+    /*枠線*/
+    border: 5px solid #19A7CE;
+    /*横幅の解釈をpadding, borderまでとする*/
+    box-sizing: border-box;
+    background-color: #B0DAFF;
+}
+
+
 
 /* お客様のログイン表示 */
 
