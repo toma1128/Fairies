@@ -1,12 +1,12 @@
-* {
-    box-sizing: border-box;
+*{
+    box-sizing: border-box ;
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-}
+  }
 
 header {
     width: 100%;
@@ -15,26 +15,17 @@ header {
     align-items: center;
     position: sticky;
     top: 0;
-    border-bottom: 10px solid #B0DAFF;
+    border-bottom: 10px solid #B0DAFF ;
 
 }
 
-h2 {
+h2{
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: bold;
-    font-size: large;
-    font-size: 3vw;
-}
-
-/* タイトルより下 */
-.main_login {
-    margin-top: 30px;
-}
-
-/* 従業員とお客様の選択 */
-.select_job {
-    border-bottom: 5px solid #19A7CE;
+    font-size: xxx-large;
+    text-align: center;
+    border-bottom: 10px solid #B0DAFF;
 }
 
 .nav-menu {
@@ -42,9 +33,6 @@ h2 {
     flex-wrap: wrap;
     font-weight: bold;
     text-align: center;
-    justify-content: center;
-    gap: 20px;
-
 }
 
 .nav-menu button {
@@ -52,39 +40,81 @@ h2 {
     font-size: xx-large;
 }
 
-#loginBtn1,
-#loginBtn2 {
+#loginBtn1,#loginBtn2 {
     margin-top: 10px;
-    color: black;
+    color:black;
     cursor: pointer;
     background-color: #B0DAFF;
-    /* 周りの線の角を指定 */
-    border-top-left-radius: 2vw;
-    border-top-right-radius: 2vw;
-
-    padding-right: 100px;
-    padding-left: 100px;
-
+    padding: 20px; 
 }
 
-/* お客様 */
-#loginBtn2 {
-    padding: 1rem;
-    /* 内側の余白の指定 */
-    border-top: solid 2px #E5E5E5;
-    /*枠線・上*/
-    border-bottom: solid 2px #E5E5E5;
-    /*枠線・下*/
-    border-right: solid 2px #E5E5E5;
-    /*枠線・右*/
-    border-left: solid 2px #E5E5E5;
-    /*枠線・左*/
-    background-color: #E5E5E5;
-    /* 周りの線の角を指定 */
-    border-top-left-radius: 2vw;
-    border-top-right-radius: 2vw;
+#loginDialog {
+    width: 30%;
+    margin: auto;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1em black;
+}
 
-    padding-right: 100px;
-    padding-left: 100px;
+#loginDialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+}
 
+#loginWrapper {
+    width: 100%;
+}
+
+#loginHeader {
+    background-color: lawngreen;
+    padding: 5px 10px;
+    border-bottom: none;
+}
+
+#loginHeader h2 {
+    font-size: 1em;
+    margin: 0;
+    border-bottom: none;
+}
+
+#loginHeader button {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+#loginWrapper div {
+    width: 80%;
+    margin: 10px auto;
+}
+
+#loginWrapper input {
+    width: 100%;
+    height: 1.5em;
+    font-size: 1.2em;
+}
+
+#loginWrapper button[type=submit] {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 5px 0;
+    font-size: 1.2em;
+    background-color: lawngreen;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+#loginDialog_employee,
+#loginDialog_customer {
+    width: 30%; 
+    margin: 10;
+    border: 0;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 1em black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

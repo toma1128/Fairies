@@ -124,66 +124,24 @@ if (isset($_POST["submitBtn1"])) {
       <div class="title">
         <img src="images/title_img.png" alt="title">
       </div>
-      <div class="main_login">
-        <div id="select_job">
-          <nav>
-            <div class="nav-menu">
-              <button id="loginBtn1">従業員はこちら</button>
-              <button id="loginBtn2">お客様はこちら</button>
-            </div>
-          </nav>
+      <h2 class="title">災害連絡掲示板</h2>
+      <nav>
+        <div class="nav-menu">
+          <button id="loginBtn1">従業員の方</button>
+          <button id="loginBtn2">お客様はこちら</button>
+      </nav>
+      <div><a href="./fairiesproject_register.php">新規登録はこちら</a></div> <!--新規作成画面に移動-->
+      <div id="loginWrapper">
+        <div>
+          <label for="userId_employee">社員番号:</label>
+          <input type="text" placeholder="社員番号入力してください" name="userId_employee" id="userId_employee">
+        </div>
+        <div>
+          <label for="password_employee">パスワード:</label>
+          <input type="password" placeholder="パスワード入力してください" name="password_employee" id="password_employee">
         </div>
 
-        <!-- 従業員のログイン表示-->
-        <div id="employee">
-
-          <div class="emp_register">
-            <p>新規登録は</p>
-            <a href="./user_register.php">こちら</a>
-          </div> <!--新規作成画面に移動-->
-
-          <div class="emp_number">
-            <p>社員番号を入力してください</p>
-            <div class="text_space">
-              <input type="text" placeholder="12345" name="userId_employee">
-            </div>
-          </div>
-
-          <div class="emp_pass">
-            <p>パスワードを入力してください</p>
-            <div class="text_space">
-              <input type="password" placeholder="eccComp2024" name="password_employee">
-            </div>
-          </div>
-          <div class="button">
-            <button type="submit" id="empBtn" name="submitBtn1">ログイン</button>
-          </div>
-
-        </div>
-
-        <!-- お客様のログイン表示 -->
-        <div id="customer">
-
-          <div class="cus_register">
-            <p>新規登録は</p>
-            <a href="./user_register.php">こちら</a>
-          </div> <!--新規作成画面に移動-->
-          <div class="cus_number">
-            <p>お客様番号を入力してください</p>
-            <div class="text_space">
-              <input type="text" placeholder="12345" name="userId_customer">
-            </div>
-          </div>
-          <div class="cus_pass">
-            <p>パスワード入力してください</p>
-            <div class="text_space">
-              <input type="password" placeholder="eccComp2024" name="password_customer">
-            </div>
-          </div>
-          <div class="button">
-            <button type="submit" id="cusBtn" name="submitBtn2">ログイン</button>
-          </div>
-        </div>
+        <button type="submit" id="submitBtn1" name="submitBtn1"z>ログイン</button>
       </div>
       <div id="loginWrapper">
 
@@ -200,9 +158,8 @@ if (isset($_POST["submitBtn1"])) {
 
     </main>
 
-  </form>
-  <script src="./login.js"></script>
-</body>
 
+  </form>
+</body>
 
 </html>
