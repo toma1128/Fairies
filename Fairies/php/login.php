@@ -138,12 +138,12 @@ if (isset($_POST["submitBtn1"])) {
         <!-- ログインで表示する内容 -->
         <div class="employee">
           <div class="employee_number">
-            <label for="employee_number">社員番号:</label>
-            <input type="text" placeholder="社員番号入力してください" name="userId_employee" id="userId_employee">
+            <label for="employee_number">社員番号を入力してください</label>
+            <input type="text" placeholder="12345" name="userId_employee" id="userId_employee">
           </div>
           <div class="employee_pass">
-            <label for="employee_pass">パスワード:</label>
-            <input type="password" placeholder="パスワード入力してください" name="password_employee" id="password_employee">
+            <label for="employee_pass">パスワードを入力してください:</label>
+            <input type="password" placeholder="eccComp2024" name="password_employee" id="password_employee">
           </div>
 
           <button type="submit" id="submitBtn1" name="submitBtn1">ログイン</button>
@@ -151,12 +151,12 @@ if (isset($_POST["submitBtn1"])) {
         <div class="customer">
 
           <div class="customer_number">
-            <label for="customer_number">お客様番号:</label>
-            <input type="text" placeholder="お客様番号を入力してください" name="userId_customer" id="userId_customer">
+            <label for="customer_number">お客様番号を入力してください:</label>
+            <input type="text" placeholder="12345" name="userId_customer" id="userId_customer">
           </div>
           <div class="customer_pass">
-            <label for="customer_pass">パスワード:</label>
-            <input type="password" placeholder="パスワード入力してください" name="password_customer" id="password_customer">
+            <label for="customer_pass">パスワード入力してください</label>
+            <input type="password" placeholder="eccComp2024" name="password_customer" id="password_customer">
           </div>
           <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>
         </div>
