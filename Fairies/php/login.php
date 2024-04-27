@@ -134,26 +134,28 @@ if (isset($_POST["submitBtn1"])) {
         </div>
 
         <div><a href="./user_register.php">新規登録はこちら</a></div> <!--新規作成画面に移動-->
-        <div id="loginWrapper">
-          <div>
-            <label for="userId_employee">社員番号:</label>
+
+        <!-- ログインで表示する内容 -->
+        <div class="employee">
+          <div class="employee_number">
+            <label for="employee_number">社員番号:</label>
             <input type="text" placeholder="社員番号入力してください" name="userId_employee" id="userId_employee">
           </div>
-          <div>
-            <label for="password_employee">パスワード:</label>
+          <div class="employee_pass">
+            <label for="employee_pass">パスワード:</label>
             <input type="password" placeholder="パスワード入力してください" name="password_employee" id="password_employee">
           </div>
 
           <button type="submit" id="submitBtn1" name="submitBtn1">ログイン</button>
         </div>
-        <div id="loginWrapper">
+        <div class="customer">
 
-          <div>
-            <label for="userId_customer">お客様番号:</label>
+          <div class="customer_number">
+            <label for="customer_number">お客様番号:</label>
             <input type="text" placeholder="お客様番号を入力してください" name="userId_customer" id="userId_customer">
           </div>
-          <div>
-            <label for="password_customer">パスワード:</label>
+          <div class="customer_pass">
+            <label for="customer_pass">パスワード:</label>
             <input type="password" placeholder="パスワード入力してください" name="password_customer" id="password_customer">
           </div>
           <button type="submit" id="submitBtn2" name="submitBtn2">ログイン</button>
