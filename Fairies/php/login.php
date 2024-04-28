@@ -1,108 +1,70 @@
 <?php
-define('DB_USER', 'fairies'); //ユーザ名
-define('DB_PASS', 'daimonia'); //パスワード
-
-// $userId_employee = filter_input(INPUT_POST,"userId_employee");
-// $password_employee = filter_input(INPUT_POST,"password_employee", FILTER_VALIDATE_INT);
-// $userId_customer = filter_input(INPUT_POST,"userId_customer");
-// $password_customer = filter_input(INPUT_POST,"password_customer", FILTER_VALIDATE_INT);
-
-/**
- * 入力が空白でないか確認する
- *
- * @param string $str
- * @return bool
- */
-function is_not_space(?string $str): bool
-{
-  $str = preg_replace("/( |　)/", "", $str);
-  if ($str == "") {
-    return FALSE;
-  } else {
-    return TRUE;
+  function h( $str ) {
+    return htmlspecialchars( $str, ENT_QUOTES, "UTF-8" );
   }
-}
 
-if (isset($_POST["submitBtn1"])) {
-  try {
+  // エラーレポーティングを有効にする
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
 
-    $db = new PDO($dsn, DB_USER, DB_PASS);
+  // データベースへの接続情報
+  $servername = "localhost"; // データベースのホスト名
+  $username = "fairies"; // データベースのユーザー名
+  $password = "daimonia"; // データベースのパスワード
+  $dbname = "feya"; // 使用するデータベース名
 
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $db->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
-
-    $sql = 'SELECT * FROM COMPANY EMPLOYEES';
-
-    $where = "where COMPANY EMPLOYEES NUMBER = :COMPANY EMPLOYEES NUMBER";
-    $AND = "AND PASSWORD = :PASSWORD";
-
-    $stmt = $db->prepare($sql . $where . $AND);
-    if ($userId_employee && $password_employee) {
-      //値のバインド
-      $stmt->bindParam(':COMPANY EMPLOYEES NUMBER', $userId_employee, PDO::PARAM_INT);
-      $stmt->bindParam(':PASSWORD', $password_employee, PDO::PARAM_STR);
-    } else {
-    }
-    //SQL実行
-    $stmt->execute();
-
-    if ($stmt->rowCount() > 0) {
-      header('Location home_employee.php');
-      exit();
-    }
-
-    // echo '<pre>';
-    // var_dump($result);
-    // echo '</pre>';
-
-  } catch (PDOException $e) {
-    echo 'error:' . $e->getMessage();
-  } finally {
-
-    //この上は省略
-    //接続切断処理
-    $stmt = null;
-    $db = null;
+  // データベースに接続する
+  $conn_DB = new mysqli($servername, $username, $password, $dbname);
+  if ($conn_DB->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
   }
-} else if (isset($_POST["submitBtn2"])) {
-  try {
 
-    $db = new PDO($dsn, DB_USER, DB_PASS);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
+  if(isset($_POST['submitBtn1'])){  //従業員の方のログインボタンが押されたら
+    $num = $_POST['userId_employee'];
+    $pass = $_POST['password_employee'];
 
-    $sql = 'SELECT * FROM CUSTOMERS';
+    $pass_sql = $conn_DB->prepare('SELECT PASSWORD FROM EMPLOYEES WHERE NUMBER = ?');
+    $pass_sql->bind_param("s",$num);
+    $pass_sql->execute(); // クエリを実行する
 
-    $where = "where CUSTOMER NUMBER = :CUSTOMER NUMBER";
-    $AND = "AND PASSWORD = :PASSWORD";
-
-    $stmt = $db->prepare($sql . $where . $AND);
-    if ($userId_customer && $password_customer) {
-      //値のバインド
-      $stmt->bindParam(':CUSTOMER NUMBER', $userId_customer, PDO::PARAM_INT);
-      $stmt->bindParam(':PASSWORD', $password_customer, PDO::PARAM_STR);
-    } else {
+    // 結果セットを取得し、関連する行を配列に追加する
+    $result = array(); // 空の配列を作成
+    $result_set = $pass_sql->get_result(); // 結果セットを取得
+    while ($row = $result_set->fetch_assoc()) { // 各行を取得
+      $result[] = $row; // 配列に行を追加
     }
-    //SQL実行
-    $stmt->execute();
 
-    if ($stmt->rowCount() > 0) {
-      header('Location customerform.php');
+    if($pass === $result[0]['PASSWORD']){
+      session_start();
+      $_SESSION['number'] = $num;
+
+      header("Location: home_employee.php");
       exit;
     }
-  } catch (PDOException $e) {
-    echo 'error:' . $e->getMessage();
-  } finally {
 
-    //この上は省略
-    //接続切断処理
-    $stmt = null;
-    $db = null;
+  }elseif(isset($_POST['submitBtn2'])){   //お客様の方のログインボタンが押されたら
+    $num = $_POST['userId_customer'];
+    $pass = $_POST['password_customer'];
+
+    $pass_sql = $conn_DB->prepare('SELECT PASSWORD FROM CUSTOMERS WHERE NUMBER = ?');
+    $pass_sql->bind_param("s",$num);
+    $pass_sql->execute(); // クエリを実行する
+
+    // 結果セットを取得し、関連する行を配列に追加する
+    $result = array(); // 空の配列を作成
+    $result_set = $pass_sql->get_result(); // 結果セットを取得
+    while ($row = $result_set->fetch_assoc()) { // 各行を取得
+      $result[] = $row; // 配列に行を追加
+    }
+
+    if($pass == $result['PASSWORD']){
+      session_start();
+      $_SESSION['number'] = $num;
+
+      header("Location: home_employee.php");
+      exit;
+    }
   }
-}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -114,7 +76,6 @@ if (isset($_POST["submitBtn1"])) {
 </head>
 
 <body>
-  <form method="POST">
     <header>
       <img src="images/fairieshome.png" alt="ロゴ" width="280">
     </header>
@@ -138,48 +99,50 @@ if (isset($_POST["submitBtn1"])) {
             <p>新規登録は</p>
             <a href="./user_register.php">こちら</a>
           </div> <!--新規作成画面に移動-->
-          <div class="emp_number">
-            <p>社員番号を入力してください</p>
-            <div class="text_space">
-              <input type="text" placeholder="12345" name="userId_employee">
+          <form action="" method="POST">
+            <div class="emp_number">
+              <p>社員番号を入力してください</p>
+              <div class="text_space">
+                <input type="text" placeholder="12345" name="userId_employee">
+              </div>
             </div>
-          </div>
-          <div class="emp_pass">
-            <p>パスワードを入力してください</p>
-            <div class="text_space">
-              <input type="password" placeholder="eccComp2024" name="password_employee">
+            <div class="emp_pass">
+              <p>パスワードを入力してください</p>
+              <div class="text_space">
+                <input type="password" placeholder="eccComp2024" name="password_employee">
+              </div>
             </div>
-          </div>
-          <div class="button">
-            <button type="submit" id="empBtn" name="submitBtn1">ログイン</button>
-          </div>
+            <div class="button">
+              <button type="submit" id="empBtn" name="submitBtn1">ログイン</button>
+            </div>
+          </form>
         </div>
         <!-- お客様のログイン表示 -->
         <div id="customer">
           <div class="cus_register">
             <p>新規登録は</p>
-            <a href="./user_register.php">こちら</a>
+            <a href="./cus_register.php">こちら</a>
           </div> <!--新規作成画面に移動-->
-          <div class="cus_number">
-            <p>お客様番号を入力してください</p>
-            <div class="text_space">
-              <input type="text" placeholder="12345" name="userId_customer">
+          <form action="" method="POST">
+            <div class="cus_number">
+              <p>お客様番号を入力してください</p>
+              <div class="text_space">
+                <input type="text" placeholder="12345" name="userId_customer">
+              </div>
             </div>
-          </div>
-          <div class="cus_pass">
-            <p>パスワード入力してください</p>
-            <div class="text_space">
-              <input type="password" placeholder="eccComp2024" name="password_customer">
+            <div class="cus_pass">
+              <p>パスワード入力してください</p>
+              <div class="text_space">
+                <input type="password" placeholder="eccComp2024" name="password_customer">
+              </div>
             </div>
-          </div>
-          <div class="button">
-            <button type="submit" id="cusBtn" name="submitBtn2">ログイン</button>
-          </div>
+            <div class="button">
+              <button type="submit" id="cusBtn" name="submitBtn2">ログイン</button>
+            </div>
+          </form>
         </div>
       </div>
     </main>
-
-  </form>
   <script src="./login.js"></script>
 </body>
 
