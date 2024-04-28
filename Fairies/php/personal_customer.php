@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <link rel="stylesheet" href="fairiesproject_personal_home_customer.css">
         <meta charset="UTF-8">
         <title>個人情報画面</title>
-    </head>
+        <link rel="stylesheet" href="personal_customer.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <body>
         <header>
             <h1>
@@ -12,7 +12,9 @@
             </h1>
             <nav>
                 <ul class="nav-menu">
-                    <li id="logoutBtn">ログアウト</li>
+                    <a href="http://localhost/Fairies/Fairies/php/login.php" class="button-link">
+                        <button type="button" class="button">ログアウト</button>
+                    </a>
                 </ul>
             </nav>
         </header>
@@ -20,18 +22,15 @@
             <h4>お客様番号</h4>
             <div class="information">
                 <h3 id="register_number">12345678</h3>
-                <h3 id="time">○○年○○月○○日</h3>
-                <h3 id="name">山田</h3>
+                <h3 id="time">〇年〇月〇日</h3>
+                <h3 id="name">&nbsp;山田花子様&nbsp;</h3>
             </div>
             <div>
                 <div class="comment">
-                    家と壁にひび割れができています。早く直しに来てください。
+                    <span>家と壁にひび割れができてい<br>ます。早く直しに来てくださ<br>い。</span>
                 </div>
                 <div class="home_condition">
                     ひび割れ
-                </div>
-                <div class="home_image_from_user">
-                    <img src="images/人.png" alt="picture_from_user" width="280">
                 </div>
                 <div class="home_detail">
                     <ul>
@@ -40,7 +39,7 @@
                     </ul>
                 </div>
                 <div class="home_image">
-                    <img src="images/家.png" alt="home" width="280">
+                    <img src="images/16111_color.png" alt="home" width="280">
                 </div>
             </div>
         </main>    
