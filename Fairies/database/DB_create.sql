@@ -1,5 +1,5 @@
 -- ログインユーザー名とパスワード
-CREATE USER 'fairies'@'%' IDENTIFIED BY 'daimonia';
+CREATE USER 'fairies'@'localhost' IDENTIFIED BY 'daimonia';
 CREATE DATABASE feya;
 GRANT ALL PRIVILEGES ON feya.* TO 'fairies'@'localhost';
 
@@ -52,11 +52,11 @@ CREATE TABLE GENERIC_MASTER(
 
 --部署の初期登録
 INSERT INTO DEPARTMENTS (ID, NAME) VALUES
-(1, '○○部'),
-(2, '××部'),
-(3, '□□部'),
-(4, '△△部'),
-(5, '◇◇部');
+(1, '営業部'),
+(2, '設計部'),
+(3, '施工管理部'),
+(4, '事務部'),
+(5, '積算部');
 
 INSERT INTO EMPLOYEES (DEPARTMENT_ID, NUMBER, NAME, PASSWORD, HIREDATE) VALUES(1,'99999','テスト','test','2024-1-1');
 INSERT INTO EMPLOYEE_FORMS (ID, NUMBER, POSSIBLE, PERIOD, REASON, MESSAGE) VALUES(1,'99999', 1,1,1,'テスト');
