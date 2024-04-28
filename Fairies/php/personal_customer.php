@@ -41,6 +41,17 @@
                 <div class="home_image">
                     <img src="images/16111_color.png" alt="home" width="280">
                 </div>
+                <div class=folder>
+                    <div class=photo>
+                        <img src="" alt="">
+                    </div>
+                    <div class=photo>
+                        <img src="" alt="">
+                    </div>
+                    <div class=photo>
+                        <img src="" alt="">
+                    </div>
+                </div>
             </div>
         </main>    
     </body>
