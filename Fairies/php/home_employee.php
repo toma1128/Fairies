@@ -8,7 +8,8 @@
     //     //exit();
     // }
 
-    //$employee_no = filter_input(INPUT_POST,"EMPLOYEE_NO");
+    session_start();
+    $employee_no = $_SESSION['number'];
 
     // データベースへの接続情報
     $servername = "localhost"; // データベースのホスト名
@@ -22,12 +23,22 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $stmt = $conn_DB->prepare('SELECT D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER) WHERE D.ID = ?');
     $where = filter_input(INPUT_POST, "department", FILTER_VALIDATE_INT);
+    // 全件表示用のクエリを準備する
+        $stmt = $conn_DB->prepare('SELECT D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER)');
 
-    $stmt->bind_param("i",$where);
+        // もし $where が設定されていない場合は、全件表示用のクエリを実行する
+        if (!$where or $where == 0) {
+            $stmt->execute(); // クエリを実行する
+            // ここで結果を処理する
+        } elseif ($where >= 1) {
+            // $where が設定されている場合は、条件付きのクエリを実行する
+            $stmt = $conn_DB->prepare('SELECT D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER) WHERE D.ID = ?');
 
-    $stmt->execute(); // クエリを実行する
+            $stmt->bind_param("i", $where);
+            $stmt->execute(); // クエリを実行する
+            // ここで結果を処理する
+        }
 
     // 結果セットを取得し、関連する行を配列に追加する
     $result = array(); // 空の配列を作成
@@ -71,7 +82,7 @@
             <img src="images/fairieshome.png" alt="ロゴ" width="230">
         </h1>
         <ul>
-            <li><a class="form_link" href="./form_employee.php?number=<?=$employee_no?>">安否報告</a></li>
+            <li><a class="form_link" href="./form_employee.php">安否報告</a></li>
             <li><a class="form_link" href="">ログアウト</a></li>
         </ul>
     </header>
@@ -96,12 +107,12 @@
                             <div class="so-to">
                                 <label for="department">部署</label>
                                 <select name="department" id="department">
-                                    <option value="1">全て</option>
-                                    <option value="2">営業</option>
-                                    <option value="3">設計</option>
-                                    <option value="4">施工管理</option>
-                                    <option value="5">事務</option>
-                                    <option value="6">積算</option>
+                                    <option value="0">全て</option>
+                                    <option value="1">営業</option>
+                                    <option value="2">設計</option>
+                                    <option value="3">施工管理</option>
+                                    <option value="4">事務</option>
+                                    <option value="5">積算</option>
                                 </select>
                             </div>
                             <div class="">

@@ -34,7 +34,7 @@
       $result[] = $row; // 配列に行を追加
     }
 
-    if($pass === $result[0]['PASSWORD']){
+    if(!empty($result) && $pass === $result[0]['PASSWORD']){
       session_start();
       $_SESSION['number'] = $num;
 
@@ -57,11 +57,11 @@
       $result[] = $row; // 配列に行を追加
     }
 
-    if($pass == $result['PASSWORD']){
+    if(!empty($result) && $pass == $result['PASSWORD']){
       session_start();
       $_SESSION['number'] = $num;
 
-      header("Location: home_employee.php");
+      header("Location: form_customer.php");
       exit;
     }
   }
