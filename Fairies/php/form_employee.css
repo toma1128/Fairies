@@ -1,120 +1,75 @@
-/* headerのスタイル */
-header {
-    /* 中央ぞろえ */
-    text-align: center;
-    background-color: #F8FEFE;
-    /* 縦 */
-    height: 10%;
-    /* 横並びに */
-    display: flex;
-    /* 要素を横並びに配置 */
-    justify-content: space-between;
-    /* 中央揃えに変更 */
-    align-items: center;
-    box-shadow: 0px 0px 0px -2px rgb(30, 28, 28) inset;
-    /* 影のスタイルを指定 ひとまず*/
+body {
+    background-color: #19A7CE;
 }
-
-header {
-    height: 10vh;
-    text-align: center;
-    background-color: #F8FEFE;
-    padding: 20px 0;
-    /* 横並びに */
-    display: flex;
-    justify-content: space-between;
-    /* 中央揃えに変更 */
-    align-items: center;
-    box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
+header h1{
+    height: 75px;
+    width: 1520px;
+    background-color: white;
+    padding: 5px;
+    margin: -10px;
+    border-bottom: 2px solid darkgray;
+    position: relative;/*親要素にログアウトボタンのポジションの形式を付与*/
 }
-
-/* headerの画像のスタイル */
-header img {
-    /* 右側の余白を自動で設定 */
-    margin: auto;
-    /* 高さ */
-    height: 4.5rem;
-    /* 横幅 */
-    width: 35vh;
+header h1 img{
+    margin: 10px;
 }
-
-/* ヘッダー内のul */
-header ul {
-    /* リストアイテムを均等に配置 */
-    justify-content: space-around;
-    /* リストアイテムを中央揃えに配置 */
-    align-items: center;
-    /* 横並びに */
-    display: flex;
-    /* 均等に */
-    justify-content: space-around;
-    /* 中央ぞろえ */
-    align-items: center;
-
-
+/*ログアウトボタンのポジションを調整*/
+nav{
+    position:absolute;
+    left:1220px;
+    bottom: 660px;
 }
-
-/* 従業員一覧のliタグ */
-header ul li {
-    /* テキストサイズ */
-    font-size: 1.8rem;
-    /* 黒丸を消す */
-    list-style: none;
-    padding: 10px 20px;
-    /*余白*/
-    background: #e3f6f5;
-    /*背景色*/
-    border-top: solid 1px #19A7CE;
-    /*枠線・上*/
-    border-bottom: solid 1px #19A7CE;
-    /*枠線・下*/
-    border-right: solid 1px #19A7CE;
-    /*枠線・右*/
-    border-left: solid 1px #19A7CE;
-    /*枠線・左*/
-
-    margin-right: 15px;
-
+/* ログアウトボタンのスタイル */
+.button {
+    font-size:25px; /* 必要に応じてフォントサイズを調整してください */
+    letter-spacing: 5px; /* 文字と文字の間隔を2ピクセルに設定 */
+    padding: 20px 35px; /* 必要に応じて余白を調整してください */
+    border: none; /* 外枠を削除 */
+    background-color: white;
+    border-left: 5px solid aqua; /* 左側のボーダーを設定 */
+    border-right: 5px solid aqua; /* 右側のボーダーを設定 */
+    font-family: 'Kiwi Maru', serif;/*フォントの種類を設定*/
+    transition: transform 0.2s; /* 変化がスムーズになるようにトランジションを追加 */
 }
-
+.button:active {
+    transform: translateY(3px); /* ボタンがクリックされたときに少し下に移動させる */
+}
 form {
     max-width: 600px;
-    font-size: large;
+    font-size: 30px;
     margin: 20px auto;
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 main {
-    max-width: 70%;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #B0DAFF;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* 新しいスタイル */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
-    /* 画面の高さいっぱいに表示 */
+    width:600px;
+    height: 100px;
+    top: 80px;
+    left: 255px;
+    position: relative;
+    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
+    background-color: gray;
+    width: 1000px;
+    height: 1600px;
+    border-radius: 10px; /* 角の丸みを指定 */
 }
-
-
-#screen {
-    width: 70%;
-    background-color: #fff;
-    padding: 30px;
-}
-
-h2 {
+.tital{
+    background-color: white;
+    width: 600px;
+    height: 100px;
+    border-radius: 10px; /* 角の丸みを指定 */
+    position: absolute;
+    left: 200px;
+    bottom: 1460px;
+    font-size: 22.2px;
     text-align: center;
 }
-
-
 textarea {
     width: 100%;
     padding: 5px;
@@ -133,4 +88,8 @@ input[type=text] {
     margin-top: 20px;
     border: none;
     border-radius: 10px;
+    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
+}
+.font{
+    font-size: 22px;
 }
