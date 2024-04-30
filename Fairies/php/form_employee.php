@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    $num = $_SESSION['number'];
+    $_SESSION['number'] = $num;
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -89,7 +95,7 @@
                     <textarea name="options" id="options" cols="30" rows="10" value=""></textarea>
                 </div>
             </div>
-            <button type="submit" id="submit" onclick="location.href='./form_check.php'">確認</button>
+            <button type="submit" name="submit" id="submit" onclick="location.href='./form_check.php'">確認</button>
         </form>
     </main>
 </body>
