@@ -14,11 +14,13 @@ body {
   /* 高さ　*/
   background-color: green;
 }
+
 /* trのカーソル処理 */
 tr:hover {
   background: gray;
   cursor: pointer;
 }
+
 /* headerのスタイル */
 header {
   /* 中央ぞろえ */
@@ -193,7 +195,7 @@ table td {
 }
 
 /* 従業員一覧のスタイル */
-#contentWrap {
+.contentWrap {
 
   background-color: #F8FEFE;
   /* 背景色を指定 */
@@ -215,7 +217,7 @@ table td {
 }
 
 /* 従業員一覧のdiv */
-#contentWrap div {
+.contentWrap div {
   margin-right: 10px;
   /* 右側との距離を指定 */
 }
@@ -286,9 +288,10 @@ table td {
   display: flex;
   /* 列方向にフレックスアイテムを配置 */
   flex-direction: column;
+  display: none;
 }
 
-#categoryWrap {
+.categoryWrap {
   display: flex;
   /* フレックスコンテナとして表示 */
   flex-wrap: wrap;
@@ -330,4 +333,14 @@ table td {
   /* 右側のパディングを指定 */
   padding-top: 15px;
   /* 上側のパディングを指定 */
+}
+
+#customer_about {
+  /* 横幅 */
+  width: 80%;
+  /* flex要素 */
+  display: flex;
+  /* 列方向にフレックスアイテムを配置 */
+  flex-direction: column;
+  display: block;
 }

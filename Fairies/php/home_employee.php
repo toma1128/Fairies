@@ -96,9 +96,9 @@ $data = [   //フォームのデータ
                 </ul>
             </div>
             <div id="employee_about">
-                <div id="categoryWrap">
+                <div class="categoryWrap">
                     <!-- <div id="categoryWrap"> -->
-                    <div id="category-1" class="category"> <!--従業員一覧かお客様一覧の表示-->
+                    <div class="category"> <!--従業員一覧かお客様一覧の表示-->
                         <h2>従業員一覧</h2>
                     </div>
                     <!-- </div> -->
@@ -130,7 +130,35 @@ $data = [   //フォームのデータ
                         </div>
                     </form>
                 </div>
-                <div id="contentWrap"> <!--情報データが入るところ-->
+                <div class="contentWrap"> <!--情報データが入るところ-->
+                    <?php foreach ($result as $r) : ?>
+                        <table>
+                            <tbody>
+                                <tr onclick="location.href='./personal_employee.php';">
+                                    <td><?= h($r["DNAME"]) ?></td>
+                                    <td><?= h($r["ENAME"]) ?></td>
+                                    <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
+                                    <td><?= h($data["period"][($r["PERIOD"])]) ?></td>
+                                    <td><?= h($data["reason"][($r["REASON"])]) ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div id="customer_about">
+                <div class="categoryWrap">
+                    <!-- <div id="categoryWrap"> -->
+                    <div class="category">
+                        <h2>お客様一覧</h2>
+                    </div>
+                    <!-- </div> -->
+                    <input type="search" id="query_c" name="q_c" placeholder="Search...">
+                    <form action="" method="POST">
+                        <button>検索</button>
+                    </form>
+                </div>
+                <div class="contentWrap">
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
