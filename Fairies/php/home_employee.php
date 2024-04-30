@@ -84,7 +84,7 @@ $data = [   //フォームのデータ
         </h1>
         <ul>
             <li><a class="form_link" href="./form_employee.php">安否報告</a></li>
-            <li><a class="form_link" href="">ログアウト</a></li>
+            <li><a class="form_link" href="./login.php">ログアウト</a></li>
         </ul>
     </header>
     <main>
@@ -134,7 +134,7 @@ $data = [   //フォームのデータ
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
-                                <tr>
+                                <tr onclick="location.href='./personal_employee.php';">
                                     <td><?= h($r["DNAME"]) ?></td>
                                     <td><?= h($r["ENAME"]) ?></td>
                                     <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
@@ -144,17 +144,6 @@ $data = [   //フォームのデータ
                             </tbody>
                         </table>
                     <?php endforeach ?>
-                    <table>
-                        <tbody>
-                            <tr onclick="location.href='./personal_employee.php';">
-                                <td>ECC部署</td>
-                                <td>田中太郎</td>
-                                <td>出社不可</td>
-                                <td>一か月以内</td>
-                                <td>怪我</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
