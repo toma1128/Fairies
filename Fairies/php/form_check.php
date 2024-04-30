@@ -1,6 +1,8 @@
 <?php
     // フォームから送信されたデータを取得する
-    //$number = filter_input(INPUT_POST,"number");
+    session_start();
+    $number = $_SESSION['number'];
+    $_SESSION['number'] = $number;  //念のため
     $possible = filter_input(INPUT_POST, "yesnochoice", FILTER_VALIDATE_INT);
     $period = filter_input(INPUT_POST, "datechoice", FILTER_VALIDATE_INT);
     $reason = filter_input(INPUT_POST, "reason", FILTER_VALIDATE_INT);
@@ -28,8 +30,6 @@
     }
 
     $conn_DB->set_charset('utf8');   //文字コードを設定
-
-    $number = '00100';   //まだ社員番号の受け渡しができないため仮のを入れる、受け渡しができるようになったら消す
 
     // SQLクエリを作成して実行する
     $stmt = $conn_DB->prepare('INSERT INTO EMPLOYEE_FORMS (ID, NUMBER, POSSIBLE, PERIOD, REASON, MESSAGE) VALUES (?, ?, ?, ?, ?, ?)');
@@ -98,7 +98,7 @@
                 <p>連絡事項等</p>
                 <textarea name="options" id="options" cols="30" rows="10" value=""><?=$message ?></textarea>
             </div>
-            <button type="submit" id="submit" onclick="location.href='./form_check.php'">送信しました</button>
+            <button type="submit" id="submit" onclick="location.href='./home_employee.php'">送信しました</button>
     </dev>
 </body>
 </html>
