@@ -110,7 +110,7 @@ form {
 /* h2タグのスタイル */
 h2 {
   /* 下の要素との距離を指定 */
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* form_linkのスタイル */
@@ -249,10 +249,6 @@ table td {
   /* テキストサイズ */
   list-style: none;
   /* 黒丸を消す */
-}
-
-/* 従業員一覧のaタグのスタイル */
-#naviWrap>ul>li a {
   display: block;
   /* ブロック要素とする */
   color: #000;
@@ -268,6 +264,8 @@ table td {
   border-left: solid 1px #19A7CE;
   /*枠線・左*/
 }
+
+
 
 /* マウスカーソルを合わせたときの処理 */
 #naviWrap>ul>li a:hover {
@@ -288,33 +286,36 @@ table td {
   display: flex;
   /* 列方向にフレックスアイテムを配置 */
   flex-direction: column;
-  display: none;
+  display: block;
+}
+
+.kennsaku {
+  width: 15px;
+  display: block;
 }
 
 .categoryWrap {
   display: flex;
   /* フレックスコンテナとして表示 */
-  flex-wrap: wrap;
-  /* 要素を折り返して配置 */
-  overflow-x: auto;
+
   /* 水平方向のオーバーフローを許可 */
   background-color: #F8FEFE;
   /* 背景色 */
-  /* 均等に */
-  justify-content: space-around;
+  width: 100%;
   /* 中央ぞろえ */
   align-items: center;
 
 }
 
 .category {
-  flex: 0 0 calc(30% - 10px);
-  /* 2列にするための幅の計算 */
+
   margin-right: 5px;
-  margin-bottom: 10px;
-  /* 要素の下部に余白を追加 */
+
 }
 
+.kenn_btn {
+  display: flex;
+}
 
 .category h2 {
   font-size: 2rem;
@@ -342,5 +343,9 @@ table td {
   display: flex;
   /* 列方向にフレックスアイテムを配置 */
   flex-direction: column;
-  display: block;
+  display: none;
+}
+
+#soto {
+  margin-left: 5px;
 }

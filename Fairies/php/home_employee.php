@@ -91,8 +91,8 @@ $data = [   //フォームのデータ
         <div id="screen">
             <div id="naviWrap">
                 <ul id="categoryNavi"> <!-- 右立のやつ-->
-                    <li><a href="#category-1"> 従業員一覧</a></li>
-                    <li><a href="#category-2">お客様一覧</a></li>
+                    <li id="emp_btn"> 従業員一覧</li>
+                    <li id="cus_btn">お客様一覧</li>
                 </ul>
             </div>
             <div id="employee_about">
@@ -101,8 +101,12 @@ $data = [   //フォームのデータ
                     <div class="category"> <!--従業員一覧かお客様一覧の表示-->
                         <h2>従業員一覧</h2>
                     </div>
+
                     <!-- </div> -->
-                    <input type="search" id="query" name="q" placeholder="Search...">
+                    <div class="kennsaku">
+                        <input type="search" id="query" name="q" placeholder="Search...">
+                    </div>
+                    <div id="so-to">
                     <form action="" method="POST">
                         <button>検索</button>
                         <div class="so-to">
@@ -129,6 +133,7 @@ $data = [   //フォームのデータ
                             </select>
                         </div>
                     </form>
+                    </div>
                 </div>
                 <div class="contentWrap"> <!--情報データが入るところ-->
                     <?php foreach ($result as $r) : ?>
@@ -153,7 +158,9 @@ $data = [   //フォームのデータ
                         <h2>お客様一覧</h2>
                     </div>
                     <!-- </div> -->
-                    <input type="search" id="query_c" name="q_c" placeholder="Search...">
+                    <div class="kennsaku">
+                        <input type="search" id="query" name="q" placeholder="Search...">
+                    </div>
                     <form action="" method="POST">
                         <button>検索</button>
                     </form>
