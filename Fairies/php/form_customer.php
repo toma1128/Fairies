@@ -6,7 +6,9 @@
     <title>ホーム画面</title>
 </head>
 <body>
-    <header><h2>フォーム画面</h2></header>
+    <header>
+        <h2>災害安否確認フォーム</h2>
+    </header>
     <main>
         <form>
             <div>
