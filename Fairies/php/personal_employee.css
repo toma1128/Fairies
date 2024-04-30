@@ -1,0 +1,89 @@
+body {
+    background-color: #19A7CE;
+}
+header h1{
+    height: 75px;
+    width: 1520px;
+    background-color: white;
+    padding: 5px;
+    margin: -10px;
+    border-bottom: 2px solid darkgray;
+    position: relative;/*親要素にログアウトボタンのポジションの形式を付与*/
+}
+header h1 img{
+    margin: 10px;
+}
+/*ログアウトボタンのポジションを調整*/
+nav{
+    position:absolute;
+    left:1220px;
+    bottom: 660px;
+}
+/* ログアウトボタンのスタイル */
+.button {
+    font-size:25px; /* 必要に応じてフォントサイズを調整してください */
+    letter-spacing: 5px; /* 文字と文字の間隔を2ピクセルに設定 */
+    padding: 20px 35px; /* 必要に応じて余白を調整してください */
+    border: none; /* 外枠を削除 */
+    background-color: white;
+    border-left: 5px solid aqua; /* 左側のボーダーを設定 */
+    border-right: 5px solid aqua; /* 右側のボーダーを設定 */
+    font-family: 'Kiwi Maru', serif;/*フォントの種類を設定*/
+    transition: transform 0.2s; /* 変化がスムーズになるようにトランジションを追加 */
+}
+.button:active {
+    transform: translateY(3px); /* ボタンがクリックされたときに少し下に移動させる */
+}
+/*親要素にポジションの形式を付与*/
+main{
+    position:relative;
+    left: 70px;
+    top: 50px;
+}
+#STATUS{
+    display: flex;
+    gap: 0px;
+    position: absolute;
+    margin-top: 18px;
+    margin-left: 100px;
+    font-size: 30px;
+    font-family: 'Kiwi Maru', serif;/*フォントの種類を設定*/
+    text-decoration: underline blue;/*bottom-borderだとテキストとボーダーラインが離れすぎててだめなので代替えとして*/
+    text-underline-offset: 2px;
+}
+#name{
+    position: absolute;
+    margin-top:40px;
+    margin-left:555px;
+    font-size: 50px;
+    font-family: 'Kiwi Maru', serif;
+    letter-spacing: 6px; 
+    background-color: white;
+    border-radius: 10px; /* 角の丸みを指定 */
+}
+.comment{
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 350px;
+    font-size: 30px;
+    font-family: 'Kiwi Maru', serif;
+    text-align: center;
+    background-color: white;
+    width: 700px;
+    border-top-left-radius: 20px; /* 角の丸みを指定 */
+    border-bottom-left-radius: 20px; /* 角の丸みを指定 */
+    border-top-right-radius: 100px; /* 角の丸みを指定 */
+    border-bottom-right-radius: 100px; /* 角の丸みを指定 */
+}
+.people_image{
+    position: absolute;
+    margin-top:200px;
+    margin-left:900px;
+}
+.duration{
+    position: absolute;
+    margin-top:380px;
+    margin-left:190px;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 40px;
+}
