@@ -26,7 +26,7 @@ if ($conn_DB->connect_error) {
 
 $where = filter_input(INPUT_POST, "department", FILTER_VALIDATE_INT);
 // 全件表示用のクエリを準備する
-$stmt = $conn_DB->prepare('SELECT D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER)');
+$stmt = $conn_DB->prepare('SELECT EF.ID AS EFID, D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER)');
 
 // もし $where が設定されていない場合は、全件表示用のクエリを実行する
 if (!$where or $where == 0) {
@@ -34,7 +34,7 @@ if (!$where or $where == 0) {
     // ここで結果を処理する
 } elseif ($where >= 1) {
     // $where が設定されている場合は、条件付きのクエリを実行する
-    $stmt = $conn_DB->prepare('SELECT D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER) WHERE D.ID = ?');
+    $stmt = $conn_DB->prepare('SELECT EF.ID AS EFID, D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER) WHERE D.ID = ?');
 
     $stmt->bind_param("i", $where);
     $stmt->execute(); // クエリを実行する
@@ -139,7 +139,7 @@ $data = [   //フォームのデータ
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_employee.php';">
+                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"]?> ';">
                                     <td><?= h($r["DNAME"]) ?></td>
                                     <td><?= h($r["ENAME"]) ?></td>
                                     <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
@@ -169,7 +169,7 @@ $data = [   //フォームのデータ
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_employee.php';">
+                                <tr onclick="location.href='./personal_employee.php?id=<?= $r['ID'] ?>';">
                                     <td><?= h($r["DNAME"]) ?></td>
                                     <td><?= h($r["ENAME"]) ?></td>
                                     <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
