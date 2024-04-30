@@ -14,7 +14,11 @@ body {
   /* 高さ　*/
   background-color: green;
 }
-
+/* trのカーソル処理 */
+tr:hover {
+  background: gray;
+  cursor: pointer;
+}
 /* headerのスタイル */
 header {
   /* 中央ぞろえ */
