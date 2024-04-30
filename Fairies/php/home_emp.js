@@ -11,3 +11,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// 画面切り替え
+const emp = document.getElementById("employee_about");
+const cus = document.getElementById("customer_about");
+
+const empBtn = document.getElementById("emp_btn");
+const cosBtn = document.getElementById("cus_btn");
+
+empBtn.addEventListener("click", () => {
+
+    emp.style.display = 'block';
+    cus.style.display = 'none';
+});
+
+cosBtn.addEventListener("click", () => {
+    emp.style.display = 'none';
+    cus.style.display = 'block';
+});
