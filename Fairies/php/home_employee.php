@@ -158,10 +158,10 @@ $data = [   //フォームのデータ
                         <h2>お客様一覧</h2>
                     </div>
                     <!-- </div> -->
-                    <div class="kennsaku">
-                        <input type="search" id="query" name="q" placeholder="Search...">
-                    </div>
+
                     <form action="" method="POST">
+                        <input type="search" id="query" name="q" placeholder="Search...">
+
                         <button>検索</button>
                     </form>
                 </div>
