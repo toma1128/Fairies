@@ -1,79 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    background-color: #19A7CE;
 }
-
-header {
-    height: 10vh;
+header h1{
+    height: 75px;
+    width: 1520px;
+    background-color: white;
+    padding: 5px;
+    margin: -10px;
+    border-bottom: 2px solid darkgray;
+    position: relative;/*親要素にログアウトボタンのポジションの形式を付与*/
+}
+header h1 img{
+    margin: 10px;
+}
+/*ログアウトボタンのポジションを調整*/
+nav{
+    position:absolute;
+    left:1220px;
+    bottom: 660px;
+}
+/* ログアウトボタンのスタイル */
+.button {
+    font-size:20px; /* 必要に応じてフォントサイズを調整してください */
+    letter-spacing: 5px; /* 文字と文字の間隔を2ピクセルに設定 */
+    padding: 20px 35px; /* 必要に応じて余白を調整してください */
+    border: none; /* 外枠を削除 */
+    background-color: white;
+    border-left: 5px solid aqua; /* 左側のボーダーを設定 */
+    border-right: 5px solid aqua; /* 右側のボーダーを設定 */
+    font-family: 'Kiwi Maru', serif;/*フォントの種類を設定*/
+    transition: transform 0.2s; /* 変化がスムーズになるようにトランジションを追加 */
+}
+.button:active {
+    transform: translateY(3px); /* ボタンがクリックされたときに少し下に移動させる */
+}
+header div{
+    background-color: gray;
+    padding: 5px;
+    height: 150px;
+    margin-left: 255px;
+    margin-right: 255px;
+    margin-top: 20px;
+    border-top-left-radius: 10px; /* 角の丸みを指定 */
+    border-top-right-radius: 10px; /* 角の丸みを指定 */
+}
+header h2{
     text-align: center;
-    background-color: #F8FEFE;
-    padding: 20px 0;
-    /* 横並びに */
-    display: flex;
-    justify-content: space-between;
-    /* 中央揃えに変更 */
-    align-items: center;
-    box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
-}
-
-/* headerの画像のスタイル */
-header img {
-    /* 右側の余白を自動で設定 */
-    margin: auto;
-    /* 高さ */
-    height: 4.5rem;
-    /* 横幅 */
-    width: 35vh;
-}
-
-/* ヘッダー内のul */
-header ul {
-    /* リストアイテムを均等に配置 */
-    justify-content: space-around;
-    /* リストアイテムを中央揃えに配置 */
-    align-items: center;
-    /* 横並びに */
-    display: flex;
-    /* 均等に */
-    justify-content: space-around;
-    /* 中央ぞろえ */
-    align-items: center;
-
-
-}
-
-/* 従業員一覧のliタグ */
-header ul li {
-    /* テキストサイズ */
-    font-size: 1.8rem;
-    /* 黒丸を消す */
-    list-style: none;
-    padding: 10px 20px;
-    /*余白*/
-    background: #e3f6f5;
-    /*背景色*/
-    border-top: solid 1px #19A7CE;
-    /*枠線・上*/
-    border-bottom: solid 1px #19A7CE;
-    /*枠線・下*/
-    border-right: solid 1px #19A7CE;
-    /*枠線・右*/
-    border-left: solid 1px #19A7CE;
-    /*枠線・左*/
-
-    margin-right: 15px;
-
+    padding: 15px;
+    font-size: 35px;
+    background-color: white;
+    border-radius: 10px; /* 角の丸みを指定 */
+    width: 61%;
+    margin-top: 50px;
+    margin-left: 177px;
+    margin-bottom: 0px;
+    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
 }
 
 main {
-    max-width: 70%;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #B0DAFF;
+    max-width: 54%;
+    margin: -10px auto;
+    padding: 90px;
+    background-color: gray;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* 新しいスタイル */
     display: flex;
     justify-content: center;
@@ -81,13 +70,31 @@ main {
     flex-direction: column;
     height: 100vh;
     /* 画面の高さいっぱいに表示 */
+    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
+    border-bottom-left-radius: 10px; /* 角の丸みを指定 */
+    border-bottom-right-radius: 10px; /* 角の丸みを指定 */
 }
-
+main h2{
+    font-size: 30px;
+}
+#team{
+    font-size: 15px; /* メニュー項目のフォントサイズを大きくする */
+    padding: 10px; /* メニューの上下左右の余白を追加 */
+    margin: 15px;
+    width: 200px; /* メニューの幅を設定 */
+    margin-left: 25px;
+    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
+}
+/*題のフォントサイズを変更*/
+.font-size{
+    font-size: 23px;
+}
 
 #screen {
     width: 70%;
     background-color: #fff;
     padding: 30px;
+    border-radius: 10px; /* 角の丸みを指定 */
 }
 
 form {
@@ -105,10 +112,12 @@ input[type="password"],
 input[type="number"],
 input[type="date"] {
     padding: 10px;
-    margin-bottom: 15px;
+    margin-top:20px;
+    margin-left:25px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-
+    border-radius: 10px;
+    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
 }
 
 input[type="text"]:focus,
@@ -117,15 +126,19 @@ input[type="number"]:focus,
 input[type="date"]:focus {
     border-color: #49ada1;
 }
-
-button {
-    padding: 12px;
+main button {
+    width: 30%;
+    padding: 15px;
+    margin-left: 170px;
+    margin-top: 50px;
+    font-size: 18px;
     background-color: #49ada1;
     color: #fff;
     border: none;
     border-radius: 5px;
+    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
 }
 
-button:hover {
+main button:hover {
     background-color: #3eabab;
 }
