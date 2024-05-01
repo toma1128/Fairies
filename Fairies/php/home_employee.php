@@ -106,10 +106,10 @@ $data = [   //フォームのデータ
                     <div class="kennsaku">
                         <input type="search" id="query" name="q" placeholder="Search...">
                     </div>
-                    <div id="so-to">
+
                     <form action="" method="POST">
                         <button>検索</button>
-                        <div class="so-to">
+                        <div>
                             <label for="department">部署</label>
                             <select name="department" id="department">
                                 <option value="0">全て</option>
@@ -120,7 +120,7 @@ $data = [   //フォームのデータ
                                 <option value="5">積算</option>
                             </select>
                         </div>
-                        <div class="">
+                        <div>
                             <label for="date">期限</label>
                             <select name="date" id="date">
                                 <option value="1">全て</option>
@@ -133,13 +133,13 @@ $data = [   //フォームのデータ
                             </select>
                         </div>
                     </form>
-                    </div>
+
                 </div>
                 <div class="contentWrap"> <!--情報データが入るところ-->
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"]?> ';">
+                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"] ?> ';">
                                     <td><?= h($r["DNAME"]) ?></td>
                                     <td><?= h($r["ENAME"]) ?></td>
                                     <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
