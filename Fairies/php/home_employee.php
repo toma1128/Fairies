@@ -13,8 +13,8 @@ function h($str)
 //     //exit();
 // }
 
-// session_start();
-// $employee_no = $_SESSION['number'];
+session_start();
+$employee_no = $_SESSION['number'];
 
 // データベースへの接続情報
 $servername = "localhost"; // データベースのホスト名
