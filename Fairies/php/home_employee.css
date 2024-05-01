@@ -315,14 +315,12 @@ table td {
 }
 
 
-.category {
-
-  margin-right: 5px;
-  margin-left: 15px;
-
+#category_employee,
+#category_customer {
+  margin: 20px 5px 15px 5px;
 }
 
-.category h2 {
+#category_employee h2 {
   font-size: 2rem;
   /* フォントサイズを指定 */
   font-weight: bold;
@@ -331,16 +329,34 @@ table td {
   /* 背景色を指定 */
   color: #000;
   /* テキストの色を指定 */
-  padding-left: 15px;
+  padding-left: 10px;
   /* 左側のパディングを指定 */
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   /* 下側のパディングを指定 */
-  padding-right: 15px;
+  padding-right: 10px;
   /* 右側のパディングを指定 */
-  padding-top: 15px;
+  padding-top: 5px;
   /* 上側のパディングを指定 */
 }
 
+#category_customer h2 {
+  font-size: 2rem;
+  /* フォントサイズを指定 */
+  font-weight: bold;
+  /* フォントの太さを指定 */
+  background-color: #FFFCA8;
+  /* 背景色を指定 */
+  color: #000;
+  /* テキストの色を指定 */
+  padding-left: 10px;
+  /* 左側のパディングを指定 */
+  padding-bottom: 5px;
+  /* 下側のパディングを指定 */
+  padding-right: 10px;
+  /* 右側のパディングを指定 */
+  padding-top: 5px;
+  /* 上側のパディングを指定 */
+}
 
 #customer_about {
   /* 横幅 */

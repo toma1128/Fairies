@@ -98,7 +98,7 @@ $data = [   //フォームのデータ
             <div id="employee_about">
                 <div class="categoryWrap">
                     <!-- <div id="categoryWrap"> -->
-                    <div class="category"> <!--従業員一覧かお客様一覧の表示-->
+                    <div id="category_employee"> <!--従業員一覧かお客様一覧の表示-->
                         <h2>従業員一覧</h2>
                     </div>
 
@@ -154,7 +154,7 @@ $data = [   //フォームのデータ
             <div id="customer_about">
                 <div class="categoryWrap">
                     <!-- <div id="categoryWrap"> -->
-                    <div class="category">
+                    <div id="category_customer">
                         <h2>お客様一覧</h2>
                     </div>
                     <!-- </div> -->
