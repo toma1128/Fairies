@@ -116,18 +116,18 @@ $data = [   //フォームのデータ
             <div id="employee_about">
                 <div class="categoryWrap">
                     <!-- <div id="categoryWrap"> -->
-                    <div class="category"> <!--従業員一覧かお客様一覧の表示-->
+                    <div id="category_employee"> <!--従業員一覧かお客様一覧の表示-->
                         <h2>従業員一覧</h2>
                     </div>
 
                     <!-- </div> -->
-                    <div class="kennsaku">
-                        <input type="search" id="query" name="q" placeholder="Search...">
-                    </div>
-                    <div id="so-to">
+
+
+
                     <form action="" method="POST">
+                        <input type="search" id="query" name="q" placeholder="Search...">
                         <button>検索</button>
-                        <div class="so-to">
+                        <div class="soto">
                             <label for="department">部署</label>
                             <select name="department" id="department">
                                 <option value="0">全て</option>
@@ -138,7 +138,7 @@ $data = [   //フォームのデータ
                                 <option value="5">積算</option>
                             </select>
                         </div>
-                        <div class="">
+                        <div class="soto">
                             <label for="date">期限</label>
                             <select name="date" id="date">
                                 <option value="1">全て</option>
@@ -151,13 +151,13 @@ $data = [   //フォームのデータ
                             </select>
                         </div>
                     </form>
-                    </div>
+
                 </div>
                 <div class="contentWrap"> <!--情報データが入るところ-->
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"]?> ';">
+                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"]  ?> ';">
                                     <td><?= h($r["DNAME"]) ?></td>
                                     <td><?= h($r["ENAME"]) ?></td>
                                     <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
@@ -172,13 +172,11 @@ $data = [   //フォームのデータ
             <div id="customer_about">
                 <div class="categoryWrap">
                     <!-- <div id="categoryWrap"> -->
-                    <div class="category">
+                    <div id="category_customer">
                         <h2>お客様一覧</h2>
                     </div>
                     <!-- </div> -->
-                    <div class="kennsaku">
                         <input type="search" id="query" name="q" placeholder="Search...">
-                    </div>
                         <button>検索</button>
                     </form>
                 </div>
