@@ -34,7 +34,7 @@ header {
   justify-content: space-between;
   /* 中央揃えに変更 */
   align-items: center;
-  box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
+  
   /* 影のスタイルを指定 ひとまず*/
 }
 
@@ -99,6 +99,8 @@ main {
 
 form {
   height: 100%;
+  display: flex;
+
 }
 
 #screen {
@@ -122,47 +124,54 @@ h2 {
 
 }
 
+.soto {
+  margin-left: 20px;
+
+}
+
 /* 検索入力のスタイル */
 input[type="search"] {
   flex: 1;
-  /*水平方向の伸縮性*/
+  /* 水平方向の伸縮性 */
   padding: 10px;
   /* 内側の余白 */
   margin-right: 10px;
-  /* 右側との距離を指定 */
+  /* 右側の間隔 */
   border: 3px solid #19A7CE;
-  /* 周りの線の指定 */
+  /* 周囲の線 */
   border-radius: 3px;
-  /* 周りの線の角を指定 */
+  /* 角の丸み */
   font-size: 30px;
+  margin-left: 20px;
 }
+
 
 /* selectタグのスタイル */
 select {
   flex: 1;
-  /* 水平方向の伸縮性の指定 */
+  /* 水平方向の伸縮性 */
   padding: 10px;
-  /* 内側の余白の指定 */
+  /* 内側の余白 */
   margin-right: 10px;
-  /* 右側との距離を指定 */
+  /* 右側の間隔 */
   border: 1px solid #19A7CE;
-  /* 周りの線の指定 */
+  /* 周囲の線 */
   border-radius: 5px;
-  /* 周りの線の角を指定 */
+  /* 角の丸み */
 }
 
 /* ボタンのスタイル */
 button {
   padding: 10px 20px;
-  /* 内側の余白の指定 */
+  /* 内側の余白 */
   color: #19A7CE;
-  /* テキストカラー */
+  /* テキストの色 */
   border: none;
-  /* 周りの線をなくす */
+  /* 周囲の線をなくす */
   border-radius: 5px;
-  /* 周りの線の角を指定 */
+  /* 角の丸み */
   cursor: pointer;
-  /* カーソルの形状をポインターに指定 */
+  /* カーソルの形状 */
   font-size: larger;
 }
 
@@ -192,6 +201,11 @@ table td {
   /* テキストを中央揃えに */
   font-size: 25px;
 
+}
+
+form {
+  display: flex;
+  margin-left: 5px;
 }
 
 /* 従業員一覧のスタイル */
@@ -268,7 +282,7 @@ table td {
 
 
 /* マウスカーソルを合わせたときの処理 */
-#naviWrap>ul>li a:hover {
+#naviWrap>ul>li:hover {
   background: #078890;
   text-decoration: none;
 }
@@ -289,10 +303,7 @@ table td {
   display: block;
 }
 
-.kennsaku {
-  width: 15px;
-  display: block;
-}
+
 
 .categoryWrap {
   display: flex;
@@ -305,19 +316,16 @@ table td {
   /* 中央ぞろえ */
   align-items: center;
 
-}
-
-.category {
-
-  margin-right: 5px;
 
 }
 
-.kenn_btn {
-  display: flex;
+
+#category_employee,
+#category_customer {
+  margin: 20px 5px 15px 5px;
 }
 
-.category h2 {
+#category_employee h2 {
   font-size: 2rem;
   /* フォントサイズを指定 */
   font-weight: bold;
@@ -326,13 +334,32 @@ table td {
   /* 背景色を指定 */
   color: #000;
   /* テキストの色を指定 */
-  padding-left: 15px;
+  padding-left: 10px;
   /* 左側のパディングを指定 */
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   /* 下側のパディングを指定 */
-  padding-right: 15px;
+  padding-right: 10px;
   /* 右側のパディングを指定 */
-  padding-top: 15px;
+  padding-top: 5px;
+  /* 上側のパディングを指定 */
+}
+
+#category_customer h2 {
+  font-size: 2rem;
+  /* フォントサイズを指定 */
+  font-weight: bold;
+  /* フォントの太さを指定 */
+  background-color: #FFFCA8;
+  /* 背景色を指定 */
+  color: #000;
+  /* テキストの色を指定 */
+  padding-left: 10px;
+  /* 左側のパディングを指定 */
+  padding-bottom: 5px;
+  /* 下側のパディングを指定 */
+  padding-right: 10px;
+  /* 右側のパディングを指定 */
+  padding-top: 5px;
   /* 上側のパディングを指定 */
 }
 
@@ -344,8 +371,4 @@ table td {
   /* 列方向にフレックスアイテムを配置 */
   flex-direction: column;
   display: none;
-}
-
-#soto {
-  margin-left: 5px;
 }
