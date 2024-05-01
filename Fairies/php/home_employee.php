@@ -109,7 +109,7 @@ $data = [   //フォームのデータ
                     <form action="" method="POST">
                         <input type="search" id="query" name="q" placeholder="Search...">
                         <button>検索</button>
-                        <div>
+                        <div class="soto">
                             <label for="department">部署</label>
                             <select name="department" id="department">
                                 <option value="0">全て</option>
@@ -120,7 +120,7 @@ $data = [   //フォームのデータ
                                 <option value="5">積算</option>
                             </select>
                         </div>
-                        <div>
+                        <div class="soto">
                             <label for="date">期限</label>
                             <select name="date" id="date">
                                 <option value="1">全て</option>
