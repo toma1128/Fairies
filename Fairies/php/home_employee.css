@@ -34,7 +34,7 @@ header {
   justify-content: space-between;
   /* 中央揃えに変更 */
   align-items: center;
-  box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
+  
   /* 影のスタイルを指定 ひとまず*/
 }
 
@@ -277,7 +277,7 @@ table td {
 
 
 /* マウスカーソルを合わせたときの処理 */
-#naviWrap>ul>li a:hover {
+#naviWrap>ul>li:hover {
   background: #078890;
   text-decoration: none;
 }
