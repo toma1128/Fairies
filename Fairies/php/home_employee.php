@@ -2,8 +2,12 @@
 
 function h($str)
 {
+    if ($str === null) {
+        return '';
+    }
     return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
 }
+
 // if (isset($_POST["logoutBtn"])) {
 //     header('Location: fairiesproject_login.php');
 //     //exit();
@@ -47,6 +51,20 @@ $result_set = $stmt->get_result(); // 結果セットを取得
 while ($row = $result_set->fetch_assoc()) { // 各行を取得
     $result[] = $row; // 配列に行を追加
 }
+
+$stmt2 = $conn_DB->prepare('SELECT C.CUSTOMERNUMBER AS CUSTOMERNUMBER, C.NAME AS CNAME, CF.STATE as CFSTATE FROM CUSTOMERS AS C JOIN CUSTOMER_FORMS AS CF ON(C.CUSTOMERNUMBER = CF.NUMBER)');
+$stmt2->execute();
+
+// 두 번째 쿼리 결과 처리
+$result2 = array();
+$result_set2 = $stmt2->get_result();
+while ($row = $result_set2->fetch_assoc()) {
+    $result2[] = $row;
+}
+
+var_dump($_POST);
+// var_dump('help me please');
+//全権表示用のクエリを準備する
 
 $data = [   //フォームのデータ
     "possible" => [
@@ -158,23 +176,18 @@ $data = [   //フォームのデータ
                         <h2>お客様一覧</h2>
                     </div>
                     <!-- </div> -->
-
-                    <form action="" method="POST">
                         <input type="search" id="query" name="q" placeholder="Search...">
-
                         <button>検索</button>
                     </form>
                 </div>
                 <div class="contentWrap">
-                    <?php foreach ($result as $r) : ?>
+                    <?php foreach ($result2 as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_employee.php?id=<?= $r['EFID'] ?>';">
-                                    <td><?= h($r["DNAME"]) ?></td>
-                                    <td><?= h($r["ENAME"]) ?></td>
-                                    <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
-                                    <td><?= h($data["period"][($r["PERIOD"])]) ?></td>
-                                    <td><?= h($data["reason"][($r["REASON"])]) ?></td>
+                                <tr onclick="location.href='./personal_customer.php?id=<?= isset($r['CUSTOMERNUMBER']) ? h($r['CUSTOMERNUMBER']) : '' ?>';">
+                                    <td><?= isset($r['CUSTOMERNUMBER']) ? h($r['CUSTOMERNUMBER']) : '' ?></td>
+                                    <td><?= isset($r['CNAME']) ? h($r['CNAME']) : '' ?></td>
+                                    <td><?= isset($r['CFSTATE']) ? h($r['CFSTATE']) : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -187,3 +200,4 @@ $data = [   //フォームのデータ
 <script src="./home_emp.js"></script>
 
 </html>
+
