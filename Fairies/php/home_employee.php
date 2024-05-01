@@ -106,7 +106,7 @@ $data = [   //フォームのデータ
                     <div class="kennsaku">
                         <input type="search" id="query" name="q" placeholder="Search...">
                     </div>
-                    <div id="so-to">
+
                     <form action="" method="POST">
                         <button>検索</button>
                         <div class="so-to">
@@ -133,13 +133,13 @@ $data = [   //フォームのデータ
                             </select>
                         </div>
                     </form>
-                    </div>
+
                 </div>
                 <div class="contentWrap"> <!--情報データが入るところ-->
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"]?> ';">
+                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"] ?> ';">
                                     <td><?= h($r["DNAME"]) ?></td>
                                     <td><?= h($r["ENAME"]) ?></td>
                                     <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
