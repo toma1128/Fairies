@@ -99,6 +99,8 @@ main {
 
 form {
   height: 100%;
+  display: flex;
+
 }
 
 #screen {
@@ -123,6 +125,8 @@ h2 {
 }
 
 /* 検索入力のスタイル */
+
+
 input[type="search"] {
   flex: 1;
   /*水平方向の伸縮性*/
@@ -136,6 +140,7 @@ input[type="search"] {
   /* 周りの線の角を指定 */
   font-size: 30px;
 }
+
 
 /* selectタグのスタイル */
 select {
@@ -289,10 +294,7 @@ table td {
   display: block;
 }
 
-.kennsaku {
-  width: 15px;
-  display: block;
-}
+
 
 .categoryWrap {
   display: flex;
@@ -305,16 +307,13 @@ table td {
   /* 中央ぞろえ */
   align-items: center;
 
+
 }
 
 .category {
 
   margin-right: 5px;
 
-}
-
-.kenn_btn {
-  display: flex;
 }
 
 .category h2 {
@@ -344,8 +343,4 @@ table td {
   /* 列方向にフレックスアイテムを配置 */
   flex-direction: column;
   display: none;
-}
-
-#soto {
-  margin-left: 5px;
 }

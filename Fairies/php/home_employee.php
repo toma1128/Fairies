@@ -103,11 +103,11 @@ $data = [   //フォームのデータ
                     </div>
 
                     <!-- </div> -->
-                    <div class="kennsaku">
-                        <input type="search" id="query" name="q" placeholder="Search...">
-                    </div>
+
+
 
                     <form action="" method="POST">
+                        <input type="search" id="query" name="q" placeholder="Search...">
                         <button>検索</button>
                         <div>
                             <label for="department">部署</label>
