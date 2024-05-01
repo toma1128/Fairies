@@ -132,15 +132,15 @@ h2 {
 /* 検索入力のスタイル */
 input[type="search"] {
   flex: 1;
-  /*水平方向の伸縮性*/
+  /* 水平方向の伸縮性 */
   padding: 10px;
   /* 内側の余白 */
   margin-right: 10px;
-  /* 右側との距離を指定 */
+  /* 右側の間隔 */
   border: 3px solid #19A7CE;
-  /* 周りの線の指定 */
+  /* 周囲の線 */
   border-radius: 3px;
-  /* 周りの線の角を指定 */
+  /* 角の丸み */
   font-size: 30px;
   margin-left: 20px;
 }
@@ -149,29 +149,29 @@ input[type="search"] {
 /* selectタグのスタイル */
 select {
   flex: 1;
-  /* 水平方向の伸縮性の指定 */
+  /* 水平方向の伸縮性 */
   padding: 10px;
-  /* 内側の余白の指定 */
+  /* 内側の余白 */
   margin-right: 10px;
-  /* 右側との距離を指定 */
+  /* 右側の間隔 */
   border: 1px solid #19A7CE;
-  /* 周りの線の指定 */
+  /* 周囲の線 */
   border-radius: 5px;
-  /* 周りの線の角を指定 */
+  /* 角の丸み */
 }
 
 /* ボタンのスタイル */
 button {
   padding: 10px 20px;
-  /* 内側の余白の指定 */
+  /* 内側の余白 */
   color: #19A7CE;
-  /* テキストカラー */
+  /* テキストの色 */
   border: none;
-  /* 周りの線をなくす */
+  /* 周囲の線をなくす */
   border-radius: 5px;
-  /* 周りの線の角を指定 */
+  /* 角の丸み */
   cursor: pointer;
-  /* カーソルの形状をポインターに指定 */
+  /* カーソルの形状 */
   font-size: larger;
 }
 
@@ -201,6 +201,11 @@ table td {
   /* テキストを中央揃えに */
   font-size: 25px;
 
+}
+
+form {
+  display: flex;
+  margin-left: 5px;
 }
 
 /* 従業員一覧のスタイル */

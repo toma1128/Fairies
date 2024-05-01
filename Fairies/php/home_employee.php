@@ -139,7 +139,7 @@ $data = [   //フォームのデータ
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"] ?> ';">
+                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"]  ?> ';">
                                     <td><?= h($r["DNAME"]) ?></td>
                                     <td><?= h($r["ENAME"]) ?></td>
                                     <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
@@ -169,7 +169,7 @@ $data = [   //フォームのデータ
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_employee.php?id=<?= $r['ID'] ?>';">
+                                <tr onclick="location.href='./personal_employee.php?id=<?= $r['EFID'] ?>';">
                                     <td><?= h($r["DNAME"]) ?></td>
                                     <td><?= h($r["ENAME"]) ?></td>
                                     <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
