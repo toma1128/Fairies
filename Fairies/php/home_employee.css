@@ -125,7 +125,8 @@ h2 {
 }
 
 .soto {
-  margin-left: 15px;
+  margin-left: 20px;
+
 }
 
 /* 検索入力のスタイル */
@@ -141,7 +142,7 @@ input[type="search"] {
   border-radius: 3px;
   /* 周りの線の角を指定 */
   font-size: 30px;
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 
@@ -317,6 +318,7 @@ table td {
 .category {
 
   margin-right: 5px;
+  margin-left: 15px;
 
 }
 
