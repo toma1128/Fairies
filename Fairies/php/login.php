@@ -44,10 +44,10 @@
 
   }elseif(isset($_POST['submitBtn2'])){   //お客様の方のログインボタンが押されたら
     $num = $_POST['userId_customer'];
-    $pass = $_POST['password_customer'];
+    $password = $_POST['password_customer'];
 
-    $pass_sql = $conn_DB->prepare('SELECT PASSWORD FROM CUSTOMERS WHERE NUMBER = ?');
-    $pass_sql->bind_param("s",$num);
+    $pass_sql = $conn_DB->prepare('SELECT PASSWORD FROM CUSTOMERS WHERE CUSTOMERNUMBER = ?');
+    $pass_sql->bind_param("i",$num);
     $pass_sql->execute(); // クエリを実行する
 
     // 結果セットを取得し、関連する行を配列に追加する

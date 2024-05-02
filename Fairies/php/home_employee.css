@@ -12,12 +12,12 @@ body {
   /* フォント */
   height: 100vh;
   /* 高さ　*/
-  background-color: green;
+  background-color: #ffffff;
 }
 
 /* trのカーソル処理 */
 tr:hover {
-  background: gray;
+  background: rgb(227, 227, 227);
   cursor: pointer;
 }
 
@@ -114,14 +114,14 @@ h2 {
   /* 下の要素との距離を指定 */
   text-align: center;
 }
-
-/* form_linkのスタイル */
-.form_link {
-  text-decoration: none;
-  /* リンクの下の線を削除 */
+header ul li{
   color: #333;
   /* テキストカラー */
+}
 
+header>ul>li:hover {
+  background: #a1e0e5;
+  text-decoration: none;
 }
 
 .soto {
@@ -303,7 +303,9 @@ form {
   display: block;
 }
 
-
+tbody>tr>td {
+  width: 10px;
+}
 
 .categoryWrap {
   display: flex;

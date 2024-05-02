@@ -62,7 +62,7 @@ while ($row = $result_set2->fetch_assoc()) {
     $result2[] = $row;
 }
 
-var_dump($_POST);
+// var_dump($_POST);
 // var_dump('help me please');
 //全権表示用のクエリを準備する
 
@@ -101,8 +101,8 @@ $data = [   //フォームのデータ
             <img src="images/fairieshome.png" alt="ロゴ" width="230">
         </h1>
         <ul>
-            <li><a class="form_link" href="./form_employee.php">安否報告</a></li>
-            <li><a class="form_link" href="./login.php">ログアウト</a></li>
+            <li onclick="location.href='./form_employee.php';">安否報告</li>
+            <li onclick="location.href='./login.php';">ログアウト</li>
         </ul>
     </header>
     <main>
