@@ -1,7 +1,4 @@
-<!-- 
-１．新規登録画面で登録を押した場合にエラーに合ってるのがある場合、
-エラーメッセージがダイアログで小さく表示されるような作業をしようとする
-２．後-->
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -64,20 +61,6 @@
                     </div>
                 </div>
                 <button id="submit" type="submit" name="submit" onclick="location.href='./empregister_check.php'">登&nbsp;録</button>
-                <!-- 新規登録画面で失敗した場合、ダイアログにその結果を表示される用-->
-                <!-- <dialog id="resultDialog">
-                    <div id="dialogWrap">
-                        <form action="" method="post" id="addItemForm">
-                            <div class="form-item-wrap">
-                                <div class="form-item">
-                                <?= $result["message"] ?><br>
-                                </div>
-                            </div>
-                            <div class="form-item-wrap"><button id="addItem" type="submit">確認</button></div>
-                        </form>
-                    </div>
-                    <span class="material-icons">close</span>
-                </dialog> -->
             </form>
         </div>
 </body>
