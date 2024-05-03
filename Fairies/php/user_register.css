@@ -5,11 +5,13 @@
 }
 
 body {
-  background-color: #f8fefe;
+  background-color: #b0daff;
 }
 
+/* header */
 header {
-  background-color: #b0daff;
+  background-color: #f8fefe;
+  /* TODO 他のページとの統一 */
   height: 5em;
   /* 配置 */
   display: flex;
@@ -24,6 +26,8 @@ header img {
   width: 35vh;
   margin-left: 15px;
 }
+
+/* TODO ボタンデザインの調整 */
 header a {
   /* テキストサイズ */
   font-size: 1.8rem;
@@ -40,30 +44,55 @@ header a {
   text-decoration: none;
   margin-right: 15px;
 }
+/* カーソルの重なったときの処理 */
+header a :hover {
+  background-color: aqua;
+}
 
-/*ログアウトボタンのポジションを調整*/
-/* nav {
-  position: absolute;
-  left: 1220px;
-  bottom: 660px;
-} */
-/* ログアウトボタンのスタイル */
-.button {
-  font-size: 20px; /* 必要に応じてフォントサイズを調整してください */
-  letter-spacing: 5px; /* 文字と文字の間隔を2ピクセルに設定 */
-  padding: 20px 35px; /* 必要に応じて余白を調整してください */
-  border: none; /* 外枠を削除 */
-  background-color: white;
-  border-left: 5px solid aqua; /* 左側のボーダーを設定 */
-  border-right: 5px solid aqua; /* 右側のボーダーを設定 */
-  font-family: "Kiwi Maru", serif; /*フォントの種類を設定*/
-  transition: transform 0.2s; /* 変化がスムーズになるようにトランジションを追加 */
+/* main */
+main {
+  /* サイズ */
+  max-width: 56%;
+  /* 配置（真ん中） */
+  margin: 20px auto;
+  /* 内の距離 */
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 10px;
+  background-color: #e5e5e5;
 }
-.button:active {
-  transform: translateY(
-    3px
-  ); /* ボタンがクリックされたときに少し下に移動させる */
+
+/* タイトル */
+#title{
+  background-color: #f8fefe;
+  /* 内外の配置 */
+  margin: 15px;
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 10px;
+  /* 中身の配置 */
+  text-align: center;
+  /* 文字サイズ */
+  font-size: x-large;
+
 }
+h2{
+  /* 配置真ん中 */
+  margin: 0 auto;
+}
+
+/* 選択肢たちの割の枠 */
+.select {
+  background-color: #f8fefe;
+  /* 内外の配置 */
+  margin: 15px;
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 10px;
+}
+
+
+
 /* header div {
   background-color: gray;
   padding: 5px;
@@ -87,23 +116,24 @@ header a {
   margin-bottom: 0px;
   font-family: "Kiwi Maru", serif; /*フォントの種類を設定*/
 /* } */
-*/ */ main {
+*/ */ 
+/* main {
   max-width: 54%;
   margin: -10px auto;
   padding: 90px;
   background-color: gray;
   border-radius: 5px;
-  /* 新しいスタイル */
+  
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  /* 画面の高さいっぱいに表示 */
-  font-family: "Kiwi Maru", serif; /*フォントの種類を設定*/
-  border-bottom-left-radius: 10px; /* 角の丸みを指定 */
-  border-bottom-right-radius: 10px; /* 角の丸みを指定 */
-}
+ 
+  font-family: "Kiwi Maru", serif;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+} */
 main h2 {
   font-size: 30px;
 }
