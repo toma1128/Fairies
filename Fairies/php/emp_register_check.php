@@ -77,7 +77,8 @@ $data = [   //フォームのデータ
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="user_register_check.css">
-    <title>新規作成画面</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <title>新規作成画面（確認）</title>
 </head>
 
 <body>
@@ -87,36 +88,40 @@ $data = [   //フォームのデータ
         </h1>
     </header>
     <main>
-        <div id="screen">
-            <div class="select">
-                <h2>新規作成（従業員用）</h2>
+        <div>
+            <div id="title">
+                <h2>新規作成（確認）</h2>
             </div>
-            <div class="container" class="select">
-                <label for="team">所属門又はチーム:</label>
-                <p><?= $data['department'][$department] ?></p>
+            <div id="check_words">
+                <div class="select">
+                    <label for="team">所属門又はチーム</label>
+                    <p class="short"><?= $data['department'][$department] ?></p>
+                </div>
                 <div class="select">
                     <label for="number">社員番号</label><br>
-                    <p><?= $number ?></p>
+                    <p class="short"><?= $number ?></p>
                 </div>
                 <div class="select">
                     <div>
                         <label for="uname">お名前</label><br>
-                        <p><?= $name ?></p>
+                        <p class="long"><?= $name ?></p>
                     </div>
                     <div>
                         <label for="password">パスワード</label><br>
-                        <p><?= $pass ?></p>
+                        <p class="short"><?= $pass ?></p>
                     </div>
                 </div>
-
                 <div class="select">
                     <label for="birthday">入社日</label><br>
-                    <p><?= $formattedJoinDate ?></p>
+                    <p class="long"><?= $formattedJoinDate ?></p>
+                </div>
+                <div>
+                    <button id="submit" type="submit" name="submit" onclick="location.href='./home_employee.php'">入力画面に戻る</button>
+                    <button id="submit" type="submit" name="submit" onclick="location.href='./home_employee.php'">送信</button>
                 </div>
             </div>
-            <p>送信しました</p>
-            <button id="submit" type="submit" name="submit" onclick="location.href='./home_employee.php'">了解</button>
         </div>
+    </main>
 </body>
 
 </html>

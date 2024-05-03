@@ -80,42 +80,35 @@ h2 {
   /* 配置真ん中 */
   margin: 0 auto;
 }
+#check_words {
+  background-color: #f8fefe;
+}
 
 /* 選択肢たちの割の枠 */
 .select {
-  background-color: #f8fefe;
   /* 内外の配置 */
-  margin: 15px;
   padding: 20px;
   /* 角の丸み */
   border-radius: 10px;
 }
-/* 説明欄の大きさ */
-p {
-  font-size: x-small;
-  /* 外配置 */
-  margin: 5px 20px;
-}
-/* 選択項目 */
-select {
+/* 入力内容 */
+p{
   font-size: small;
-  /* 内配置 */
-  padding: 10px;
   /* 外配置 */
-  margin: 10px 20px;
-  /* 枠 */
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  margin: 5px 10px;
+  /* 内外の配置 */
+  padding: 10px;
+  /* 角の丸み */
+  border-radius: 5px;
+  background-color: #e5e5e5;
   /* サイズ */
-  width: 110px;
+  width: auto;
 }
 /* 項目タイトル */
 label {
   font-size: large;
   /* 太文字 */
   font-weight: bold;
-  /* 外配置 */
-  margin-bottom: 10px;
 }
 /* 入力する */
 input[type="text"],
