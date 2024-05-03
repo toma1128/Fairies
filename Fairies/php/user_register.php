@@ -21,8 +21,7 @@
             </div>
             <form id="registrationForm" action="./emp_register_check.php" method="POST" class="w-1/2 mx-8">
                 <div class="select">
-                    <label for="team">所属門又はチーム</label>
-                    <p>半角数字で入力してください。</p>
+                    <label for="team">所属門又はチーム<br></label>
                     <select name="team" id="team">
                         <option value="1">営業</option>
                         <option value="2">設計</option>
@@ -33,24 +32,25 @@
                 </div>
                 <div class="select">
                     <label for="number">社員番号を入力</label><br>
+                    <p>半角数字で入力してください。</p>
                     <input type="number" name="number" id="number" placeholder="例:99999" required>
                 </div>
                 <div class="select">
                     <div>
                         <label for="uname">お名前を入力</label><br>
-                        <input type="text" name="uname" id="uname" placeholder="田 中 太 郎" required>
+                        <input type="text" name="uname" id="uname" placeholder="例:田 中 太 郎" required>
                     </div>
                     <div>
                         <label for="password">パスワードを設定</label><br>
                         <p>記号と英数字をそれぞれ一文字以上を含めて、八文字以上で入力してください</p>
-                        <input type="password" name="password" id="password" placeholder="123qwe" required>
+                        <input type="password" name="password" id="password" placeholder="例:123qwe" required>
                     </div>
                 </div>
                 <div class="select">
                     <label for="birthday">入社日を入力</label><br>
                     <input type="date" id="birthday" name="birthday" required>
                 </div>
-                <button type="submit" name="submit" onclick="location.href='./emp_register_check.php'">登 録</button>
+                <button type="submit" name="submit" onclick="location.href='./emp_register_check.php'">送信内容を確認する</button>
             </form>
         </div>
     </main>
