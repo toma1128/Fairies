@@ -74,7 +74,7 @@ try{
 <body>
     <header>
         <h1 class="logo">
-            <img src="images/fairieshome.png" alt="ロゴ" width="230">
+            <img src="images/fairies_home.png" alt="ロゴ" width="230">
         </h1>
         <ul>
             <li><a class="form_link" href="">ログアウト</a></li>

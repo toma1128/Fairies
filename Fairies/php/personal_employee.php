@@ -60,7 +60,7 @@ $data = [   //フォームのデータ
     <body>
         <header>
             <h1>
-                <img src="images/fairieshome.png" alt="ロゴ" width="280">
+                <img src="images/fairies_home.png" alt="ロゴ" width="280">
             </h1>
             <nav>
                 <ul class="nav-menu">
