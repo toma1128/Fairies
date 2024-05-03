@@ -91,120 +91,62 @@ h2 {
   border-radius: 10px;
 }
 /* 説明欄の大きさ */
-p{
+p {
   font-size: x-small;
+  /* 外配置 */
+  margin: 5px 20px;
 }
 /* 選択項目 */
-select{
-  font-size: large;
+select {
+  font-size: small;
+  /* 内配置 */
+  padding: 10px;
+  /* 外配置 */
+  margin: 10px 20px;
+  /* 枠 */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  /* サイズ */
+  width: 110px;
 }
-
-/* header div {
-  background-color: gray;
-  padding: 5px;
-  height: 150px;
-  margin-left: 255px;
-  margin-right: 255px;
-  margin-top: 20px;
-  border-top-left-radius: 10px; /* 角の丸みを指定 */
-/* border-top-right-radius: 10px;  */
-/* }  */
-
-/* header h2 {
-  text-align: center;
-  padding: 15px;
-  font-size: 35px;
-  background-color: white;
-  border-radius: 10px; /* 角の丸みを指定 */
-/* width: 61%;
-  margin-top: 50px;
-  margin-left: 177px;
-  margin-bottom: 0px;
-  font-family: "Kiwi Maru", serif; /*フォントの種類を設定*/
-/* } */
-*/ */ 
-/* main {
-  max-width: 54%;
-  margin: -10px auto;
-  padding: 90px;
-  background-color: gray;
-  border-radius: 5px;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
- 
-  font-family: "Kiwi Maru", serif;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-} */
-main h2 {
-  font-size: 30px;
-}
-#team {
-  font-size: 15px; /* メニュー項目のフォントサイズを大きくする */
-  padding: 10px; /* メニューの上下左右の余白を追加 */
-  margin: 15px;
-  width: 200px; /* メニューの幅を設定 */
-  margin-left: 25px;
-  font-family: "Kiwi Maru", serif; /*フォントの種類を設定*/
-}
-/*題のフォントサイズを変更*/
-.font-size {
-  font-size: 23px;
-}
-
-#screen {
-  width: 70%;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px; /* 角の丸みを指定 */
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
+/* 項目タイトル */
 label {
+  font-size: large;
+  /* 太文字 */
   font-weight: bold;
-  margin-bottom: 5px;
+  /* 外配置 */
+  margin-bottom: 10px;
 }
-
+/* 入力する */
 input[type="text"],
 input[type="password"],
 input[type="number"],
 input[type="date"] {
+  /* 内配置 */
   padding: 10px;
-  margin-top: 20px;
-  margin-left: 25px;
-  margin-bottom: 20px;
+  /* 外配置 */
+  margin: 10px 20px;
+  /* 枠 */
   border: 1px solid #ccc;
   border-radius: 10px;
-  font-family: "Kiwi Maru", serif; /*フォントの種類を設定*/
 }
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="date"]:focus {
-  border-color: #49ada1;
-}
-main button {
+/* button */
+button {
+  /* サイズ */
   width: 30%;
+  /* 内配置 */
   padding: 15px;
-  margin-left: 170px;
-  margin-top: 50px;
-  font-size: 18px;
-  background-color: #49ada1;
-  color: #fff;
+  font-size: large;
+  /* 真ん中 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* 色 */
+  background-color: #f8fefe;
+  /* 枠 */
   border: none;
-  border-radius: 5px;
-  font-family: "Kiwi Maru", serif; /*フォントの種類を設定*/
+  border-radius: 10px;
 }
-
-main button:hover {
-  background-color: #ab753e;
+button:hover {
+  background-color: #b0daff;
 }

@@ -23,7 +23,7 @@
                 <div class="select">
                     <label for="team">所属門又はチーム</label>
                     <p>半角数字で入力してください。</p>
-                    <select>
+                    <select name="team" id="team">
                         <option value="1">営業</option>
                         <option value="2">設計</option>
                         <option value="3">施工管理</option>
