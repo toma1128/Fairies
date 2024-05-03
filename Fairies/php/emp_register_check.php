@@ -60,7 +60,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="user_register.css">
+    <link rel="stylesheet" href="user_register_check.css">
     <title>新規作成画面</title>
 </head>
 
