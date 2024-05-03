@@ -114,6 +114,9 @@ label {
 }
 
 /* button */
+#button{
+    display: flex;
+}
 button {
   /* サイズ */
   width: 30%;

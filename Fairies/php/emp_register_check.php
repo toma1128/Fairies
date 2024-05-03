@@ -83,9 +83,8 @@ $data = [   //フォームのデータ
 
 <body>
     <header>
-        <h1 class="logo">
-            <img src="images/fairies_home.png" alt="ロゴ" width="230">
-        </h1>
+        <img src="images/fairies_home.png" alt="ロゴ" width="230">
+        <a href="http://localhost/Fairies/Fairies/php/login.php">ホームに戻る</a>
     </header>
     <main>
         <div>
@@ -95,30 +94,28 @@ $data = [   //フォームのデータ
             <div id="check_words">
                 <div class="select">
                     <label for="team">所属門又はチーム</label>
-                    <p class="short"><?= $data['department'][$department] ?></p>
+                    <p><?= $data['department'][$department] ?></p>
                 </div>
                 <div class="select">
                     <label for="number">社員番号</label><br>
-                    <p class="short"><?= $number ?></p>
+                    <p><?= $number ?></p>
                 </div>
                 <div class="select">
-                    <div>
-                        <label for="uname">お名前</label><br>
-                        <p class="long"><?= $name ?></p>
-                    </div>
-                    <div>
-                        <label for="password">パスワード</label><br>
-                        <p class="short"><?= $pass ?></p>
-                    </div>
+                    <label for="uname">お名前</label><br>
+                    <p><?= $name ?></p>
+                </div>
+                <div class="select">
+                    <label for="password">パスワード</label><br>
+                    <p><?= $pass ?></p>
                 </div>
                 <div class="select">
                     <label for="birthday">入社日</label><br>
-                    <p class="long"><?= $formattedJoinDate ?></p>
+                    <p><?= $formattedJoinDate ?></p>
                 </div>
-                <div>
-                    <button id="submit" type="submit" name="submit" onclick="location.href='./home_employee.php'">入力画面に戻る</button>
-                    <button id="submit" type="submit" name="submit" onclick="location.href='./home_employee.php'">送信</button>
-                </div>
+            </div>
+            <div id="button">
+                <button id="submit" type="submit" name="submit" onclick="location.href='./user_register.php'">入力画面に戻る</button>
+                <button id="submit" type="submit" name="submit" onclick="location.href='./login.php'">送信</button>
             </div>
         </div>
     </main>
