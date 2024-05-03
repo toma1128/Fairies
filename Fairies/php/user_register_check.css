@@ -13,7 +13,7 @@ body {
 header {
   background-color: #f8fefe;
   /* TODO 他のページとの統一 */
-  height: 5em;
+  height: 7vw;
   /* 配置 */
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ header {
 
 header img {
   /* 高さ */
-  height: 4.5rem;
+  height: 80%;
   /* 横幅 */
   width: 35vh;
   margin-left: 15px;
@@ -31,7 +31,7 @@ header img {
 /* TODO ボタンデザインの調整 */
 header a {
   /* テキストサイズ */
-  font-size: 1.8rem;
+  font-size: 5vmin;
   background-color: #b0daff;
   /*枠線・上*/
   border-top: solid 1px #19a7ce;
@@ -44,6 +44,9 @@ header a {
   /* 下線消す */
   text-decoration: none;
   margin-right: 15px;
+  /* 高さ */
+  height: 7vmin;
+  align-items: center;
 }
 /* カーソルの重なったときの処理 */
 header a :hover {
@@ -53,7 +56,7 @@ header a :hover {
 /* main */
 main {
   /* サイズ */
-  max-width: 56%;
+  width: 50vw;
   /* 配置（真ん中） */
   margin: 20px auto;
   /* 内の距離 */
@@ -67,14 +70,14 @@ main {
 #title {
   background-color: #f8fefe;
   /* 内外の配置 */
-  margin: 15px;
+  margin: 1.5vw;
   padding: 20px;
   /* 角の丸み */
   border-radius: 5px;
   /* 中身の配置 */
   text-align: center;
   /* 文字サイズ */
-  font-size: x-large;
+  font-size: 3vmin;
 }
 h2 {
   /* 配置真ん中 */
@@ -83,7 +86,7 @@ h2 {
 #check_words {
   background-color: #f8fefe;
   /* 配置 */
-  margin: 15px;
+  margin: 1.5vw;
   /* 角の丸み */
   border-radius: 5px;
 }
@@ -95,7 +98,7 @@ h2 {
 }
 /* 入力内容 */
 p {
-  font-size: small;
+  font-size: 2vmin;
   /* 外配置 */
   margin: 5px 10px;
   /* 内外の配置 */
@@ -108,21 +111,22 @@ p {
 }
 /* 項目タイトル */
 label {
-  font-size: large;
+  font-size: 2.5vmin;
   /* 太文字 */
   font-weight: bold;
 }
 
 /* button */
-#button{
-    display: flex;
+#button {
+  display: flex;
+  align-items: center;
 }
 button {
   /* サイズ */
   width: 30%;
   /* 内配置 */
-  padding: 15px;
-  font-size: large;
+  padding: 2vmin;
+  font-size: 2.5vmin;
   /* 真ん中 */
   margin: 0 auto;
   display: flex;
