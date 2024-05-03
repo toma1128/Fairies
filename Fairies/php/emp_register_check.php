@@ -1,66 +1,52 @@
 <?php
-// date_default_timezone_set('Asia/Tokyo');
-// $department = filter_input(INPUT_POST, "team", FILTER_VALIDATE_INT);
-// $number = filter_input(INPUT_POST, "number");
-// $name = filter_input(INPUT_POST, "uname");
-// $pass = filter_input(INPUT_POST, "password");
-// $joinDate = filter_input(INPUT_POST, "birthday");
-// $unixTimestamp = strtotime($joinDate);
-// $formattedJoinDate = date('Y-m-d', $unixTimestamp); // 日付のみの形式にフォーマット
+date_default_timezone_set('Asia/Tokyo');
+$department = filter_input(INPUT_POST, "team", FILTER_VALIDATE_INT);
+$number = filter_input(INPUT_POST, "number");
+$name = filter_input(INPUT_POST, "uname");
+$pass = filter_input(INPUT_POST, "password");
+$joinDate = filter_input(INPUT_POST, "birthday");
+$unixTimestamp = strtotime($joinDate);
+$formattedJoinDate = date('Y-m-d', $unixTimestamp); // 日付のみの形式にフォーマット
 
 
 
-//     // データベースへの接続情報
-//     $servername = "localhost"; // データベースのホスト名
-//     $username = "fairies"; // データベースのユーザー名
-//     $password = "daimonia"; // データベースのパスワード
-//     $dbname = "feya"; // 使用するデータベース名
+    // データベースへの接続情報
+    $servername = "localhost"; // データベースのホスト名
+    $username = "fairies"; // データベースのユーザー名
+    $password = "daimonia"; // データベースのパスワード
+    $dbname = "feya"; // 使用するデータベース名
 
-//     // データベースに接続する
-//     $conn_DB = new mysqli($servername, $username, $password, $dbname);
+    // データベースに接続する
+    $conn_DB = new mysqli($servername, $username, $password, $dbname);
 
-//     // 接続を確認する
-//     if ($conn_DB->connect_error) {
-//         die("Connection failed: " . $conn->connect_error);
-//     }
+    // 接続を確認する
+    if ($conn_DB->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-//     $conn_DB->set_charset('utf8');   //文字コードを設定
+    $conn_DB->set_charset('utf8');   //文字コードを設定
 
-//     // SQLクエリを作成して実行する
-//     $stmt = $conn_DB->prepare('INSERT INTO EMPLOYEES (DEPARTMENT_ID, NUMBER, NAME, PASSWORD, HIREDATE) VALUES (?, ?, ?, ?, ?)');
+    // SQLクエリを作成して実行する
+    $stmt = $conn_DB->prepare('INSERT INTO EMPLOYEES (DEPARTMENT_ID, NUMBER, NAME, PASSWORD, HIREDATE) VALUES (?, ?, ?, ?, ?)');
 
-//     $stmt->bind_param('issss',$department, $number, $name, $pass, $formattedJoinDate);
-//     if($stmt->execute()){
-//         // ステートメントを閉じる
-//         $stmt->close();
-//         // データベース接続を閉じる
-//         $conn_DB->close();
-//     } else {
-//         // エラーが発生した場合の処理
-//         echo "Error: " . $stmt->error;
-//     }
-// if($_POST['submit']){
-//     session_start();
-//     $_SESSION['number'] = $number;
+    $stmt->bind_param('issss',$department, $number, $name, $pass, $formattedJoinDate);
+    if($stmt->execute()){
+        // ステートメントを閉じる
+        $stmt->close();
+        // データベース接続を閉じる
+        $conn_DB->close();
+    } else {
+        // エラーが発生した場合の処理
+        echo "Error: " . $stmt->error;
+    }
+if($_POST['submit']){
+    session_start();
+    $_SESSION['number'] = $number;
 
-//     header("Location: home_employee.php");
-//     exit;
-// }
+    header("Location: home_employee.php");
+    exit;
+}
 
-// $data = [   //フォームのデータ
-//     "department" => [
-//         1 => "営業部",
-//         2 => "設計部",
-//         3 => "施行管理部",
-//         4 => "事務部",
-//         5 => "積算部"
-//     ]
-// ]
-$department = 1;
-$number = 12345;
-$name = "だるい";
-$pass = 1234567;
-$formattedJoinDate = "2024-05-04";
 $data = [   //フォームのデータ
     "department" => [
         1 => "営業部",
@@ -70,6 +56,7 @@ $data = [   //フォームのデータ
         5 => "積算部"
     ]
 ]
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
