@@ -27,7 +27,7 @@
     </header>
     <main>
         <div id="screen">
-            <form id="registrationForm" action="./empregister_check.php" method="POST" class="w-1/2 mx-8">
+            <form id="registrationForm" action="./emp_register_check.php" method="POST" class="w-1/2 mx-8">
                 
                 <div class="container" class="select">
                     <label for="team" class=font-size>所属門又はチーム</label>
