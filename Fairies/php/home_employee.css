@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 /* bodyのスタイル */
@@ -25,7 +24,7 @@ tr:hover {
 header {
   /* 中央ぞろえ */
   text-align: center;
-  background-color: #F8FEFE;
+  background-color: #f8fefe;
   /* 縦 */
   height: 10%;
   /* 横並びに */
@@ -34,7 +33,7 @@ header {
   justify-content: space-between;
   /* 中央揃えに変更 */
   align-items: center;
-  
+
   /* 影のスタイルを指定 ひとまず*/
 }
 
@@ -60,8 +59,6 @@ header ul {
   justify-content: space-around;
   /* 中央ぞろえ */
   align-items: center;
-
-
 }
 
 /* 従業員一覧のliタグ */
@@ -74,23 +71,22 @@ header ul li {
   /*余白*/
   background: #e3f6f5;
   /*背景色*/
-  border-top: solid 1px #19A7CE;
+  border-top: solid 1px #19a7ce;
   /*枠線・上*/
-  border-bottom: solid 1px #19A7CE;
+  border-bottom: solid 1px #19a7ce;
   /*枠線・下*/
-  border-right: solid 1px #19A7CE;
+  border-right: solid 1px #19a7ce;
   /*枠線・右*/
-  border-left: solid 1px #19A7CE;
+  border-left: solid 1px #19a7ce;
   /*枠線・左*/
 
   margin-right: 15px;
-
 }
 
 /* mainのスタイル */
 main {
   /* 背景カラー */
-  background-color: #B0DAFF;
+  background-color: #b0daff;
   /* 高さ */
   height: 90%;
 
@@ -100,7 +96,6 @@ main {
 form {
   height: 100%;
   display: flex;
-
 }
 
 #screen {
@@ -114,19 +109,18 @@ h2 {
   /* 下の要素との距離を指定 */
   text-align: center;
 }
-header ul li{
+header ul li {
   color: #333;
   /* テキストカラー */
 }
 
-header>ul>li:hover {
+header > ul > li:hover {
   background: #a1e0e5;
   text-decoration: none;
 }
 
 .soto {
   margin-left: 20px;
-
 }
 
 /* 検索入力のスタイル */
@@ -137,14 +131,13 @@ input[type="search"] {
   /* 内側の余白 */
   margin-right: 10px;
   /* 右側の間隔 */
-  border: 3px solid #19A7CE;
+  border: 3px solid #19a7ce;
   /* 周囲の線 */
   border-radius: 3px;
   /* 角の丸み */
   font-size: 30px;
   margin-left: 20px;
 }
-
 
 /* selectタグのスタイル */
 select {
@@ -154,7 +147,7 @@ select {
   /* 内側の余白 */
   margin-right: 10px;
   /* 右側の間隔 */
-  border: 1px solid #19A7CE;
+  border: 1px solid #19a7ce;
   /* 周囲の線 */
   border-radius: 5px;
   /* 角の丸み */
@@ -164,7 +157,7 @@ select {
 button {
   padding: 10px 20px;
   /* 内側の余白 */
-  color: #19A7CE;
+  color: #19a7ce;
   /* テキストの色 */
   border: none;
   /* 周囲の線をなくす */
@@ -181,13 +174,13 @@ table {
   /*横幅を指定*/
   border-collapse: collapse;
   /* セルの境界線を結合 */
-  border-top: solid 1px #19A7CE;
+  border-top: solid 1px #19a7ce;
   /*枠線・上*/
-  border-bottom: solid 1px #19A7CE;
+  border-bottom: solid 1px #19a7ce;
   /*枠線・下*/
-  border-right: solid 1px #19A7CE;
+  border-right: solid 1px #19a7ce;
   /*枠線・右*/
-  border-left: solid 1px #19A7CE;
+  border-left: solid 1px #19a7ce;
   /*枠線・左*/
 }
 
@@ -200,7 +193,6 @@ table td {
   text-align: center;
   /* テキストを中央揃えに */
   font-size: 25px;
-
 }
 
 form {
@@ -210,8 +202,7 @@ form {
 
 /* 従業員一覧のスタイル */
 .contentWrap {
-
-  background-color: #F8FEFE;
+  background-color: #f8fefe;
   /* 背景色を指定 */
   padding: 20px;
   /* 内側の余白の指定 */
@@ -243,22 +234,20 @@ form {
   /* 最小幅を指定 */
   min-width: 180px;
   /* 背景色 */
-  background: #146C94;
+  background: #146c94;
   /* 内側の余白の指定 */
   padding: 5px;
-
-
 }
 
 /* 従業員一覧のulタグ */
-#naviWrap>ul {
+#naviWrap > ul {
   background: #4abbc1;
   /* 左寄せ */
-  padding-left: 0
+  padding-left: 0;
 }
 
 /* 従業員一覧のliタグ */
-#naviWrap>ul>li {
+#naviWrap > ul > li {
   font-size: 1.5rem;
   /* テキストサイズ */
   list-style: none;
@@ -269,26 +258,24 @@ form {
   /* テキストカラー */
   padding: 1rem;
   /* 内側の余白の指定 */
-  border-top: solid 1px #19A7CE;
+  border-top: solid 1px #19a7ce;
   /*枠線・上*/
-  border-bottom: solid 1px #19A7CE;
+  border-bottom: solid 1px #19a7ce;
   /*枠線・下*/
-  border-right: solid 1px #19A7CE;
+  border-right: solid 1px #19a7ce;
   /*枠線・右*/
-  border-left: solid 1px #19A7CE;
+  border-left: solid 1px #19a7ce;
   /*枠線・左*/
 }
 
-
-
 /* マウスカーソルを合わせたときの処理 */
-#naviWrap>ul>li:hover {
+#naviWrap > ul > li:hover {
   background: #078890;
   text-decoration: none;
 }
 
 /* liタグの中のクラスの処理 */
-#naviWrap>ul>li.active {
+#naviWrap > ul > li.active {
   background: #078890;
 }
 
@@ -303,7 +290,7 @@ form {
   display: block;
 }
 
-tbody>tr>td {
+tbody > tr > td {
   width: 10px;
 }
 
@@ -312,15 +299,12 @@ tbody>tr>td {
   /* フレックスコンテナとして表示 */
 
   /* 水平方向のオーバーフローを許可 */
-  background-color: #F8FEFE;
+  background-color: #f8fefe;
   /* 背景色 */
   width: 100%;
   /* 中央ぞろえ */
   align-items: center;
-
-
 }
-
 
 #category_employee,
 #category_customer {
@@ -351,7 +335,7 @@ tbody>tr>td {
   /* フォントサイズを指定 */
   font-weight: bold;
   /* フォントの太さを指定 */
-  background-color: #FFFCA8;
+  background-color: #fffca8;
   /* 背景色を指定 */
   color: #000;
   /* テキストの色を指定 */
