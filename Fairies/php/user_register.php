@@ -9,9 +9,20 @@
 </head>
 
 <body>
-    <header>
-            <img src="images/fairieshome.png" alt="ロゴ" width="230">
-        <a href="http://localhost/Fairies/Fairies/php/login.php" class="button-link">ホームに戻る</a>
+<header>
+        <h1 class="logo">
+            <img src="images/fairies_home.png" alt="ロゴ" width="230">
+        </h1>
+        <nav>
+            <ul class="nav-menu">
+                <a href="http://localhost/Fairies/Fairies/php/login.php" class="button-link">
+                    <button type="button" class="button">ホームに戻る</button>
+                </a>
+            </ul>
+        </nav>
+        <div>
+            <h2>新&nbsp;規&nbsp;作&nbsp;成</h2>
+        </div>
     </header>
     <main>
         <div>

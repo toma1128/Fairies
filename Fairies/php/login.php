@@ -77,7 +77,7 @@
 
 <body>
     <header>
-      <img src="images/fairieshome.png" alt="ロゴ" width="280">
+      <img src="images/fairies_home.png" alt="ロゴ" width="280">
     </header>
     <main>
       <div class="title">
