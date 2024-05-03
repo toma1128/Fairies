@@ -19,7 +19,7 @@
         </div>
 
         <div>
-            <form id="registrationForm" action="./empregister_check.php" method="POST" class="w-1/2 mx-8">
+            <form id="registrationForm" action="./emp_register_check.php" method="POST" class="w-1/2 mx-8">
 
                 <div>
                     <label for="team">所属門又はチーム</label>
@@ -52,7 +52,7 @@
                         <input type="date" id="birthday" name="birthday" required>
                     </div>
                 </div>
-                <button type="submit" name="submit" onclick="location.href='./empregister_check.php'">登 録</button>
+                <button type="submit" name="submit" onclick="location.href='./emp_register_check.php'">登 録</button>
             </form>
         </div>
 </body>
