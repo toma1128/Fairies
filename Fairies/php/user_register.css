@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Kiwi Maru", serif;
 }
 
 body {
@@ -63,7 +64,7 @@ main {
 }
 
 /* タイトル */
-#title{
+#title {
   background-color: #f8fefe;
   /* 内外の配置 */
   margin: 15px;
@@ -74,9 +75,8 @@ main {
   text-align: center;
   /* 文字サイズ */
   font-size: x-large;
-
 }
-h2{
+h2 {
   /* 配置真ん中 */
   margin: 0 auto;
 }
@@ -90,8 +90,14 @@ h2{
   /* 角の丸み */
   border-radius: 10px;
 }
-
-
+/* 説明欄の大きさ */
+p{
+  font-size: x-small;
+}
+/* 選択項目 */
+select{
+  font-size: large;
+}
 
 /* header div {
   background-color: gray;
