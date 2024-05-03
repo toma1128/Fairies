@@ -59,7 +59,7 @@ main {
   /* 内の距離 */
   padding: 20px;
   /* 角の丸み */
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #e5e5e5;
 }
 
@@ -70,7 +70,7 @@ main {
   margin: 15px;
   padding: 20px;
   /* 角の丸み */
-  border-radius: 10px;
+  border-radius: 5px;
   /* 中身の配置 */
   text-align: center;
   /* 文字サイズ */
@@ -88,7 +88,7 @@ h2 {
   margin: 15px;
   padding: 20px;
   /* 角の丸み */
-  border-radius: 10px;
+  border-radius: 5px;
 }
 /* 説明欄の大きさ */
 p {
@@ -105,7 +105,7 @@ select {
   margin: 10px 20px;
   /* 枠 */
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 5px;
   /* サイズ */
   width: 110px;
 }
@@ -128,7 +128,7 @@ input[type="date"] {
   margin: 10px 20px;
   /* 枠 */
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 /* button */
 button {
@@ -145,7 +145,7 @@ button {
   background-color: #f8fefe;
   /* 枠 */
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 button:hover {
   background-color: #b0daff;

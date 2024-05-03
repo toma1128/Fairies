@@ -59,7 +59,7 @@ main {
   /* 内の距離 */
   padding: 20px;
   /* 角の丸み */
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #e5e5e5;
 }
 
@@ -70,7 +70,7 @@ main {
   margin: 15px;
   padding: 20px;
   /* 角の丸み */
-  border-radius: 10px;
+  border-radius: 5px;
   /* 中身の配置 */
   text-align: center;
   /* 文字サイズ */
@@ -82,17 +82,19 @@ h2 {
 }
 #check_words {
   background-color: #f8fefe;
+  /* 配置 */
+  margin: 15px;
+  /* 角の丸み */
+  border-radius: 5px;
 }
 
 /* 選択肢たちの割の枠 */
 .select {
   /* 内外の配置 */
   padding: 20px;
-  /* 角の丸み */
-  border-radius: 10px;
 }
 /* 入力内容 */
-p{
+p {
   font-size: small;
   /* 外配置 */
   margin: 5px 10px;
@@ -110,19 +112,7 @@ label {
   /* 太文字 */
   font-weight: bold;
 }
-/* 入力する */
-input[type="text"],
-input[type="password"],
-input[type="number"],
-input[type="date"] {
-  /* 内配置 */
-  padding: 10px;
-  /* 外配置 */
-  margin: 10px 20px;
-  /* 枠 */
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
+
 /* button */
 button {
   /* サイズ */
@@ -138,7 +128,7 @@ button {
   background-color: #f8fefe;
   /* 枠 */
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 button:hover {
   background-color: #b0daff;
