@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kiwi Maru", serif;
+}
+
+body {
+  background-color: #b0daff;
+}
+
+/* header */
+header {
+  background-color: #f8fefe;
+  /* TODO 他のページとの統一 */
+  height: 5em;
+  /* 配置 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img {
+  /* 高さ */
+  height: 4.5rem;
+  /* 横幅 */
+  width: 35vh;
+  margin-left: 15px;
+}
+
+/* TODO ボタンデザインの調整 */
+header a {
+  /* テキストサイズ */
+  font-size: 1.8rem;
+  background-color: #b0daff;
+  /*枠線・上*/
+  border-top: solid 1px #19a7ce;
+  /*枠線・下*/
+  border-bottom: solid 1px #19a7ce;
+  /*枠線・右*/
+  border-right: solid 1px #19a7ce;
+  /*枠線・左*/
+  border-left: solid 1px #19a7ce;
+  /* 下線消す */
+  text-decoration: none;
+  margin-right: 15px;
+}
+/* カーソルの重なったときの処理 */
+header a :hover {
+  background-color: aqua;
+}
+
+/* main */
+main {
+  /* サイズ */
+  max-width: 56%;
+  /* 配置（真ん中） */
+  margin: 20px auto;
+  /* 内の距離 */
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 10px;
+  background-color: #e5e5e5;
+}
+
+/* タイトル */
+#title {
+  background-color: #f8fefe;
+  /* 内外の配置 */
+  margin: 15px;
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 10px;
+  /* 中身の配置 */
+  text-align: center;
+  /* 文字サイズ */
+  font-size: x-large;
+}
+h2 {
+  /* 配置真ん中 */
+  margin: 0 auto;
+}
+
+/* 選択肢たちの割の枠 */
+.select {
+  background-color: #f8fefe;
+  /* 内外の配置 */
+  margin: 15px;
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 10px;
+}
+/* 説明欄の大きさ */
+p {
+  font-size: x-small;
+  /* 外配置 */
+  margin: 5px 20px;
+}
+/* 選択項目 */
+select {
+  font-size: small;
+  /* 内配置 */
+  padding: 10px;
+  /* 外配置 */
+  margin: 10px 20px;
+  /* 枠 */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  /* サイズ */
+  width: 110px;
+}
+/* 項目タイトル */
+label {
+  font-size: large;
+  /* 太文字 */
+  font-weight: bold;
+  /* 外配置 */
+  margin-bottom: 10px;
+}
+/* 入力する */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"] {
+  /* 内配置 */
+  padding: 10px;
+  /* 外配置 */
+  margin: 10px 20px;
+  /* 枠 */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+/* button */
+button {
+  /* サイズ */
+  width: 30%;
+  /* 内配置 */
+  padding: 15px;
+  font-size: large;
+  /* 真ん中 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* 色 */
+  background-color: #f8fefe;
+  /* 枠 */
+  border: none;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: #b0daff;
+}
