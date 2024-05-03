@@ -11,8 +11,9 @@
 <body>
     <header>
             <img src="images/fairies_home.png" alt="ロゴ" width="230">
-                <a href="http://localhost/Fairies/Fairies/php/login.php">ホームに戻る</a>
+            <a href="http://localhost/Fairies/Fairies/php/login.php">ホームに戻る</a>
     </header>
+
     <main>
         <div>
             <h2>新 規 作 成</h2>
