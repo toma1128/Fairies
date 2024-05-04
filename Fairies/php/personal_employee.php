@@ -13,12 +13,12 @@ if ($conn_DB->connect_error) {
 
 $where = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 
-    // $where が設定されている場合は、条件付きのクエリを実行する
-    $stmt = $conn_DB->prepare('SELECT D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON, EF.MESSAGE AS MESSAGE FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER) WHERE EF.ID = ?');
+// $where が設定されている場合は、条件付きのクエリを実行する
+$stmt = $conn_DB->prepare('SELECT D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON, EF.MESSAGE AS MESSAGE FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER) WHERE EF.ID = ?');
 
-    $stmt->bind_param("s", $where);
-    $stmt->execute(); // クエリを実行する
-    // ここで結果を処理する
+$stmt->bind_param("s", $where);
+$stmt->execute(); // クエリを実行する
+// ここで結果を処理する
 
 // 結果セットを取得し、関連する行を配列に追加する
 $result = array(); // 空の配列を作成
@@ -51,50 +51,43 @@ $data = [   //フォームのデータ
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>個人情報画面</title>
-        <link rel="stylesheet" href="personal_employee.css">
-        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <h1>
-                <img src="images/fairies_home.png" alt="ロゴ" width="280">
-            </h1>
-            <nav>
-                <ul class="nav-menu">
-                    <a href="./login.php" class="button-link">
-                        <button type="button" class="button">ログアウト</button>
-                    </a>
-                </ul>
-            </nav>
-        </header>
-        <main>
+
+<head>
+    <meta charset="UTF-8">
+    <title>個人情報画面</title>
+    <link rel="stylesheet" href="personal_employee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="images/fairies_home.png" alt="ロゴ" width="230">
+        <a href="http://localhost/Fairies/Fairies/php/home_employee.php">ホームに戻る</a>
+    </header>
+    <main>
         <?php foreach ($result as $r) : ?>
-            <div>
-                <div id = STATUS>
-                    <h3><?=$r["DNAME"] ?>部</h3>
-                    <h3>&nbsp;&nbsp;二年目</h3>
+            <div id="status_about">
+                <div id=STATUS>
+                    <h3><?= $r["DNAME"] ?></h3>
+                    <h3>入社日</h3>
                 </div>
-                <h3 id="name">&nbsp;<?=$r["ENAME"] ?>&nbsp;</h3>
+                <h3 id="name">&nbsp;<?= $r["ENAME"] ?>&nbsp;</h3>
             </div>
-            <div>
-                <div class="comment">
-                    <p><?=$r["MESSAGE"] ?></p>
+            <div id="massage">
+                <div id="comment">
+                    <p><?= $r["MESSAGE"] ?></p>
                 </div>
-                <div class="duration">
-                    <?php if($r['POSSIBLE'] == '1') : ?>
-                        <p>出社可能です。</p>
-                    <?php else: ?>
-                   <p> <?=$data["period"][$r['REASON']] ?>、<?=$data['reason'][$r['REASON']] ?>が原因で出社できません。</p>
-                   <?php endif; ?>
-                </div>
-                <div class="people_image">
-                    <img src="images/17459_color.png" alt="human" width="280">
-                </div>
+                <img src="images/17459_color.png" alt="human" id="people_image">
             </div>
-            <?php endforeach ?>
-        </main>
-    </body>
+        <?php endforeach ?>
+        <div id="duration">
+            <?php if ($r['POSSIBLE'] == '1') : ?>
+                <p>出社可能です。</p>
+            <?php else : ?>
+                <p> <?= $data["period"][$r['REASON']] ?>、<?= $data['reason'][$r['REASON']] ?>が原因で出社できません。</p>
+            <?php endif; ?>
+        </div>
+    </main>
+</body>
+
 </html>
