@@ -66,29 +66,27 @@ $data = [   //フォームのデータ
     </header>
     <main>
         <?php foreach ($result as $r) : ?>
-            <div>
+            <div id="status_about">
                 <div id=STATUS>
                     <h3><?= $r["DNAME"] ?></h3>
                     <h3>入社日</h3>
                 </div>
                 <h3 id="name">&nbsp;<?= $r["ENAME"] ?>&nbsp;</h3>
             </div>
-            <div>
-                <div class="comment">
+            <div id="massage">
+                <div id="comment">
                     <p><?= $r["MESSAGE"] ?></p>
                 </div>
-                <div class="duration">
-                    <?php if ($r['POSSIBLE'] == '1') : ?>
-                        <p>出社可能です。</p>
-                    <?php else : ?>
-                        <p> <?= $data["period"][$r['REASON']] ?>、<?= $data['reason'][$r['REASON']] ?>が原因で出社できません。</p>
-                    <?php endif; ?>
-                </div>
-                <div class="people_image">
-                    <img src="images/17459_color.png" alt="human" width="280">
-                </div>
+                <img src="images/17459_color.png" alt="human" id="people_image">
             </div>
         <?php endforeach ?>
+        <div id="duration">
+            <?php if ($r['POSSIBLE'] == '1') : ?>
+                <p>出社可能です。</p>
+            <?php else : ?>
+                <p> <?= $data["period"][$r['REASON']] ?>、<?= $data['reason'][$r['REASON']] ?>が原因で出社できません。</p>
+            <?php endif; ?>
+        </div>
     </main>
 </body>
 
