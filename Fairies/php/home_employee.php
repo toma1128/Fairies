@@ -92,14 +92,13 @@ $data = [   //フォームのデータ
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="home_employee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <title>ホーム画面</title>
 </head>
 
 <body>
     <header>
-        <h1 class="logo">
-            <img src="images/fairies_home.png" alt="ロゴ" width="230">
-        </h1>
+        <img src="images/fairies_home.png" alt="ロゴ" width="230">
         <ul>
             <li onclick="location.href='./form_employee.php';">安否報告</li>
             <li onclick="location.href='./login.php';">ログアウト</li>
@@ -121,9 +120,6 @@ $data = [   //フォームのデータ
                     </div>
 
                     <!-- </div> -->
-
-
-
                     <form action="" method="POST">
                         <input type="search" id="query" name="q" placeholder="Search...">
                         <button>検索</button>
@@ -176,8 +172,8 @@ $data = [   //フォームのデータ
                         <h2>お客様一覧</h2>
                     </div>
                     <!-- </div> -->
-                        <input type="search" id="query" name="q" placeholder="Search...">
-                        <button>検索</button>
+                    <input type="search" id="query" name="q" placeholder="Search...">
+                    <button>検索</button>
                     </form>
                 </div>
                 <div class="contentWrap">
@@ -200,4 +196,3 @@ $data = [   //フォームのデータ
 <script src="./home_emp.js"></script>
 
 </html>
-

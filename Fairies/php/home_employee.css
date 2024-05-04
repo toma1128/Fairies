@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Kiwi Maru", serif;
 }
 
 /* bodyのスタイル */
@@ -20,31 +21,23 @@ tr:hover {
   cursor: pointer;
 }
 
-/* headerのスタイル */
+/* header */
 header {
-  /* 中央ぞろえ */
-  text-align: center;
   background-color: #f8fefe;
-  /* 縦 */
   height: 10%;
-  /* 横並びに */
+  /* 配置 */
   display: flex;
-  /* 要素を横並びに配置 */
-  justify-content: space-between;
-  /* 中央揃えに変更 */
   align-items: center;
-
-  /* 影のスタイルを指定 ひとまず*/
+  justify-content: space-between;
 }
 
 /* headerの画像のスタイル */
 header img {
-  /* 右側の余白を自動で設定 */
-  margin: auto;
   /* 高さ */
-  height: 4.5rem;
+  height: 80%;
   /* 横幅 */
   width: 35vh;
+  margin-left: 15px;
 }
 
 /* ヘッダー内のul */
@@ -137,6 +130,7 @@ input[type="search"] {
   /* 角の丸み */
   font-size: 30px;
   margin-left: 20px;
+  width: 30%;
 }
 
 /* selectタグのスタイル */
@@ -202,14 +196,11 @@ form {
 
 /* 従業員一覧のスタイル */
 .contentWrap {
+  height: 90%;
   background-color: #f8fefe;
   /* 背景色を指定 */
   padding: 20px;
   /* 内側の余白の指定 */
-  border-radius: 5px;
-  /* 周りの線の角を指定 */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* 影のスタイルを指定 */
   display: flex;
   /* フレックスコンテナとして指定 */
   flex-direction: column;
@@ -219,6 +210,9 @@ form {
   align-items: center;
   /* アイテムを中央揃えに配置 */
   overflow: scroll;
+
+  /* スクロール */
+  overflow-y: scroll;
 }
 
 /* 従業員一覧のdiv */
@@ -304,7 +298,9 @@ tbody > tr > td {
   width: 100%;
   /* 中央ぞろえ */
   align-items: center;
+  height: 10%;
 }
+
 
 #category_employee,
 #category_customer {
