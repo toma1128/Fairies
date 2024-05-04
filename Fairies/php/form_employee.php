@@ -27,13 +27,13 @@ $_SESSION['number'] = $num;
             <form action="./form_check.php" method="POST">
                 <div class=select>
                     <p>出勤可能ですか？</p>
-                    <div class="select_word">
+                    <div class="select_word" id="possible">
                         <input type="radio" id="yes" name="yesnochoice" value="1">
-                        <label for="yes" class=font>可能</label>
+                        <label for="yes">可能</label>
                     </div>
-                    <div class="select_word">
+                    <div class="select_word" id="impossible">
                         <input type="radio" id="no" name="yesnochoice" value="2">
-                        <label for="no" class=font>不可</label>
+                        <label for="no">不可</label>
                     </div>
                 </div>
                 <div class="select">
@@ -90,6 +90,7 @@ $_SESSION['number'] = $num;
             </form>
         </div>
     </main>
+    <script src="./form_employee.js"></script>
 </body>
 
 </html>
