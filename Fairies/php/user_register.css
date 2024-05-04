@@ -12,7 +12,6 @@ body {
 /* header */
 header {
   background-color: #f8fefe;
-  /* TODO 他のページとの統一 */
   height: 7vw;
   /* 配置 */
   display: flex;
