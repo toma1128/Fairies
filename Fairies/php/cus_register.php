@@ -99,7 +99,7 @@ try {
                         <input type="password" name="password" id="password" placeholder="例:123qwe" required>
                     </div>
                 </div>
-                <button id="submit" type="submit" name="registerBtn">登録</button>
+                <button type="submit" name="submit" onclick="location.href='./cus_register_check.php'">送信内容を確認する</button>
             </form>
         </div>
     </main>

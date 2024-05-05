@@ -1,15 +1,8 @@
 <?php
 date_default_timezone_set('Asia/Tokyo');
-$department = filter_input(INPUT_POST, "team", FILTER_VALIDATE_INT);
 $number = filter_input(INPUT_POST, "number");
 $name = filter_input(INPUT_POST, "uname");
 $pass = filter_input(INPUT_POST, "password");
-$joinDate = filter_input(INPUT_POST, "birthday");
-$unixTimestamp = strtotime($joinDate);
-$formattedJoinDate = date('Y-m-d', $unixTimestamp); // 日付のみの形式にフォーマット
-
-
-
     // データベースへの接続情報
     $servername = "localhost"; // データベースのホスト名
     $username = "fairies"; // データベースのユーザー名
@@ -27,9 +20,9 @@ $formattedJoinDate = date('Y-m-d', $unixTimestamp); // 日付のみの形式に�
     $conn_DB->set_charset('utf8');   //文字コードを設定
 
     // SQLクエリを作成して実行する
-    $stmt = $conn_DB->prepare('INSERT INTO EMPLOYEES (DEPARTMENT_ID, NUMBER, NAME, PASSWORD, HIREDATE) VALUES (?, ?, ?, ?, ?)');
+    $stmt = $conn_DB->prepare('INSERT INTO CUSTOMERS (NUMBER, NAME, PASSWORD) VALUES (?, ?, ?)');
 
-    $stmt->bind_param('issss',$department, $number, $name, $pass, $formattedJoinDate);
+    $stmt->bind_param('issss',$number, $name, $pass);
     if($stmt->execute()){
         // ステートメントを閉じる
         $stmt->close();
@@ -46,17 +39,6 @@ if($_POST['submit']){
     header("Location: login.php");
     exit;
 }
-
-$data = [   //フォームのデータ
-    "department" => [
-        1 => "営業部",
-        2 => "設計部",
-        3 => "施行管理部",
-        4 => "事務部",
-        5 => "積算部"
-    ]
-]
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
