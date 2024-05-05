@@ -1,6 +1,7 @@
 <?php
-function h( $str ){
-    return htmlspecialchars( $str, ENT_QUOTES, "UTF-8" );
+function h($str)
+{
+    return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
 }
 
 //mysql -u fairies -p feya; 
@@ -9,29 +10,29 @@ $servername = "localhost";
 $username = "fairies";
 $password = "daimonia";
 $dbname = "feya";
-try{
+try {
     //データベースに接続するためsqlインスタン生成
     $conn_DB = new mysqli($servername, $username, $password, $dbname);
-    if($conn_DB->connect_error){
-        die("Connect failed :". $conn_DB -> connect_error);
+    if ($conn_DB->connect_error) {
+        die("Connect failed :" . $conn_DB->connect_error);
     }
     //初期設定
-    $CusNumber = filter_input(INPUT_POST,"CusNumber", FILTER_VALIDATE_INT);
-    $uname = filter_input(INPUT_POST,"uname");
-    $password = filter_input(INPUT_POST,"password");
+    $CusNumber = filter_input(INPUT_POST, "CusNumber", FILTER_VALIDATE_INT);
+    $uname = filter_input(INPUT_POST, "uname");
+    $password = filter_input(INPUT_POST, "password");
 
-    if(isset($_POST['registerBtn'])){
+    if (isset($_POST['registerBtn'])) {
 
-         // CusNumberがデータベース内に存在するか確認
+        // CusNumberがデータベース内に存在するか確認
         $stmt = $conn_DB->prepare("SELECT * FROM CUSTOMERS where CUSTOMERNUMBER = ?");
-        $stmt->bind_param("i",$CusNumber);
+        $stmt->bind_param("i", $CusNumber);
         $stmt->execute();
         $result = $stmt->get_result();
 
         //　登録する際、CusNumberが存在する場合の処理
-        if($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             echo "既に存在します。";
-        }else{
+        } else {
             // // パスワードをハッシュ化
             // $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
@@ -52,10 +53,9 @@ try{
             }
         }
     }
-
-}catch(PDOException $e){
-    echo'error:'.$e->getMessage();
-}finally{
+} catch (PDOException $e) {
+    echo 'error:' . $e->getMessage();
+} finally {
 
     //接続切断処理
     $stmt = null;
@@ -67,46 +67,42 @@ try{
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="user_register.css">
+    <link rel="stylesheet" href="cus_register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <title>初期作成画面</title>
 </head>
 
 <body>
     <header>
-        <h1 class="logo">
-            <img src="images/fairies_home.png" alt="ロゴ" width="230">
-        </h1>
-        <ul>
-            <li><a class="form_link" href="">ログアウト</a></li>
-        </ul>
+        <img src="images/fairies_home.png" alt="ロゴ" width="230">
+        <a class="form_link" href="">ログアウト</a>
     </header>
 
     <main>
-        <form action="" method="POST" class="w-1/2 mx-8">
-        <div id="screen">
-            <div class="select">
-                <h2>初期作成（お客様用）</h2>
+        <div>
+            <div id="title">
+                <h2>初 期 作 成（お客様用）</h2>
             </div>
-                <div class="container" class="select">
-                    <div class="select">
-                        <label for="number">お客様番号</label><br>
-                        <input type="number" name="CusNumber" id="CusNumber" placeholder="例:99999" required>
+            <form action="" method="POST" class="w-1/2 mx-8">
+                <div class="select">
+                    <label for="number">お客様番号</label><br>
+                    <input type="number" name="CusNumber" id="CusNumber" placeholder="例:99999" required>
+                </div>
+                <div class="select">
+                    <div>
+                        <label for="uname">お名前</label><br>
+                        <input type="text" name="uname" id="uname" placeholder="例:山田花子" required>
                     </div>
-                    <div class="select">
-                        <div>
-                            <label for="uname">お名前</label><br>
-                            <input type="text" name="uname" id="uname" placeholder="名前を入力してください。" required>
-                        </div>
-                        <div>
-                            <label for="password">パスワード</label><br>
-                            <p>記号と英数字をそれぞれ一文字以上を含めて、八文字以上で入力してください.</p>
-                            <input type="password" name="password" id="password" placeholder="8文字以上の英数字" required>
-                        </div>
+                    <div>
+                        <label for="password">パスワード</label><br>
+                        <p>記号と英数字をそれぞれ一文字以上を含めて、八文字以上で入力してください.</p>
+                        <input type="password" name="password" id="password" placeholder="例:123qwe" required>
                     </div>
                 </div>
                 <button id="submit" type="submit" name="registerBtn">登録</button>
             </form>
         </div>
+    </main>
 </body>
 
 </html>
