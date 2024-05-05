@@ -27,7 +27,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $conn_DB->set_charset('utf8');   //文字コードを設定
+    $conn_DB->set_charset('utf8');   //文字コードを設定;
 
     $number = '00100';   //まだ社員番号の受け渡しができないため仮のを入れる、受け渡しができるようになったら消す
 
