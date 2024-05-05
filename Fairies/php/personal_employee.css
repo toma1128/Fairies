@@ -51,7 +51,7 @@ header a :hover {
 }
 /*親要素にポジションの形式を付与*/
 main {
-  height: 75%;
+  height: 85%;
 }
 #STATUS {
   width: fit-content;
@@ -80,6 +80,8 @@ main {
   border-radius: 5px;
   height: 60%;
   overflow: scroll;
+  /*スクロールバー非表示（Firefox）*/
+  scrollbar-width: none;
   border: 4px solid #19a7ce;
 }
 
