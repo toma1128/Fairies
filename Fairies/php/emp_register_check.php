@@ -10,40 +10,40 @@ $formattedJoinDate = date('Y-m-d', $unixTimestamp); // 日付のみの形式に�
 
 
 
-    // データベースへの接続情報
-    $servername = "localhost"; // データベースのホスト名
-    $username = "fairies"; // データベースのユーザー名
-    $password = "daimonia"; // データベースのパスワード
-    $dbname = "feya"; // 使用するデータベース名
+// データベースへの接続情報
+$servername = "localhost"; // データベースのホスト名
+$username = "fairies"; // データベースのユーザー名
+$password = "daimonia"; // データベースのパスワード
+$dbname = "feya"; // 使用するデータベース名
 
-    // データベースに接続する
-    $conn_DB = new mysqli($servername, $username, $password, $dbname);
+// データベースに接続する
+$conn_DB = new mysqli($servername, $username, $password, $dbname);
 
-    // 接続を確認する
-    if ($conn_DB->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+// 接続を確認する
+if ($conn_DB->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-    $conn_DB->set_charset('utf8');   //文字コードを設定
+$conn_DB->set_charset('utf8');   //文字コードを設定
 
-    // SQLクエリを作成して実行する
-    $stmt = $conn_DB->prepare('INSERT INTO EMPLOYEES (DEPARTMENT_ID, NUMBER, NAME, PASSWORD, HIREDATE) VALUES (?, ?, ?, ?, ?)');
+// SQLクエリを作成して実行する
+$stmt = $conn_DB->prepare('INSERT INTO EMPLOYEES (DEPARTMENT_ID, NUMBER, NAME, PASSWORD, HIREDATE) VALUES (?, ?, ?, ?, ?)');
 
-    $stmt->bind_param('issss',$department, $number, $name, $pass, $formattedJoinDate);
-    if($stmt->execute()){
-        // ステートメントを閉じる
-        $stmt->close();
-        // データベース接続を閉じる
-        $conn_DB->close();
-    } else {
-        // エラーが発生した場合の処理
-        echo "Error: " . $stmt->error;
-    }
-if($_POST['submit']){
+$stmt->bind_param('issss', $department, $number, $name, $pass, $formattedJoinDate);
+if ($stmt->execute()) {
+    // ステートメントを閉じる
+    $stmt->close();
+    // データベース接続を閉じる
+    $conn_DB->close();
+} else {
+    // エラーが発生した場合の処理
+    echo "Error: " . $stmt->error;
+}
+if ($_POST['submit']) {
     session_start();
     $_SESSION['number'] = $number;
 
-    header("Location: home_employee.php");
+    header("Location: login.php");
     exit;
 }
 
