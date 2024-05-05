@@ -20,9 +20,7 @@
             </div>
             <h3 id="name">山田花子様</h3>
         </div>
-        <p id="home_condition">
-            ひび割れ
-        </p>
+        <p id="home_condition">ひび割れ</p>
         <div>
             <img src="images/16111_color.png" alt="home" id="home_image">
             <div class="home_detail">
