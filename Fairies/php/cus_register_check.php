@@ -1,50 +1,52 @@
 <?php
-//初期設定
-$CusNumber = filter_input(INPUT_POST, "CusNumber", FILTER_VALIDATE_INT);
-$uname = filter_input(INPUT_POST, "uname");
-$pass = filter_input(INPUT_POST, "password");
+// //初期設定
+// $CusNumber = filter_input(INPUT_POST, "CusNumber", FILTER_VALIDATE_INT);
+// $uname = filter_input(INPUT_POST, "uname");
+// $pass = filter_input(INPUT_POST, "password");
 
-// データベースの情報
-//mysql -u fairies -p feya; 
-//password:daimonia;
-$servername = "localhost";
-$username = "fairies";
-$password = "daimonia";
-$dbname = "feya";
-
-
-//データベースに接続するためsqlインスタン生成
-$conn_DB = new mysqli($servername, $username, $password, $dbname);
-if ($conn_DB->connect_error) {
-    die("Connection failed :" . $conn_DB->connect_error);
-}
-
-$conn_DB->set_charset('utf8');   //文字コードを設定
-
-//DBのCUSTOMERSの中にその情報が格納
-$stmt = $conn_DB->prepare("INSERT INTO CUSTOMERS (CUSTOMERNUMBER, NAME, PASSWORD) VALUE(?, ?, ?)");
-$stmt->bind_param("iss", $CusNumber, $uname, $pass);
+// // データベースの情報
+// //mysql -u fairies -p feya; 
+// //password:daimonia;
+// $servername = "localhost";
+// $username = "fairies";
+// $password = "daimonia";
+// $dbname = "feya";
 
 
-//挿入に成功したかどうかを確認 
-if ($stmt->execute()) {
+// //データベースに接続するためsqlインスタン生成
+// $conn_DB = new mysqli($servername, $username, $password, $dbname);
+// if ($conn_DB->connect_error) {
+//     die("Connection failed :" . $conn_DB->connect_error);
+// }
 
-    //接続切断処理
-    $stmt->close();
-    $conn_DB->close();
-} else {
-    // エラーが発生した場合の処理
-    echo "Error: " . $stmt->error;
-}
-if ($_POST['registerBtn']) {
-    session_start();
-    $_SESSION['CusNumber'] = $CusNumber;
+// $conn_DB->set_charset('utf8');   //文字コードを設定
 
-    header("Location: login.php");
-    exit;
-}
+// //DBのCUSTOMERSの中にその情報が格納
+// $stmt = $conn_DB->prepare("INSERT INTO CUSTOMERS (CUSTOMERNUMBER, NAME, PASSWORD) VALUE(?, ?, ?)");
+// $stmt->bind_param("iss", $CusNumber, $uname, $pass);
 
 
+// //挿入に成功したかどうかを確認 
+// if ($stmt->execute()) {
+
+//     //接続切断処理
+//     $stmt->close();
+//     $conn_DB->close();
+// } else {
+//     // エラーが発生した場合の処理
+//     echo "Error: " . $stmt->error;
+// }
+// if ($_POST['registerBtn']) {
+//     session_start();
+//     $_SESSION['CusNumber'] = $CusNumber;
+
+//     header("Location: login.php");
+//     exit;
+// }
+
+$CusNumber = '12345';
+$uname = '山田花子';
+$pass = '123qwe';
 ?>
 <!DOCTYPE html>
 <html lang="ja">
