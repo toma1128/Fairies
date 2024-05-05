@@ -1,6 +1,8 @@
 <?php
     // フォームから送信されたデータを取得する
-    //$number = filter_input(INPUT_POST,"number");
+    session_start();
+    $number = $_SESSION['number'];
+    $_SESSION['number'] = $number;  //念のため
     $possible = filter_input(INPUT_POST, "yesnochoice", FILTER_VALIDATE_INT);
     $period = filter_input(INPUT_POST, "datechoice", FILTER_VALIDATE_INT);
     $reason = filter_input(INPUT_POST, "reason", FILTER_VALIDATE_INT);
@@ -28,8 +30,6 @@
     }
 
     $conn_DB->set_charset('utf8');   //文字コードを設定;
-
-    $number = '00100';   //まだ社員番号の受け渡しができないため仮のを入れる、受け渡しができるようになったら消す
 
     // SQLクエリを作成して実行する
     $stmt = $conn_DB->prepare('INSERT INTO EMPLOYEE_FORMS (ID, NUMBER, POSSIBLE, PERIOD, REASON, MESSAGE) VALUES (?, ?, ?, ?, ?, ?)');
@@ -76,8 +76,11 @@
 </head>
 <body>
     <header>
+
         <h1>
             <img src="images/fairieshome.png" alt="ロゴ" width="230">
+
+
         </h1>
         <nav>
             <ul>
@@ -87,6 +90,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <div>
             <h2>災害安否確認フォーム</h2>
@@ -114,5 +118,7 @@
                 <button onclick="location.href='./form_employee.php'"class = change>変&nbsp;更</button>
         </dev>
     </main>
+
+
 </body>
 </html>

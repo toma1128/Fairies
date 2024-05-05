@@ -1,3 +1,67 @@
+<?php
+function h( $str ){
+    return htmlspecialchars( $str, ENT_QUOTES, "UTF-8" );
+}
+
+//mysql -u fairies -p feya; 
+//password:daimonia;
+$servername = "localhost";
+$username = "fairies";
+$password = "daimonia";
+$dbname = "feya";
+try{
+    //データベースに接続するためsqlインスタン生成
+    $conn_DB = new mysqli($servername, $username, $password, $dbname);
+    if($conn_DB->connect_error){
+        die("Connect failed :". $conn_DB -> connect_error);
+    }
+    //初期設定
+    $CusNumber = filter_input(INPUT_POST,"CusNumber", FILTER_VALIDATE_INT);
+    $uname = filter_input(INPUT_POST,"uname");
+    $password = filter_input(INPUT_POST,"password");
+
+    if(isset($_POST['registerBtn'])){
+
+         // CusNumberがデータベース内に存在するか確認
+        $stmt = $conn_DB->prepare("SELECT * FROM CUSTOMERS where CUSTOMERNUMBER = ?");
+        $stmt->bind_param("i",$CusNumber);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        //　登録する際、CusNumberが存在する場合の処理
+        if($result->num_rows > 0){
+            echo "既に存在します。";
+        }else{
+            // // パスワードをハッシュ化
+            // $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+            //登録されたら、DBのCUSTOMERSの中にその情報が格納
+            $stmt = $conn_DB->prepare("INSERT INTO CUSTOMERS (CUSTOMERNUMBER, NAME, PASSWORD) VALUE(?, ?, ?)");
+            $stmt->bind_param("iss", $CusNumber, $uname, $password);
+
+            //SQL実行
+            $stmt->execute();
+
+            //挿入に成功したかどうかを確認 
+            if ($stmt->affected_rows > 0) {
+                echo "<div>登録に成功しました。</div>";
+                header("Location: login.php");
+                exit();
+            } else {
+                echo "<div>登録に失敗しました。</div>";
+            }
+        }
+    }
+
+}catch(PDOException $e){
+    echo'error:'.$e->getMessage();
+}finally{
+
+    //接続切断処理
+    $stmt = null;
+    $db = null;
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -10,24 +74,23 @@
 <body>
     <header>
         <h1 class="logo">
-            <img src="images/fairieshome.png" alt="ロゴ" width="230">
+            <img src="images/fairies_home.png" alt="ロゴ" width="230">
         </h1>
         <ul>
             <li><a class="form_link" href="">ログアウト</a></li>
         </ul>
-
     </header>
+
     <main>
+        <form action="" method="POST" class="w-1/2 mx-8">
         <div id="screen">
             <div class="select">
                 <h2>初期作成（お客様用）</h2>
             </div>
-            <form id="registrationForm" action="fairiesproject_register.php" method="POST" class="w-1/2 mx-8">
-                
                 <div class="container" class="select">
                     <div class="select">
                         <label for="number">お客様番号</label><br>
-                        <input type="number" name="number" id="number" placeholder="例:99999" required>
+                        <input type="number" name="CusNumber" id="CusNumber" placeholder="例:99999" required>
                     </div>
                     <div class="select">
                         <div>
@@ -41,77 +104,9 @@
                         </div>
                     </div>
                 </div>
-                <button id="submit" type="submit">登録</button>
-                <!-- 新規登録画面で失敗した場合、ダイアログにその結果を表示される用-->
-                <dialog id="resultDialog">
-                    <div id="dialogWrap">
-                        <form action="" method="post" id="addItemForm">
-                            <div class="form-item-wrap">
-                                <div class="form-item">
-                                    <?= $result["message"] ?><br>
-                                </div>
-                            </div>
-                            <div class="form-item-wrap"><button id="addItem" type="submit"  onclick="location.href='./form_customer.php'">確認</button></div>
-                        </form>
-                    </div>
-                    <span class="material-icons">close</span>
-                </dialog>
+                <button id="submit" type="submit" name="registerBtn">登録</button>
             </form>
         </div>
 </body>
 
 </html>
-<!-- <script>
-    document.getElementById('registrationForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // フォームのデフォルトの送信を防止
-
-        // フォームの要素を取得
-        const form = event.target;
-        const nameInput = form.querySelector('#name');
-        const rubyInput = form.querySelector('#ruby');
-        const passwordInput = form.querySelector('#password');
-        const confirmPasswordInput = form.querySelector('#confirmpassword');
-        const numberInput = form.querySelector('#number');
-
-        let isValid = true;
-        let errorMessage = '';
-
-        // 名前の入力をバリデート
-        if (!nameInput.value) {
-            errorMessage += '名前を入力してください。\n';
-            isValid = false;
-        }
-
-        // 価格（`ruby`）の入力をバリデート
-        if (!rubyInput.value) {
-            errorMessage += '価格を入力してください。\n';
-            isValid = false;
-        }
-
-        // パスワードの入力をバリデート
-        if (!passwordInput.value) {
-            errorMessage += 'パスワードを入力してください。\n';
-            isValid = false;
-        }
-
-        // パスワード確認の入力をバリデート
-        if (!confirmPasswordInput.value || passwordInput.value !== confirmPasswordInput.value) {
-            errorMessage += 'パスワードが一致しません。\n';
-            isValid = false;
-        }
-
-        // 電話番号の入力をバリデート
-        if (!numberInput.value || isNaN(numberInput.value)) {
-            errorMessage += '電話番号を正しく入力してください。\n';
-            isValid = false;
-        }
-
-        // フォームが有効でない場合、エラーメッセージを表示
-        if (!isValid) {
-            alert(errorMessage);
-        } else {
-            // フォームが有効な場合、フォームを送信します
-            form.submit();
-        }
-    });
-</script> -->

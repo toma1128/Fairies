@@ -1,131 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kiwi Maru", serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  background-color: #b0daff;
 }
 
+/* header */
 header {
-    height: 10vh;
-    text-align: center;
-    background-color: #F8FEFE;
-    padding: 20px 0;
-    /* 横並びに */
-    display: flex;
-    justify-content: space-between;
-    /* 中央揃えに変更 */
-    align-items: center;
-    box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
+  background-color: #f8fefe;
+  height: 7vw;
+  /* 配置 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* headerの画像のスタイル */
 header img {
-    /* 右側の余白を自動で設定 */
-    margin: auto;
-    /* 高さ */
-    height: 4.5rem;
-    /* 横幅 */
-    width: 35vh;
+  /* 高さ */
+  height: 80%;
+  /* 横幅 */
+  width: 35vh;
+  margin-left: 15px;
+}
+header a {
+  /* テキストサイズ */
+  font-size: 5vmin;
+  background-color: #b0daff;
+  /*枠線・上*/
+  border-top: solid 1px #19a7ce;
+  /*枠線・下*/
+  border-bottom: solid 1px #19a7ce;
+  /*枠線・右*/
+  border-right: solid 1px #19a7ce;
+  /*枠線・左*/
+  border-left: solid 1px #19a7ce;
+  /* 下線消す */
+  text-decoration: none;
+  margin-right: 15px;
+  /* 高さ */
+  height: 7vmin;
+  align-items: center;
+}
+/* カーソルの重なったときの処理 */
+header a :hover {
+  background-color: aqua;
 }
 
-/* ヘッダー内のul */
-header ul {
-    /* リストアイテムを均等に配置 */
-    justify-content: space-around;
-    /* リストアイテムを中央揃えに配置 */
-    align-items: center;
-    /* 横並びに */
-    display: flex;
-    /* 均等に */
-    justify-content: space-around;
-    /* 中央ぞろえ */
-    align-items: center;
-
-
-}
-
-/* 従業員一覧のliタグ */
-header ul li {
-    /* テキストサイズ */
-    font-size: 1.8rem;
-    /* 黒丸を消す */
-    list-style: none;
-    padding: 10px 20px;
-    /*余白*/
-    background: #e3f6f5;
-    /*背景色*/
-    border-top: solid 1px #19A7CE;
-    /*枠線・上*/
-    border-bottom: solid 1px #19A7CE;
-    /*枠線・下*/
-    border-right: solid 1px #19A7CE;
-    /*枠線・右*/
-    border-left: solid 1px #19A7CE;
-    /*枠線・左*/
-
-    margin-right: 15px;
-
-}
-
+/* main */
 main {
-    max-width: 70%;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #B0DAFF;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* 新しいスタイル */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    /* 画面の高さいっぱいに表示 */
+  /* サイズ */
+  max-width: 60vw;
+  /* 配置（真ん中） */
+  margin: 20px auto;
+  /* 内の距離 */
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 5px;
+  background-color: #e5e5e5;
 }
 
-
-#screen {
-    width: 70%;
-    background-color: #fff;
-    padding: 30px;
+/* タイトル */
+#title {
+  background-color: #f8fefe;
+  /* 内外の配置 */
+  margin: 15px;
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 5px;
+  /* 中身の配置 */
+  text-align: center;
+  /* 文字サイズ */
+  font-size: 3vmin;
+}
+h2 {
+  /* 配置真ん中 */
+  margin: 0 auto;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+/* 選択肢たちの割の枠 */
+.select {
+  background-color: #f8fefe;
+  /* 内外の配置 */
+  margin: 15px;
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 5px;
 }
-
+/* 説明欄の大きさ */
+p {
+  font-size: 1.5vmin;
+  /* 外配置 */
+  margin: 5px 20px;
+}
+/* 選択項目 */
+select {
+  font-size: 2vmin;
+  /* 内配置 */
+  padding: 10px;
+  /* 外配置 */
+  margin: 10px 20px;
+  /* 枠 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* サイズ */
+  width: 110px;
+}
+/* 項目タイトル */
 label {
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-size: 2.5vmin;
+  /* 太文字 */
+  font-weight: bold;
+  /* 外配置 */
+  margin-bottom: 10px;
 }
-
+/* 入力する */
 input[type="text"],
 input[type="password"],
 input[type="number"],
 input[type="date"] {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-
+  /* 内配置 */
+  padding: 10px;
+  /* 外配置 */
+  margin: 10px 20px;
+  /* 枠 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="date"]:focus {
-    border-color: #49ada1;
-}
-
+/* button */
 button {
-    padding: 12px;
-    background-color: #49ada1;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+  /* サイズ */
+  width: 30%;
+  /* 内配置 */
+  padding: 2vmin;
+  font-size: 2.5vmin;
+  /* 真ん中 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* 色 */
+  background-color: #f8fefe;
+  /* 枠 */
+  border: none;
+  border-radius: 5px;
 }
-
 button:hover {
-    background-color: #3eabab;
+  background-color: #b0daff;
 }

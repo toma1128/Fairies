@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  font-family: "Kiwi Maru", serif;
 }
 
 /* bodyのスタイル */
@@ -12,38 +12,32 @@ body {
   /* フォント */
   height: 100vh;
   /* 高さ　*/
-  background-color: green;
+  background-color: #ffffff;
 }
+
 /* trのカーソル処理 */
 tr:hover {
-  background: gray;
+  background: rgb(227, 227, 227);
   cursor: pointer;
 }
-/* headerのスタイル */
+
+/* header */
 header {
-  /* 中央ぞろえ */
-  text-align: center;
-  background-color: #F8FEFE;
-  /* 縦 */
+  background-color: #f8fefe;
   height: 10%;
-  /* 横並びに */
+  /* 配置 */
   display: flex;
-  /* 要素を横並びに配置 */
-  justify-content: space-between;
-  /* 中央揃えに変更 */
   align-items: center;
-  box-shadow: 2px 2px 4px -2px rgb(30, 28, 28) inset;
-  /* 影のスタイルを指定 ひとまず*/
+  justify-content: space-between;
 }
 
 /* headerの画像のスタイル */
 header img {
-  /* 右側の余白を自動で設定 */
-  margin: auto;
   /* 高さ */
-  height: 4.5rem;
+  height: 80%;
   /* 横幅 */
   width: 35vh;
+  margin-left: 15px;
 }
 
 /* ヘッダー内のul */
@@ -58,8 +52,6 @@ header ul {
   justify-content: space-around;
   /* 中央ぞろえ */
   align-items: center;
-
-
 }
 
 /* 従業員一覧のliタグ */
@@ -72,23 +64,22 @@ header ul li {
   /*余白*/
   background: #e3f6f5;
   /*背景色*/
-  border-top: solid 1px #19A7CE;
+  border-top: solid 1px #19a7ce;
   /*枠線・上*/
-  border-bottom: solid 1px #19A7CE;
+  border-bottom: solid 1px #19a7ce;
   /*枠線・下*/
-  border-right: solid 1px #19A7CE;
+  border-right: solid 1px #19a7ce;
   /*枠線・右*/
-  border-left: solid 1px #19A7CE;
+  border-left: solid 1px #19a7ce;
   /*枠線・左*/
 
   margin-right: 15px;
-
 }
 
 /* mainのスタイル */
 main {
   /* 背景カラー */
-  background-color: #B0DAFF;
+  background-color: #b0daff;
   /* 高さ */
   height: 90%;
 
@@ -97,6 +88,7 @@ main {
 
 form {
   height: 100%;
+  display: flex;
 }
 
 #screen {
@@ -108,59 +100,65 @@ form {
 /* h2タグのスタイル */
 h2 {
   /* 下の要素との距離を指定 */
-  margin-bottom: 20px;
+  text-align: center;
 }
-
-/* form_linkのスタイル */
-.form_link {
-  text-decoration: none;
-  /* リンクの下の線を削除 */
+header ul li {
   color: #333;
   /* テキストカラー */
+}
 
+header > ul > li:hover {
+  background: #a1e0e5;
+  text-decoration: none;
+}
+
+.soto {
+  margin-left: 20px;
 }
 
 /* 検索入力のスタイル */
 input[type="search"] {
   flex: 1;
-  /*水平方向の伸縮性*/
+  /* 水平方向の伸縮性 */
   padding: 10px;
   /* 内側の余白 */
   margin-right: 10px;
-  /* 右側との距離を指定 */
-  border: 3px solid #19A7CE;
-  /* 周りの線の指定 */
+  /* 右側の間隔 */
+  border: 3px solid #19a7ce;
+  /* 周囲の線 */
   border-radius: 3px;
-  /* 周りの線の角を指定 */
+  /* 角の丸み */
   font-size: 30px;
+  margin-left: 20px;
+  width: 30%;
 }
 
 /* selectタグのスタイル */
 select {
   flex: 1;
-  /* 水平方向の伸縮性の指定 */
+  /* 水平方向の伸縮性 */
   padding: 10px;
-  /* 内側の余白の指定 */
+  /* 内側の余白 */
   margin-right: 10px;
-  /* 右側との距離を指定 */
-  border: 1px solid #19A7CE;
-  /* 周りの線の指定 */
+  /* 右側の間隔 */
+  border: 1px solid #19a7ce;
+  /* 周囲の線 */
   border-radius: 5px;
-  /* 周りの線の角を指定 */
+  /* 角の丸み */
 }
 
 /* ボタンのスタイル */
 button {
   padding: 10px 20px;
-  /* 内側の余白の指定 */
-  color: #19A7CE;
-  /* テキストカラー */
+  /* 内側の余白 */
+  color: #19a7ce;
+  /* テキストの色 */
   border: none;
-  /* 周りの線をなくす */
+  /* 周囲の線をなくす */
   border-radius: 5px;
-  /* 周りの線の角を指定 */
+  /* 角の丸み */
   cursor: pointer;
-  /* カーソルの形状をポインターに指定 */
+  /* カーソルの形状 */
   font-size: larger;
 }
 
@@ -170,13 +168,13 @@ table {
   /*横幅を指定*/
   border-collapse: collapse;
   /* セルの境界線を結合 */
-  border-top: solid 1px #19A7CE;
+  border-top: solid 1px #19a7ce;
   /*枠線・上*/
-  border-bottom: solid 1px #19A7CE;
+  border-bottom: solid 1px #19a7ce;
   /*枠線・下*/
-  border-right: solid 1px #19A7CE;
+  border-right: solid 1px #19a7ce;
   /*枠線・右*/
-  border-left: solid 1px #19A7CE;
+  border-left: solid 1px #19a7ce;
   /*枠線・左*/
 }
 
@@ -189,20 +187,20 @@ table td {
   text-align: center;
   /* テキストを中央揃えに */
   font-size: 25px;
+}
 
+form {
+  display: flex;
+  margin-left: 5px;
 }
 
 /* 従業員一覧のスタイル */
-#contentWrap {
-
-  background-color: #F8FEFE;
+.contentWrap {
+  height: 90%;
+  background-color: #f8fefe;
   /* 背景色を指定 */
   padding: 20px;
   /* 内側の余白の指定 */
-  border-radius: 5px;
-  /* 周りの線の角を指定 */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* 影のスタイルを指定 */
   display: flex;
   /* フレックスコンテナとして指定 */
   flex-direction: column;
@@ -212,10 +210,13 @@ table td {
   align-items: center;
   /* アイテムを中央揃えに配置 */
   overflow: scroll;
+
+  /* スクロール */
+  overflow-y: scroll;
 }
 
 /* 従業員一覧のdiv */
-#contentWrap div {
+.contentWrap div {
   margin-right: 10px;
   /* 右側との距離を指定 */
 }
@@ -227,54 +228,48 @@ table td {
   /* 最小幅を指定 */
   min-width: 180px;
   /* 背景色 */
-  background: #146C94;
+  background: #146c94;
   /* 内側の余白の指定 */
   padding: 5px;
-
-
 }
 
 /* 従業員一覧のulタグ */
-#naviWrap>ul {
+#naviWrap > ul {
   background: #4abbc1;
   /* 左寄せ */
-  padding-left: 0
+  padding-left: 0;
 }
 
 /* 従業員一覧のliタグ */
-#naviWrap>ul>li {
+#naviWrap > ul > li {
   font-size: 1.5rem;
   /* テキストサイズ */
   list-style: none;
   /* 黒丸を消す */
-}
-
-/* 従業員一覧のaタグのスタイル */
-#naviWrap>ul>li a {
   display: block;
   /* ブロック要素とする */
   color: #000;
   /* テキストカラー */
   padding: 1rem;
   /* 内側の余白の指定 */
-  border-top: solid 1px #19A7CE;
+  border-top: solid 1px #19a7ce;
   /*枠線・上*/
-  border-bottom: solid 1px #19A7CE;
+  border-bottom: solid 1px #19a7ce;
   /*枠線・下*/
-  border-right: solid 1px #19A7CE;
+  border-right: solid 1px #19a7ce;
   /*枠線・右*/
-  border-left: solid 1px #19A7CE;
+  border-left: solid 1px #19a7ce;
   /*枠線・左*/
 }
 
 /* マウスカーソルを合わせたときの処理 */
-#naviWrap>ul>li a:hover {
+#naviWrap > ul > li:hover {
   background: #078890;
   text-decoration: none;
 }
 
 /* liタグの中のクラスの処理 */
-#naviWrap>ul>li.active {
+#naviWrap > ul > li.active {
   background: #078890;
 }
 
@@ -286,34 +281,33 @@ table td {
   display: flex;
   /* 列方向にフレックスアイテムを配置 */
   flex-direction: column;
+  display: block;
 }
 
-#categoryWrap {
+tbody > tr > td {
+  width: 10px;
+}
+
+.categoryWrap {
   display: flex;
   /* フレックスコンテナとして表示 */
-  flex-wrap: wrap;
-  /* 要素を折り返して配置 */
-  overflow-x: auto;
+
   /* 水平方向のオーバーフローを許可 */
-  background-color: #F8FEFE;
+  background-color: #f8fefe;
   /* 背景色 */
-  /* 均等に */
-  justify-content: space-around;
+  width: 100%;
   /* 中央ぞろえ */
   align-items: center;
-
-}
-
-.category {
-  flex: 0 0 calc(30% - 10px);
-  /* 2列にするための幅の計算 */
-  margin-right: 5px;
-  margin-bottom: 10px;
-  /* 要素の下部に余白を追加 */
+  height: 10%;
 }
 
 
-.category h2 {
+#category_employee,
+#category_customer {
+  margin: 20px 5px 15px 5px;
+}
+
+#category_employee h2 {
   font-size: 2rem;
   /* フォントサイズを指定 */
   font-weight: bold;
@@ -322,12 +316,41 @@ table td {
   /* 背景色を指定 */
   color: #000;
   /* テキストの色を指定 */
-  padding-left: 15px;
+  padding-left: 10px;
   /* 左側のパディングを指定 */
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   /* 下側のパディングを指定 */
-  padding-right: 15px;
+  padding-right: 10px;
   /* 右側のパディングを指定 */
-  padding-top: 15px;
+  padding-top: 5px;
   /* 上側のパディングを指定 */
+}
+
+#category_customer h2 {
+  font-size: 2rem;
+  /* フォントサイズを指定 */
+  font-weight: bold;
+  /* フォントの太さを指定 */
+  background-color: #fffca8;
+  /* 背景色を指定 */
+  color: #000;
+  /* テキストの色を指定 */
+  padding-left: 10px;
+  /* 左側のパディングを指定 */
+  padding-bottom: 5px;
+  /* 下側のパディングを指定 */
+  padding-right: 10px;
+  /* 右側のパディングを指定 */
+  padding-top: 5px;
+  /* 上側のパディングを指定 */
+}
+
+#customer_about {
+  /* 横幅 */
+  width: 80%;
+  /* flex要素 */
+  display: flex;
+  /* 列方向にフレックスアイテムを配置 */
+  flex-direction: column;
+  display: none;
 }

@@ -2,8 +2,12 @@
 
 function h($str)
 {
+    if ($str === null) {
+        return '';
+    }
     return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
 }
+
 // if (isset($_POST["logoutBtn"])) {
 //     header('Location: fairiesproject_login.php');
 //     //exit();
@@ -26,7 +30,7 @@ if ($conn_DB->connect_error) {
 
 $where = filter_input(INPUT_POST, "department", FILTER_VALIDATE_INT);
 // 全件表示用のクエリを準備する
-$stmt = $conn_DB->prepare('SELECT D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER)');
+$stmt = $conn_DB->prepare('SELECT EF.ID AS EFID, D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER)');
 
 // もし $where が設定されていない場合は、全件表示用のクエリを実行する
 if (!$where or $where == 0) {
@@ -34,7 +38,7 @@ if (!$where or $where == 0) {
     // ここで結果を処理する
 } elseif ($where >= 1) {
     // $where が設定されている場合は、条件付きのクエリを実行する
-    $stmt = $conn_DB->prepare('SELECT D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER) WHERE D.ID = ?');
+    $stmt = $conn_DB->prepare('SELECT EF.ID AS EFID, D.NAME AS DNAME, E.NAME AS ENAME, EF.POSSIBLE AS POSSIBLE, EF.PERIOD AS PERIOD, EF.REASON AS REASON FROM EMPLOYEES AS E JOIN DEPARTMENTS AS D ON(E.DEPARTMENT_ID = D.ID) JOIN EMPLOYEE_FORMS AS EF ON(E.NUMBER = EF.NUMBER) WHERE D.ID = ?');
 
     $stmt->bind_param("i", $where);
     $stmt->execute(); // クエリを実行する
@@ -47,6 +51,20 @@ $result_set = $stmt->get_result(); // 結果セットを取得
 while ($row = $result_set->fetch_assoc()) { // 各行を取得
     $result[] = $row; // 配列に行を追加
 }
+
+$stmt2 = $conn_DB->prepare('SELECT C.CUSTOMERNUMBER AS CUSTOMERNUMBER, C.NAME AS CNAME, CF.STATE as CFSTATE FROM CUSTOMERS AS C JOIN CUSTOMER_FORMS AS CF ON(C.CUSTOMERNUMBER = CF.NUMBER)');
+$stmt2->execute();
+
+// 두 번째 쿼리 결과 처리
+$result2 = array();
+$result_set2 = $stmt2->get_result();
+while ($row = $result_set2->fetch_assoc()) {
+    $result2[] = $row;
+}
+
+// var_dump($_POST);
+// var_dump('help me please');
+//全権表示用のクエリを準備する
 
 $data = [   //フォームのデータ
     "possible" => [
@@ -74,38 +92,38 @@ $data = [   //フォームのデータ
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="home_employee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <title>ホーム画面</title>
 </head>
 
 <body>
     <header>
-        <h1 class="logo">
-            <img src="images/fairieshome.png" alt="ロゴ" width="230">
-        </h1>
+        <img src="images/fairies_home.png" alt="ロゴ" width="230">
         <ul>
-            <li><a class="form_link" href="./form_employee.php">安否報告</a></li>
-            <li><a class="form_link" href="./login.php">ログアウト</a></li>
+            <li onclick="location.href='./form_employee.php';">安否報告</li>
+            <li onclick="location.href='./login.php';">ログアウト</li>
         </ul>
     </header>
     <main>
         <div id="screen">
             <div id="naviWrap">
                 <ul id="categoryNavi"> <!-- 右立のやつ-->
-                    <li><a href="#category-1"> 従業員一覧</a></li>
-                    <li><a href="#category-2">お客様一覧</a></li>
+                    <li id="emp_btn"> 従業員一覧</li>
+                    <li id="cus_btn">お客様一覧</li>
                 </ul>
             </div>
             <div id="employee_about">
-                <div id="categoryWrap">
+                <div class="categoryWrap">
                     <!-- <div id="categoryWrap"> -->
-                    <div id="category-1" class="category"> <!--従業員一覧かお客様一覧の表示-->
+                    <div id="category_employee"> <!--従業員一覧かお客様一覧の表示-->
                         <h2>従業員一覧</h2>
                     </div>
+
                     <!-- </div> -->
-                    <input type="search" id="query" name="q" placeholder="Search...">
                     <form action="" method="POST">
+                        <input type="search" id="query" name="q" placeholder="Search...">
                         <button>検索</button>
-                        <div class="so-to">
+                        <div class="soto">
                             <label for="department">部署</label>
                             <select name="department" id="department">
                                 <option value="0">全て</option>
@@ -116,7 +134,7 @@ $data = [   //フォームのデータ
                                 <option value="5">積算</option>
                             </select>
                         </div>
-                        <div class="">
+                        <div class="soto">
                             <label for="date">期限</label>
                             <select name="date" id="date">
                                 <option value="1">全て</option>
@@ -129,17 +147,43 @@ $data = [   //フォームのデータ
                             </select>
                         </div>
                     </form>
+
                 </div>
-                <div id="contentWrap"> <!--情報データが入るところ-->
+                <div class="contentWrap"> <!--情報データが入るところ-->
                     <?php foreach ($result as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_employee.php';">
+                                <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"]  ?> ';">
                                     <td><?= h($r["DNAME"]) ?></td>
                                     <td><?= h($r["ENAME"]) ?></td>
                                     <td><?= h($data["possible"][($r["POSSIBLE"])]) ?></td>
                                     <td><?= h($data["period"][($r["PERIOD"])]) ?></td>
                                     <td><?= h($data["reason"][($r["REASON"])]) ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div id="customer_about">
+                <div class="categoryWrap">
+                    <!-- <div id="categoryWrap"> -->
+                    <div id="category_customer">
+                        <h2>お客様一覧</h2>
+                    </div>
+                    <!-- </div> -->
+                    <input type="search" id="query" name="q" placeholder="Search...">
+                    <button>検索</button>
+                    </form>
+                </div>
+                <div class="contentWrap">
+                    <?php foreach ($result2 as $r) : ?>
+                        <table>
+                            <tbody>
+                                <tr onclick="location.href='./personal_customer.php?id=<?= isset($r['CUSTOMERNUMBER']) ? h($r['CUSTOMERNUMBER']) : '' ?>';">
+                                    <td><?= isset($r['CUSTOMERNUMBER']) ? h($r['CUSTOMERNUMBER']) : '' ?></td>
+                                    <td><?= isset($r['CNAME']) ? h($r['CNAME']) : '' ?></td>
+                                    <td><?= isset($r['CFSTATE']) ? h($r['CFSTATE']) : '' ?></td>
                                 </tr>
                             </tbody>
                         </table>
