@@ -2,7 +2,7 @@
 //初期設定
 $CusNumber = filter_input(INPUT_POST, "CusNumber", FILTER_VALIDATE_INT);
 $uname = filter_input(INPUT_POST, "uname");
-$password = filter_input(INPUT_POST, "password");
+$pass = filter_input(INPUT_POST, "password");
 
 // データベースの情報
 //mysql -u fairies -p feya; 
@@ -23,7 +23,7 @@ $conn_DB->set_charset('utf8');   //文字コードを設定
 
 //DBのCUSTOMERSの中にその情報が格納
 $stmt = $conn_DB->prepare("INSERT INTO CUSTOMERS (CUSTOMERNUMBER, NAME, PASSWORD) VALUE(?, ?, ?)");
-$stmt->bind_param("iss", $CusNumber, $uname, $password);
+$stmt->bind_param("iss", $CusNumber, $uname, $pass);
 
 
 //挿入に成功したかどうかを確認 
@@ -51,7 +51,7 @@ if ($_POST['registerBtn']) {
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="user_register_check.css">
+    <link rel="stylesheet" href="cus_register_check.css">
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <title>新規作成画面（確認）</title>
 </head>
@@ -77,7 +77,7 @@ if ($_POST['registerBtn']) {
                 </div>
                 <div class="select">
                     <label for="password">パスワード</label><br>
-                    <p><?= $password ?></p>
+                    <p><?= $pass ?></p>
                 </div>
             </div>
             <div id="button">
