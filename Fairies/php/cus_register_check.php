@@ -1,44 +1,50 @@
 <?php
-date_default_timezone_set('Asia/Tokyo');
-$number = filter_input(INPUT_POST, "number");
-$name = filter_input(INPUT_POST, "uname");
-$pass = filter_input(INPUT_POST, "password");
-    // データベースへの接続情報
-    $servername = "localhost"; // データベースのホスト名
-    $username = "fairies"; // データベースのユーザー名
-    $password = "daimonia"; // データベースのパスワード
-    $dbname = "feya"; // 使用するデータベース名
+//初期設定
+$CusNumber = filter_input(INPUT_POST, "CusNumber", FILTER_VALIDATE_INT);
+$uname = filter_input(INPUT_POST, "uname");
+$password = filter_input(INPUT_POST, "password");
 
-    // データベースに接続する
-    $conn_DB = new mysqli($servername, $username, $password, $dbname);
+// データベースの情報
+//mysql -u fairies -p feya; 
+//password:daimonia;
+$servername = "localhost";
+$username = "fairies";
+$password = "daimonia";
+$dbname = "feya";
 
-    // 接続を確認する
-    if ($conn_DB->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
-    $conn_DB->set_charset('utf8');   //文字コードを設定
+//データベースに接続するためsqlインスタン生成
+$conn_DB = new mysqli($servername, $username, $password, $dbname);
+if ($conn_DB->connect_error) {
+    die("Connection failed :" . $conn_DB->connect_error);
+}
 
-    // SQLクエリを作成して実行する
-    $stmt = $conn_DB->prepare('INSERT INTO CUSTOMERS (NUMBER, NAME, PASSWORD) VALUES (?, ?, ?)');
+$conn_DB->set_charset('utf8');   //文字コードを設定
 
-    $stmt->bind_param('issss',$number, $name, $pass);
-    if($stmt->execute()){
-        // ステートメントを閉じる
-        $stmt->close();
-        // データベース接続を閉じる
-        $conn_DB->close();
-    } else {
-        // エラーが発生した場合の処理
-        echo "Error: " . $stmt->error;
-    }
-if($_POST['submit']){
+//DBのCUSTOMERSの中にその情報が格納
+$stmt = $conn_DB->prepare("INSERT INTO CUSTOMERS (CUSTOMERNUMBER, NAME, PASSWORD) VALUE(?, ?, ?)");
+$stmt->bind_param("iss", $CusNumber, $uname, $password);
+
+
+//挿入に成功したかどうかを確認 
+if ($stmt->execute()) {
+
+    //接続切断処理
+    $stmt->close();
+    $conn_DB->close();
+} else {
+    // エラーが発生した場合の処理
+    echo "Error: " . $stmt->error;
+}
+if ($_POST['registerBtn']) {
     session_start();
-    $_SESSION['number'] = $number;
+    $_SESSION['CusNumber'] = $CusNumber;
 
     header("Location: login.php");
     exit;
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -62,28 +68,20 @@ if($_POST['submit']){
             </div>
             <div id="check_words">
                 <div class="select">
-                    <label for="team">所属門又はチーム</label>
-                    <p><?= $data['department'][$department] ?></p>
-                </div>
-                <div class="select">
-                    <label for="number">社員番号</label><br>
-                    <p><?= $number ?></p>
+                    <label for="number">お客様番号</label><br>
+                    <p><?= $CusNumber ?></p>
                 </div>
                 <div class="select">
                     <label for="uname">お名前</label><br>
-                    <p><?= $name ?></p>
+                    <p><?= $uname ?></p>
                 </div>
                 <div class="select">
                     <label for="password">パスワード</label><br>
-                    <p><?= $pass ?></p>
-                </div>
-                <div class="select">
-                    <label for="birthday">入社日</label><br>
-                    <p><?= $formattedJoinDate ?></p>
+                    <p><?= $password ?></p>
                 </div>
             </div>
             <div id="button">
-                <button id="submit" type="submit" name="submit" onclick="location.href='./user_register.php'">入力画面に戻る</button>
+                <button id="submit" type="submit" name="submit" onclick="location.href='./cus_register.php'">入力画面に戻る</button>
                 <button id="submit" type="submit" name="submit" onclick="location.href='./login.php'">送信</button>
             </div>
         </div>
