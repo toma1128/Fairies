@@ -20,17 +20,19 @@
             </div>
             <h3 id="name">山田花子様</h3>
         </div>
-        <p id="home_condition">ひび割れ</p>
-        <div>
-            <img src="images/16111_color.png" alt="home" id="home_image">
-            <div class="home_detail">
-                <ul>
-                    <li>壁</li>
-                    <li>屋根</li>
-                </ul>
-            </div>
-            <div id="comment">
-                <p>家と壁にひび割れができています。早く直しに来てください。</p>
+        <div id="word">
+            <p id="home_condition">ひび割れ</p>
+            <div id="home">
+                <img src="images/16111_color.png" alt="home" id="home_image">
+                <div id="home_detail">
+                    <ul>
+                        <li>壁</li>
+                        <li>屋根</li>
+                    </ul>
+                </div>
+                <div id="comment">
+                    <p>家と壁にひび割れができています。早く直しに来てください。</p>
+                </div>
             </div>
         </div>
         <div id=folder>
