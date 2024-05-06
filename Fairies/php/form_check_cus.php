@@ -3,7 +3,7 @@
 date_default_timezone_set('Asia/Tokyo');
 // どこから持ってくるかわからん
 // 重複ダメって怒られた;;
-$id = "11111";
+$id = "11118";
 $number = "12345";
 // ーーーーーーーーーーーーーー
 $home = filter_input(INPUT_POST, "choice", FILTER_VALIDATE_INT);

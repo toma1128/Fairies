@@ -137,6 +137,7 @@ if (isset($_POST['submitBtn1'])) {  //従業員の方のログインボタンが
               <input type="password" placeholder="eccComp2024" name="password_customer">
             </div>
           </div>
+          <!-- ボタンの押した処理作る後で -->
           <div class="button">
             <button type="submit" id="cusBtn" name="submitBtn2">ログイン</button>
           </div>
