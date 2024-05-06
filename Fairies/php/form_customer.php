@@ -17,7 +17,8 @@
         <div id="title">
             <h2>災害安否確認フォーム</h2>
         </div>
-        <form action="" method="POST">
+        <!--  enctype="multipart/form-data"画像 -->
+        <form action="./form_check_cus.php" method="POST" enctype="multipart/form-data">
             <div class="select">
                 <p>現在の家を状態を教えてください。</p>
                 <input type="radio" id="choice1" name="choice" value="1">
@@ -41,19 +42,6 @@
                 <label for="2ndchoice5">その他</label>
             </div>
             <div class="select">
-                <p>出社出来ない理由を選択してください。</p>
-                <input type="radio" id="reason1" name="reason" value="1">
-                <label for="reason1">怪我</label>
-                <input type="radio" id="reason2" name="reason" value="2">
-                <label for="reason2">家族</label>
-                <input type="radio" id="reason3" name="reason" value="3">
-                <label for="reason3">家</label>
-                <input type="radio" id="reason4" name="reason" value="4">
-                <label for="reason4">交通機関</label>
-                <input type="radio" id="reason5" name="reason" value="5">
-                <label for="reason5">その他</label>
-            </div>
-            <div class="select">
                 <p>壊れている部分の写真３枚送付してください。</p>
                 <div id="photo">
                     <input type="file" id="myFile" name="filename1">
@@ -65,7 +53,7 @@
                 <p>壊れた箇所の詳細な情報をお書きください。</p>
                 <textarea name="options" id="options" cols="30" rows="10"></textarea>
             </div>
-            <button type="submit" id="submit">送信</button>
+            <button type="submit" name="submit" onclick="location.href='./emp_register_check.php'">送信内容を確認する</button>
         </form>
     </main>
 </body>

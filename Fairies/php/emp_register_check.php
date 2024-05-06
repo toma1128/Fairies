@@ -71,7 +71,7 @@ $data = [   //フォームのデータ
 <body>
     <header>
         <img src="images/fairies_home.png" alt="ロゴ" width="230">
-        <a href="http://localhost/Fairies/Fairies/php/login.php">ホームに戻る</a>
+        <a href="http://localhost/Fairies/Fairies/php/login.php">ログイン画面に戻る</a>
     </header>
     <main>
         <div>

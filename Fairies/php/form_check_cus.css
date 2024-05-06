@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #b0daff;
+  background-color: #FFFCA8;
 }
 
 /* header */
@@ -87,6 +87,10 @@ h2 {
   /* 角の丸み */
   border-radius: 5px;
 }
+/* 画像 */
+#photo{
+    display: flex;
+}
 
 /* 選択肢たちの割の枠 */
 .select {
@@ -135,5 +139,5 @@ button {
   border-radius: 5px;
 }
 button:hover {
-  background-color: #b0daff;
+  background-color: #FFFCA8;
 }
