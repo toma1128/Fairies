@@ -18,7 +18,7 @@ session_start();
 $number = $_SESSION['number'];  //お客様番号
 
 //連番ID取得
-$getID = "SELECT MAX(ID) FROM EMPLOYEE_FORMS;";
+$getID = "SELECT MAX(ID) FROM CUSTOMER_FORMS;";
 $result = $conn_DB->query($getID);
 $row = $result->fetch_row();
 $id = $row[0] + 1;      //ID
@@ -139,10 +139,15 @@ $detailData = [
             <div class="select">
                 <label>壊れている部分の写真</label>
                 <div id="photo">
-                    <!-- 保存する場所のファイルの名前も表示されちゃうのどうにかしてほしい -->
-                    <p><?= $destination1 ?></p>
-                    <p><?= $destination2 ?></p>
-                    <p><?= $destination3 ?></p>
+                    <div class="photos">
+                        <img src="./<?= $destination1 ?>" alt="" width = "200">
+                    </div>
+                    <div class="photos">
+                        <img src="./<?= $destination2 ?>" alt="" width = "200">
+                    </div>
+                    <div class="photos">
+                        <img src="./<?= $destination3 ?>" alt="" width = "200">
+                    </div>
                 </div>
             </div>
             <div class="select">

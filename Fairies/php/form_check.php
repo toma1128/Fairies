@@ -4,8 +4,8 @@
     $number = $_SESSION['number'];
     $_SESSION['number'] = $number;  //念のため
     $possible = filter_input(INPUT_POST, "yesnochoice", FILTER_VALIDATE_INT);
-    $period = filter_input(INPUT_POST, "datechoice", FILTER_VALIDATE_INT);
-    $reason = filter_input(INPUT_POST, "reason", FILTER_VALIDATE_INT);
+    $period = filter_input(INPUT_POST, "datechoice", FILTER_VALIDATE_INT)  ? $_POST['datechoice'] : 0;
+    $reason = filter_input(INPUT_POST, "reason", FILTER_VALIDATE_INT) ? $_POST['reason'] : 0;
     $message = filter_input(INPUT_POST, "options");
 
     // データベースへの接続情報
@@ -49,6 +49,7 @@
             2 => "不可能"
         ],
         "period" => [
+            0 => "",
             1 => "一週間以内",
             2 => "一か月以内",
             3 => "半年以内",
@@ -56,6 +57,7 @@
             5 => "未定"
         ],
         "reason" => [
+            0 => "",
             1 => "怪我",
             2 => "家族",
             3 => "家",
@@ -63,7 +65,6 @@
             5 => "その他"
         ]
     ]
-
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +115,7 @@
                 <div>
                     <p class=explanation>お間違えなければ登録、変更する場合は変更を押してください</p>
                 </div>
-                <button type="submit" id="submit" onclick="location.href='./form_check.php'"class = registration>登&nbsp;録</button>
+                <button type="submit" id="submit" onclick="location.href='./home_employee.php'"class = registration>登&nbsp;録</button>
                 <button onclick="location.href='./form_employee.php'"class = change>変&nbsp;更</button>
         </dev>
     </main>
