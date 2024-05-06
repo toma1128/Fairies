@@ -1,144 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kiwi Maru", serif;
+}
+
 body {
-    background-color: #19A7CE;
-}
-header h1{
-    height: 75px;
-    width: 1520px;
-    background-color: white;
-    padding: 5px;
-    margin: -10px;
-    border-bottom: 2px solid darkgray;
-    position: relative;/*親要素にログアウトボタンのポジションの形式を付与*/
-}
-header h1 img{
-    margin: 10px;
-}
-/*ログアウトボタンのポジションを調整*/
-nav{
-    position:absolute;
-    left:1220px;
-    bottom: 660px;
-}
-/* ログアウトボタンのスタイル */
-.button {
-    font-size:20px; /* 必要に応じてフォントサイズを調整してください */
-    letter-spacing: 5px; /* 文字と文字の間隔を2ピクセルに設定 */
-    padding: 20px 35px; /* 必要に応じて余白を調整してください */
-    border: none; /* 外枠を削除 */
-    background-color: white;
-    border-left: 5px solid aqua; /* 左側のボーダーを設定 */
-    border-right: 5px solid aqua; /* 右側のボーダーを設定 */
-    font-family: 'Kiwi Maru', serif;/*フォントの種類を設定*/
-    transition: transform 0.2s; /* 変化がスムーズになるようにトランジションを追加 */
-}
-.button:active {
-    transform: translateY(3px); /* ボタンがクリックされたときに少し下に移動させる */
-}
-header div{
-    background-color: gray;
-    padding: 5px;
-    height: 150px;
-    margin-left: 255px;
-    margin-right: 255px;
-    margin-top: 20px;
-    border-top-left-radius: 10px; /* 角の丸みを指定 */
-    border-top-right-radius: 10px; /* 角の丸みを指定 */
-}
-header h2{
-    text-align: center;
-    padding: 15px;
-    font-size: 35px;
-    background-color: white;
-    border-radius: 10px; /* 角の丸みを指定 */
-    width: 61%;
-    margin-top: 50px;
-    margin-left: 177px;
-    margin-bottom: 0px;
-    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
+  background-color: #b0daff;
 }
 
+/* header */
+header {
+  background-color: #f8fefe;
+  height: 7vw;
+  /* 配置 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img {
+  /* 高さ */
+  height: 80%;
+  /* 横幅 */
+  width: 35vh;
+  margin-left: 15px;
+}
+header a {
+  /* テキストサイズ */
+  font-size: 5vmin;
+  background-color: #b0daff;
+  /*枠線・上*/
+  border-top: solid 1px #19a7ce;
+  /*枠線・下*/
+  border-bottom: solid 1px #19a7ce;
+  /*枠線・右*/
+  border-right: solid 1px #19a7ce;
+  /*枠線・左*/
+  border-left: solid 1px #19a7ce;
+  /* 下線消す */
+  text-decoration: none;
+  margin-right: 15px;
+  /* 高さ */
+  height: 7vmin;
+  align-items: center;
+}
+/* カーソルの重なったときの処理 */
+header a :hover {
+  background-color: aqua;
+}
+
+/* main */
 main {
-    max-width: 54%;
-    margin: -10px auto;
-    padding: 90px;
-    background-color: gray;
-    border-radius: 5px;
-    /* 新しいスタイル */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    /* 画面の高さいっぱいに表示 */
-    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
-    border-bottom-left-radius: 10px; /* 角の丸みを指定 */
-    border-bottom-right-radius: 10px; /* 角の丸みを指定 */
-}
-main h2{
-    font-size: 30px;
-}
-#team{
-    font-size: 15px; /* メニュー項目のフォントサイズを大きくする */
-    padding: 10px; /* メニューの上下左右の余白を追加 */
-    margin: 15px;
-    width: 200px; /* メニューの幅を設定 */
-    margin-left: 25px;
-    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
-}
-/*題のフォントサイズを変更*/
-.font-size{
-    font-size: 23px;
+  /* サイズ */
+  max-width: 60vw;
+  /* 配置（真ん中） */
+  margin: 20px auto;
+  /* 内の距離 */
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 5px;
+  background-color: #e5e5e5;
 }
 
-#screen {
-    width: 70%;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px; /* 角の丸みを指定 */
+/* タイトル */
+#title {
+  background-color: #f8fefe;
+  /* 内外の配置 */
+  margin: 15px;
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 5px;
+  /* 中身の配置 */
+  text-align: center;
+  /* 文字サイズ */
+  font-size: 3vmin;
+}
+h2 {
+  /* 配置真ん中 */
+  margin: 0 auto;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+/* 選択肢たちの割の枠 */
+.select {
+  background-color: #f8fefe;
+  /* 内外の配置 */
+  margin: 15px;
+  padding: 20px;
+  /* 角の丸み */
+  border-radius: 5px;
 }
-
+/* 説明欄の大きさ */
+p {
+  font-size: 1.5vmin;
+  /* 外配置 */
+  margin: 5px 20px;
+}
+/* 選択項目 */
+select {
+  font-size: 2vmin;
+  /* 内配置 */
+  padding: 10px;
+  /* 外配置 */
+  margin: 10px 20px;
+  /* 枠 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* サイズ */
+  width: 110px;
+}
+/* 項目タイトル */
 label {
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-size: 2.5vmin;
+  /* 太文字 */
+  font-weight: bold;
+  /* 外配置 */
+  margin-bottom: 10px;
 }
-
+/* 入力する */
 input[type="text"],
 input[type="password"],
 input[type="number"],
 input[type="date"] {
-    padding: 10px;
-    margin-top:20px;
-    margin-left:25px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
+  /* 内配置 */
+  padding: 10px;
+  /* 外配置 */
+  margin: 10px 20px;
+  /* 枠 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="date"]:focus {
-    border-color: #49ada1;
+/* button */
+button {
+  /* サイズ */
+  width: 30%;
+  /* 内配置 */
+  padding: 2vmin;
+  font-size: 2.5vmin;
+  /* 真ん中 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* 色 */
+  background-color: #f8fefe;
+  /* 枠 */
+  border: none;
+  border-radius: 5px;
 }
-main button {
-    width: 30%;
-    padding: 15px;
-    margin-left: 170px;
-    margin-top: 50px;
-    font-size: 18px;
-    background-color: #49ada1;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Kiwi Maru', serif; /*フォントの種類を設定*/
-}
-
-main button:hover {
-    background-color: #3eabab;
+button:hover {
+  background-color: #b0daff;
 }

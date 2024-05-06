@@ -4,9 +4,11 @@
   box-sizing: border-box;
   font-family: "Kiwi Maru", serif;
 }
+
 body {
   background-color: #b0daff;
 }
+
 /* header */
 header {
   background-color: #f8fefe;
@@ -16,6 +18,7 @@ header {
   align-items: center;
   justify-content: space-between;
 }
+
 header img {
   /* 高さ */
   height: 80%;
@@ -46,10 +49,11 @@ header a {
 header a :hover {
   background-color: aqua;
 }
+
 /* main */
 main {
   /* サイズ */
-  max-width: 60vw;
+  width: 60vw;
   /* 配置（真ん中） */
   margin: 20px auto;
   /* 内の距離 */
@@ -58,11 +62,12 @@ main {
   border-radius: 5px;
   background-color: #e5e5e5;
 }
+
 /* タイトル */
 #title {
   background-color: #f8fefe;
   /* 内外の配置 */
-  margin: 15px;
+  margin: 1.5vw;
   padding: 20px;
   /* 角の丸み */
   border-radius: 5px;
@@ -75,43 +80,44 @@ h2 {
   /* 配置真ん中 */
   margin: 0 auto;
 }
-
-/* 選択肢たちの割の枠 */
-.select {
+#check_words {
   background-color: #f8fefe;
-  /* 内外の配置 */
-  margin: 15px;
-  padding: 20px;
+  /* 配置 */
+  margin: 1.5vw;
   /* 角の丸み */
   border-radius: 5px;
 }
-/* 説明欄の大きさ */
+
+/* 選択肢たちの割の枠 */
+.select {
+  /* 内外の配置 */
+  padding: 20px;
+}
+/* 入力内容 */
 p {
+  font-size: 2vmin;
+  /* 外配置 */
+  margin: 5px 10px;
+  /* 内外の配置 */
+  padding: 10px;
+  /* 角の丸み */
+  border-radius: 5px;
+  background-color: #e5e5e5;
+  /* サイズ */
+  width: auto;
+}
+/* 項目タイトル */
+label {
   font-size: 2.5vmin;
   /* 太文字 */
   font-weight: bold;
-  /* 外配置 */
-  margin-bottom: 10px;
 }
-label{
-    margin: 5px;
-}
-/* テキストエリア */
-textarea {
-  width: 90%;
-  margin: 20px;
-  padding: 5px;
-  /* 大きさを変えないようにする */
-  resize:none;
-  /* 周りの色 */
-  border: 3px solid #cccccc;
-  border-radius: 5px;
-}
-textarea:focus {
-border:3px solid #b0daff;
-outline:0;
-}
+
 /* button */
+#button {
+  display: flex;
+  align-items: center;
+}
 button {
   /* サイズ */
   width: 30%;

@@ -9,24 +9,16 @@
 </head>
 
 <body>
-<header>
-        <h1 class="logo">
-            <img src="images/fairieshome.png" alt="ロゴ" width="230">
-        </h1>
-        <nav>
-            <ul class="nav-menu">
-                <a href="http://localhost/Fairies/Fairies/php/login.php" class="button-link">
-                    <button type="button" class="button">ホームに戻る</button>
-                </a>
-            </ul>
-        </nav>
+    <header>
+        <img src="images/fairies_home.png" alt="ロゴ" width="230">
+        <a class="form_link" href="./login.php">ログイン画面に戻る</a>
     </header>
     <main>
-        <div id="screen">
-        <form id="registrationForm" action="./cusregister_check.php" method="POST">
-            <div class="select">
-                <h2>初期作成（お客様用）</h2>
-                <?php
+        <div>
+            <div id="title">
+                <h2>初 期 作 成（お客様用）</h2>
+            </div>
+            <?php
                 //checkphpに画面遷移する時に、固有番号がDBの中にすでにある
                 //この処理を始めます。
                 session_start();
@@ -38,27 +30,24 @@
                     unset($_SESSION['error']);
                 }
 
-                ?>
-            </div>
-            
-                <div class="container" class="select">
-                    <div class="select">
-                        <label for="number">お客様番号</label><br>
-                        <input type="number" name="CusNumber" id="CusNumber" placeholder="例:99999" required>
+             ?>
+            <form action="./cus_register_check.php" method="POST" class="w-1/2 mx-8">
+                <div class="select">
+                    <label for="number">お客様番号</label><br>
+                    <input type="number" name="CusNumber" id="CusNumber" placeholder="例:99999" required>
+                </div>
+                <div class="select">
+                    <div>
+                        <label for="uname">お名前</label><br>
+                        <input type="text" name="uname" id="uname" placeholder="例:山田花子" required>
                     </div>
-                    <div class="select">
-                        <div>
-                            <label for="uname">お名前</label><br>
-                            <input type="text" name="uname" id="uname" placeholder="名前を入力してください。" required>
-                        </div>
-                        <div>
-                            <label for="password">パスワード</label><br>
-                            <p>記号と英数字をそれぞれ一文字以上を含めて、八文字以上で入力してください.</p>
-                            <input type="password" name="password" id="password" placeholder="8文字以上の英数字" required>
-                        </div>
+                    <div>
+                        <label for="password">パスワード</label><br>
+                        <p>記号と英数字をそれぞれ一文字以上を含めて、八文字以上で入力してください.</p>
+                        <input type="password" name="password" id="password" placeholder="例:123qwe" required>
                     </div>
                 </div>
-                <button id="submit" type="submit" name="submit">登&nbsp;録</button>
+                <button type="submit" name="registerBtn" onclick="location.href='./cus_register_check.php'">送信内容を確認する</button>
             </form>
         </div>
     </main>

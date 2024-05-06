@@ -52,7 +52,7 @@ while ($row = $result_set->fetch_assoc()) { // 各行を取得
     $result[] = $row; // 配列に行を追加
 }
 
-$stmt2 = $conn_DB->prepare('SELECT C.CUSTOMERNUMBER AS CUSTOMERNUMBER, C.NAME AS CNAME, CF.STATE as CFSTATE FROM CUSTOMERS AS C JOIN CUSTOMER_FORMS AS CF ON(C.CUSTOMERNUMBER = CF.NUMBER)');
+$stmt2 = $conn_DB->prepare('SELECT CF.ID AS CFID, C.CUSTOMERNUMBER AS CUSTOMERNUMBER, C.NAME AS CNAME, CF.STATE as CFSTATE FROM CUSTOMERS AS C JOIN CUSTOMER_FORMS AS CF ON(C.CUSTOMERNUMBER = CF.NUMBER)');
 $stmt2->execute();
 
 // 두 번째 쿼리 결과 처리
@@ -62,7 +62,7 @@ while ($row = $result_set2->fetch_assoc()) {
     $result2[] = $row;
 }
 
-var_dump($_POST);
+// var_dump($_POST);
 // var_dump('help me please');
 //全権表示用のクエリを準備する
 
@@ -72,6 +72,7 @@ $data = [   //フォームのデータ
         2 => "不可能"
     ],
     "period" => [
+        0 => "",
         1 => "一週間以内",
         2 => "一か月以内",
         3 => "半年以内",
@@ -79,30 +80,40 @@ $data = [   //フォームのデータ
         5 => "未定"
     ],
     "reason" => [
+        0 => "",
         1 => "怪我",
         2 => "家族",
         3 => "家",
         4 => "交通機関",
         5 => "その他"
     ]
-]
+];
+
+$customer_data = [
+    "state" => [
+        1 => "崩壊",
+        2 => "ひび割れ",
+        3=> "その他"
+    ]
+];
+
+
 ?>
 <html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="home_employee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <title>ホーム画面</title>
 </head>
 
 <body>
     <header>
-        <h1 class="logo">
-            <img src="images/fairieshome.png" alt="ロゴ" width="230">
-        </h1>
+        <img src="images/fairies_home.png" alt="ロゴ" width="230">
         <ul>
-            <li><a class="form_link" href="./form_employee.php">安否報告</a></li>
-            <li><a class="form_link" href="./login.php">ログアウト</a></li>
+            <li onclick="location.href='./form_employee.php';">安否報告</li>
+            <li onclick="location.href='./login.php';">ログアウト</li>
         </ul>
     </header>
     <main>
@@ -121,9 +132,6 @@ $data = [   //フォームのデータ
                     </div>
 
                     <!-- </div> -->
-
-
-
                     <form action="" method="POST">
                         <input type="search" id="query" name="q" placeholder="Search...">
                         <button>検索</button>
@@ -176,18 +184,18 @@ $data = [   //フォームのデータ
                         <h2>お客様一覧</h2>
                     </div>
                     <!-- </div> -->
-                        <input type="search" id="query" name="q" placeholder="Search...">
-                        <button>検索</button>
+                    <input type="search" id="query" name="q" placeholder="Search...">
+                    <button>検索</button>
                     </form>
                 </div>
                 <div class="contentWrap">
                     <?php foreach ($result2 as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_customer.php?id=<?= isset($r['CUSTOMERNUMBER']) ? h($r['CUSTOMERNUMBER']) : '' ?>';">
+                                <tr onclick="location.href='./personal_customer.php?id=<?= $r["CFID"] ?>';">
                                     <td><?= isset($r['CUSTOMERNUMBER']) ? h($r['CUSTOMERNUMBER']) : '' ?></td>
                                     <td><?= isset($r['CNAME']) ? h($r['CNAME']) : '' ?></td>
-                                    <td><?= isset($r['CFSTATE']) ? h($r['CFSTATE']) : '' ?></td>
+                                    <td><?= $customer_data["state"][$r["CFSTATE"]] ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -200,4 +208,3 @@ $data = [   //フォームのデータ
 <script src="./home_emp.js"></script>
 
 </html>
-

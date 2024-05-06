@@ -1,126 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kiwi Maru", serif;
+}
 body {
-    background-color: #FFFCA8;
+  background-color: #fffca8;
+  height: 100vh;
+  overflow: hidden;
 }
-header h1{
-    height: 75px;
-    width: 1520px;
-    background-color: white;
-    padding: 5px;
-    margin: -10px;
-    border-bottom: 2px solid darkgray;
-    position: relative;/*親要素にログアウトボタンのポジションの形式を付与*/
+/* header */
+header {
+  background-color: #f8fefe;
+  height: 15%;
+  /* 配置 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-header h1 img{
-    margin: 10px;
+header img {
+  /* 高さ */
+  height: 80%;
+  /* 横幅 */
+  width: 35vh;
+  margin-left: 15px;
 }
-/*ログアウトボタンのポジションを調整*/
-nav{
-    position:absolute;
-    left:1220px;
-    bottom: 675px;
+header a {
+  /* テキストサイズ */
+  font-size: 5vmin;
+  background-color: #b0daff;
+  /*枠線・上*/
+  border-top: solid 1px #19a7ce;
+  /*枠線・下*/
+  border-bottom: solid 1px #19a7ce;
+  /*枠線・右*/
+  border-right: solid 1px #19a7ce;
+  /*枠線・左*/
+  border-left: solid 1px #19a7ce;
+  /* 下線消す */
+  text-decoration: none;
+  margin-right: 15px;
+  /* 高さ */
+  height: 7vmin;
+  align-items: center;
 }
-/* ログアウトボタンのスタイル */
-.button {
-    font-size:25px; /* 必要に応じてフォントサイズを調整してください */
-    letter-spacing: 5px; /* 文字と文字の間隔を2ピクセルに設定 */
-    padding: 20px 35px; /* 必要に応じて余白を調整してください */
-    border: none; /* 外枠を削除 */
-    background-color: white;
-    border-left: 5px solid aqua; /* 左側のボーダーを設定 */
-    border-right: 5px solid aqua; /* 右側のボーダーを設定 */
-    font-family: 'Kiwi Maru', serif;/*フォントの種類を設定*/
-    transition: transform 0.2s; /* 変化がスムーズになるようにトランジションを追加 */
+/* カーソルの重なったときの処理 */
+header a :hover {
+  background-color: aqua;
 }
-.button:active {
-    transform: translateY(3px); /* ボタンがクリックされたときに少し下に移動させる */
+main {
+  height: 85%;
+  position: relative;
 }
-/*親要素にポジションの形式を付与*/
-main{
-    position:relative;
+/* 番号、日付、名前の枠*/
+#information {
+  width: 70%;
+  height: 30%;
+  display: flex;
 }
-/*お客様番号のスタイルと位置を調整*/
-h4{
-    position:absolute;
-    top:10px;
-    left:100px;
-    font-size:15px;
-    letter-spacing: 1px; /* 文字と文字の間隔を2ピクセルに設定 */
-    font-family: 'Kiwi Maru', serif;/*フォントの種類を設定*/
+/* 番号と日付 */
+#status {
+  width: fit-content;
+  height: fit-content;
+  gap: 8px;
+  margin-top: 18px;
+  margin-left: 5%;
+  display: flex;
+  font-size: 4vmin;
+  border-bottom: 3px solid #e9b824;
+  text-underline-offset: 2px;
 }
-/*お客様番号の数字の方のデザイン*/
-#register_number{
-    position:absolute;
-    top:18px;
-    left:100px;
-    font-size: 30px;
-    font-family: 'Kiwi Maru', serif;/*フォントの種類を設定*/
-    text-decoration: underline aqua;/*bottom-borderだとテキストとボーダーラインが離れすぎててだめなので代替えとして*/
-    text-underline-offset: 2px;
-}
-/*時間の欄のデザイン*/
-#time{
-    position:absolute;
-    top:18px;
-    left:350px;
-    font-size: 30px;
-    font-family: 'Kiwi Maru', serif;/*フォントの種類を設定*/
-}
+
 /*名前欄のデザイン*/
-#name{
-    position: absolute;
-    top:0px;
-    left:600px;
-    font-size: 50px;
-    font-family: 'Kiwi Maru', serif;
-    letter-spacing: 6px; 
-    background-color: white;
-    border-radius: 10px; /* 角の丸みを指定 */
+#name {
+  width: fit-content;
+  height: fit-content;
+  /* 真ん中 */
+  display: flex;
+  align-items: center;
+  margin: auto auto;
+  font-size: 7.5vmin;
+  letter-spacing: 6px;
+  background-color: #f8fefe;
+  border-radius: 5px; /* 角の丸みを指定 */
 }
+/* 選択情報の枠 */
+#word {
+  width: 70%;
+  height: 70%;
+}
+/* 壊れた個所 */
+#home_condition {
+  margin-left: 13%;
+  font-size: 4vmin;
+}
+/* 画像など */
+#home {
+  display: flex;
+  height: 95%;
+  position: relative;
+}
+
 /*理由欄のデザイン*/
-.comment{
-    position:absolute;
-    top: 220px;
-    left:550px;
-    padding: 50px;
-    font-size: 30px;
-    font-family: 'Kiwi Maru', serif;
-    background-color: white;
-    height: 300px;
-    border-radius: 20px; 
+#comment {
+  position: absolute;
+  right: 0;
+  padding: 4vmin;
+  font-size: 4vmin;
+  background-color: #f8fefe;
+  height: 60%;
+  width: 50%;
+  overflow: scroll;
+  /*スクロールバー非表示（Firefox）*/
+  scrollbar-width: none;
+  border: 4px solid #e9b824;
+  border-radius: 5px;
 }
-.home_condition{
-    position: absolute;
-    top: 170px;
-    left: 170px;
-    font-size: 40px;
-    font-family: 'Kiwi Maru', serif;
+#comment p {
+  overflow-wrap: break-word;
 }
-.home_detail{
-    position:absolute;
-    top: 250px;
-    left: 410px;
-    font-size: 30px;
-    font-family: 'Kiwi Maru', serif;
+/* 画像 */
+#home_image {
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 280px;
+  height: 280px;
 }
-.home_image{
-    position:absolute;
-    top: 300px;
-    left: 100px;
+#home_detail {
+  font-size: 4vmin;
+  width: 10%;
+  position: absolute;
+  right: calc(50% + 10px);
+  top: 0;
 }
-.folder{
-    width: 350px;
-    height:520px;
-    position: absolute;
-    top: 100px;
-    left: 1130px;
-    display: flex;
-    flex-flow: column;
-    margin: 1px auto;
+
+#folder {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
-.photo{
-    background-color: white;
-    width: 350px;
-    height:520px;
-    margin: 3px auto;
-    ;
+.photo {
+  background-color: #f8fefe;
+  width: 80%;
+  margin: 5px 0;
+  flex-grow: 1;
+}
+
+.photo img{
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
