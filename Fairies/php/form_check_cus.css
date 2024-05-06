@@ -92,6 +92,12 @@ h2 {
     display: flex;
 }
 
+.photos img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* 選択肢たちの割の枠 */
 .select {
   /* 内外の配置 */
