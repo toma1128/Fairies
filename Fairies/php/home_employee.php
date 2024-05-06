@@ -52,7 +52,7 @@ while ($row = $result_set->fetch_assoc()) { // 各行を取得
     $result[] = $row; // 配列に行を追加
 }
 
-$stmt2 = $conn_DB->prepare('SELECT C.CUSTOMERNUMBER AS CUSTOMERNUMBER, C.NAME AS CNAME, CF.STATE as CFSTATE FROM CUSTOMERS AS C JOIN CUSTOMER_FORMS AS CF ON(C.CUSTOMERNUMBER = CF.NUMBER)');
+$stmt2 = $conn_DB->prepare('SELECT CF.ID AS CFID, C.CUSTOMERNUMBER AS CUSTOMERNUMBER, C.NAME AS CNAME, CF.STATE as CFSTATE FROM CUSTOMERS AS C JOIN CUSTOMER_FORMS AS CF ON(C.CUSTOMERNUMBER = CF.NUMBER)');
 $stmt2->execute();
 
 // 두 번째 쿼리 결과 처리
@@ -85,7 +85,17 @@ $data = [   //フォームのデータ
         4 => "交通機関",
         5 => "その他"
     ]
-]
+];
+
+$customer_data = [
+    "state" => [
+        1 => "崩壊",
+        2 => "ひび割れ",
+        3=> "その他"
+    ]
+];
+
+
 ?>
 <html lang="ja">
 
@@ -180,10 +190,10 @@ $data = [   //フォームのデータ
                     <?php foreach ($result2 as $r) : ?>
                         <table>
                             <tbody>
-                                <tr onclick="location.href='./personal_customer.php?id=<?= isset($r['CUSTOMERNUMBER']) ? h($r['CUSTOMERNUMBER']) : '' ?>';">
+                                <tr onclick="location.href='./personal_customer.php?id=<?= $r["CFID"] ?>';">
                                     <td><?= isset($r['CUSTOMERNUMBER']) ? h($r['CUSTOMERNUMBER']) : '' ?></td>
                                     <td><?= isset($r['CNAME']) ? h($r['CNAME']) : '' ?></td>
-                                    <td><?= isset($r['CFSTATE']) ? h($r['CFSTATE']) : '' ?></td>
+                                    <td><?= $customer_data["state"][$r["CFSTATE"]] ?></td>
                                 </tr>
                             </tbody>
                         </table>

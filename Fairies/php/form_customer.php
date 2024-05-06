@@ -1,3 +1,8 @@
+<?php
+session_start();
+$num = $_SESSION['number'];
+$_SESSION['number'] = $num;
+?>
 <!DOCTYPE html>
 <html lang="ja">
 

@@ -1,15 +1,27 @@
 <?php
 // 読み取り
 date_default_timezone_set('Asia/Tokyo');
-// どこから持ってくるかわからん
-// 重複ダメって怒られた;;
-$id = "11118";
-$number = "12345";
 // ーーーーーーーーーーーーーー
 $home = filter_input(INPUT_POST, "choice", FILTER_VALIDATE_INT);
 $detail = filter_input(INPUT_POST, "datechoice", FILTER_VALIDATE_INT);
 
-// 多分あってると思う
+// データベースへの接続情報
+$servername = "localhost"; // データベースのホスト名
+$username = "fairies"; // データベースのユーザー名
+$password = "daimonia"; // データベースのパスワード
+$dbname = "feya"; // 使用するデータベース名
+
+// データベースに接続する
+$conn_DB = new mysqli($servername, $username, $password, $dbname);
+
+session_start();
+$number = $_SESSION['number'];  //お客様番号
+
+//連番ID取得
+$getID = "SELECT MAX(ID) FROM EMPLOYEE_FORMS;";
+$result = $conn_DB->query($getID);
+$row = $result->fetch_row();
+$id = $row[0] + 1;      //ID
 
 // ファイルの一時的な保存先からファイルを移動する
 $photo1_tmp = $_FILES['filename1']['tmp_name'];
@@ -21,7 +33,7 @@ $photo1_name = basename($_FILES['filename1']['name']);
 $photo2_name = basename($_FILES['filename2']['name']);
 $photo3_name = basename($_FILES['filename3']['name']);
 // 移動先のディレクトリを指定（images フォルダ内）
-$uploadDirectory = 'webImages/';
+$uploadDirectory = 'cus_images/';
 
 // ファイルを移動
 $destination1 = $uploadDirectory . $photo1_name;
@@ -54,9 +66,9 @@ if ($conn_DB->connect_error) {
 $conn_DB->set_charset('utf8');   //文字コードを設定
 
 // SQLクエリを作成して実行する
-$stmt = $conn_DB->prepare('INSERT INTO CUSTOMER_FORMS (ID, NUMBER, STATE, PART, PHOTO1,PHOTO2,PHOTO3,INFORMATION) VALUES (?, ?, ?, ?, ?,?,?,?)');
+$stmt = $conn_DB->prepare('INSERT INTO CUSTOMER_FORMS (ID, NUMBER, STATE, PART, PHOTO1, PHOTO2, PHOTO3, INFORMATION) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
 
-$stmt->bind_param('iissssss', $id, $number, $home, $detail, $destination1, $destination2, $destination3, $message);
+$stmt->bind_param('isiissss', $id, $number, $home, $detail, $destination1, $destination2, $destination3, $message);
 
 if ($stmt->execute()) {
     // ステートメントを閉じる
