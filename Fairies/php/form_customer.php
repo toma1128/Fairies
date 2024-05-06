@@ -41,19 +41,6 @@
                 <label for="2ndchoice5">その他</label>
             </div>
             <div class="select">
-                <p>出社出来ない理由を選択してください。</p>
-                <input type="radio" id="reason1" name="reason" value="1">
-                <label for="reason1">怪我</label>
-                <input type="radio" id="reason2" name="reason" value="2">
-                <label for="reason2">家族</label>
-                <input type="radio" id="reason3" name="reason" value="3">
-                <label for="reason3">家</label>
-                <input type="radio" id="reason4" name="reason" value="4">
-                <label for="reason4">交通機関</label>
-                <input type="radio" id="reason5" name="reason" value="5">
-                <label for="reason5">その他</label>
-            </div>
-            <div class="select">
                 <p>壊れている部分の写真３枚送付してください。</p>
                 <div id="photo">
                     <input type="file" id="myFile" name="filename1">

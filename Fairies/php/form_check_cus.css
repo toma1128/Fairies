@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #b0daff;
+  background-color: #FFFCA8;
 }
 
 /* header */
@@ -135,5 +135,5 @@ button {
   border-radius: 5px;
 }
 button:hover {
-  background-color: #b0daff;
+  background-color: #FFFCA8;
 }
