@@ -2,14 +2,39 @@
 // 読み取り
 date_default_timezone_set('Asia/Tokyo');
 // どこから持ってくるかわからん
-$id = "12345";
+// 重複ダメって怒られた;;
+$id = "12111";
 $number = "12345";
 // ーーーーーーーーーーーーーー
 $home = filter_input(INPUT_POST, "choice", FILTER_VALIDATE_INT);
 $detail = filter_input(INPUT_POST, "datechoice", FILTER_VALIDATE_INT);
-$photo1 = filter_input(INPUT_POST, "filename1");
-$photo2 = filter_input(INPUT_POST, "filename2");
-$photo3 = filter_input(INPUT_POST, "filename3");
+
+// 多分あってると思う
+
+// ファイルの一時的な保存先からファイルを移動する
+$photo1_tmp = $_FILES['filename1']['tmp_name'];
+$photo2_tmp = $_FILES['filename2']['tmp_name'];
+$photo3_tmp = $_FILES['filename3']['tmp_name'];
+
+// ファイル名の生成
+$photo1_name = basename($_FILES['filename1']['name']);
+$photo2_name = basename($_FILES['filename2']['name']);
+$photo3_name = basename($_FILES['filename3']['name']);
+// 移動先のディレクトリを指定（images フォルダ内）
+$uploadDirectory = 'webImages/';
+
+// ファイルを移動
+$destination1 = $uploadDirectory . $photo1_name;
+$destination2 = $uploadDirectory . $photo2_name;
+$destination3 = $uploadDirectory . $photo3_name;
+
+// ファイルを移動
+move_uploaded_file($photo1_tmp, $destination1);
+move_uploaded_file($photo2_tmp, $destination2);
+move_uploaded_file($photo3_tmp, $destination3);
+
+
+// ーーーーーーーーーーーーーーーーーーーーーーーー
 // テキストフィールドに対しての処理を行っていません。
 $message = filter_input(INPUT_POST, "options");
 
@@ -31,7 +56,7 @@ $conn_DB->set_charset('utf8');   //文字コードを設定
 // SQLクエリを作成して実行する
 $stmt = $conn_DB->prepare('INSERT INTO CUSTOMER_FORMS (ID, NUMBER, STATE, PART, PHOTO1,PHOTO2,PHOTO3,INFORMATION) VALUES (?, ?, ?, ?, ?,?,?,?)');
 
-$stmt->bind_param('issss', $id, $number, $home, $detail, $photo1, $photo2, $photo3, $message);
+$stmt->bind_param('iissssss', $id, $number, $home, $detail, $destination1, $destination2, $destination3, $message);
 
 if ($stmt->execute()) {
     // ステートメントを閉じる
@@ -102,9 +127,10 @@ $detailData = [
             <div class="select">
                 <label>壊れている部分の写真</label>
                 <div id="photo">
-                    <p><?= $photo1 ?></p>
-                    <p><?= $photo2 ?></p>
-                    <p><?= $photo3 ?></p>
+                    <!-- 保存する場所のファイルの名前も表示されちゃうのどうにかしてほしい -->
+                    <p><?= $destination1 ?></p>
+                    <p><?= $destination2 ?></p>
+                    <p><?= $destination3 ?></p>
                 </div>
             </div>
             <div class="select">
@@ -113,8 +139,8 @@ $detailData = [
             </div>
         </div>
         <div id="button">
-            <button id="submit" type="submit" name="submit" onclick="location.href='./user_register.php'">入力画面に戻る</button>
-            <button id="submit" type="submit" name="submit" onclick="location.href='./login.php'">送信</button>
+            <button type="submit" name="submit" onclick="location.href='./user_register.php'">入力画面に戻る</button>
+            <button type="submit" name="submit" onclick="location.href='./login.php'">送信</button>
         </div>
 
     </main>

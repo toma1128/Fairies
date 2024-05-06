@@ -17,7 +17,8 @@
         <div id="title">
             <h2>災害安否確認フォーム</h2>
         </div>
-        <form action="./form_check_cus.php" method="POST">
+        <!--  enctype="multipart/form-data"画像 -->
+        <form action="./form_check_cus.php" method="POST" enctype="multipart/form-data">
             <div class="select">
                 <p>現在の家を状態を教えてください。</p>
                 <input type="radio" id="choice1" name="choice" value="1">
