@@ -87,6 +87,10 @@ h2 {
   /* 角の丸み */
   border-radius: 5px;
 }
+/* 画像 */
+#photo{
+    display: flex;
+}
 
 /* 選択肢たちの割の枠 */
 .select {

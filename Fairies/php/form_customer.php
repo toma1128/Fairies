@@ -17,7 +17,7 @@
         <div id="title">
             <h2>災害安否確認フォーム</h2>
         </div>
-        <form action="" method="POST">
+        <form action="./form_check_cus.php" method="POST">
             <div class="select">
                 <p>現在の家を状態を教えてください。</p>
                 <input type="radio" id="choice1" name="choice" value="1">
@@ -52,7 +52,7 @@
                 <p>壊れた箇所の詳細な情報をお書きください。</p>
                 <textarea name="options" id="options" cols="30" rows="10"></textarea>
             </div>
-            <button type="submit" id="submit">送信</button>
+            <button type="submit" name="submit" onclick="location.href='./emp_register_check.php'">送信内容を確認する</button>
         </form>
     </main>
 </body>

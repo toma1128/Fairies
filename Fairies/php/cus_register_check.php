@@ -1,5 +1,5 @@
 <?php
-//初期設定
+// 読み取り
 $CusNumber = filter_input(INPUT_POST, "CusNumber", FILTER_VALIDATE_INT);
 $uname = filter_input(INPUT_POST, "uname");
 $pass = filter_input(INPUT_POST, "password");
