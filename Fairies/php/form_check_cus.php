@@ -3,7 +3,7 @@
 date_default_timezone_set('Asia/Tokyo');
 // どこから持ってくるかわからん
 // 重複ダメって怒られた;;
-$id = "12111";
+$id = "11111";
 $number = "12345";
 // ーーーーーーーーーーーーーー
 $home = filter_input(INPUT_POST, "choice", FILTER_VALIDATE_INT);
@@ -139,7 +139,7 @@ $detailData = [
             </div>
         </div>
         <div id="button">
-            <button type="submit" name="submit" onclick="location.href='./user_register.php'">入力画面に戻る</button>
+            <button type="submit" name="submit" onclick="location.href='./form_customer.php'">入力画面に戻る</button>
             <button type="submit" name="submit" onclick="location.href='./login.php'">送信</button>
         </div>
 

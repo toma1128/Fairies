@@ -11,7 +11,7 @@
 <body>
     <header>
         <img src="images/fairies_home.png" alt="ロゴ" width="230">
-        <a class="form_link" href="">ログアウト</a>
+        <a class="form_link" href="./login.php">ログイン画面に戻る</a>
     </header>
 
     <main>
