@@ -79,7 +79,7 @@
     <header>
 
         <h1>
-            <img src="images/fairieshome.png" alt="ロゴ" width="230">
+            <img src="images/fairies_home.png" alt="ロゴ" width="230">
 
 
         </h1>

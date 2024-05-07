@@ -34,15 +34,17 @@ nav{
 }
 
 .button:active {
-    transform: translateY(0.2em); /* ボタンがクリックされたときに少し下に移動させる */
+    transform: translateY(0.1em); /* ボタンがクリックされたときに少し下に移動させる */
 }
-
+.button:hover{
+    background-color: #b0daff;
+}
 main{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #19A7CE;
+    background-color:  #e5e5e5;
     width: 50%; /* 固定の幅を指定 */
     margin-left: auto; /* 左側のマージンを自動にして中央寄せ */
     margin-right: auto; /* 右側のマージンを自動にして中央寄せ */
@@ -95,7 +97,7 @@ main button {
 }
 
 main button:hover {
-    background-color: #3eabab;
+    background-color: #b0daff;
 }
 
 .explanation{
