@@ -162,8 +162,8 @@ $customer_data = [
 
                 </div>
                 <div class="contentWrap"> <!--情報データが入るところ-->
-                    <?php foreach ($result as $r) : ?>
-                        <table>
+                    <table>
+                        <?php foreach ($result as $r) : ?>
                             <tbody>
                                 <tr onclick="location.href='./personal_employee.php?id=<?= $r["EFID"]  ?> ';">
                                     <td><?= h($r["DNAME"]) ?></td>
@@ -173,8 +173,8 @@ $customer_data = [
                                     <td><?= h($data["reason"][($r["REASON"])]) ?></td>
                                 </tr>
                             </tbody>
-                        </table>
-                    <?php endforeach ?>
+                        <?php endforeach ?>
+                    </table>
                 </div>
             </div>
             <div id="customer_about">
@@ -189,8 +189,8 @@ $customer_data = [
                     </form>
                 </div>
                 <div class="contentWrap">
-                    <?php foreach ($result2 as $r) : ?>
-                        <table>
+                    <table>
+                        <?php foreach ($result2 as $r) : ?>
                             <tbody>
                                 <tr onclick="location.href='./personal_customer.php?id=<?= $r["CFID"] ?>';">
                                     <td><?= isset($r['CUSTOMERNUMBER']) ? h($r['CUSTOMERNUMBER']) : '' ?></td>
@@ -198,8 +198,8 @@ $customer_data = [
                                     <td><?= $customer_data["state"][$r["CFSTATE"]] ?></td>
                                 </tr>
                             </tbody>
-                        </table>
-                    <?php endforeach ?>
+                        <?php endforeach ?>
+                    </table>
                 </div>
             </div>
         </div>

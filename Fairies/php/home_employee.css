@@ -189,6 +189,17 @@ table td {
   font-size: 25px;
 }
 
+table tr {
+  border-top: solid 1px #19a7ce;
+  /*枠線・上*/
+  border-bottom: solid 1px #19a7ce;
+  /*枠線・下*/
+  border-right: solid 1px #19a7ce;
+  /*枠線・右*/
+  border-left: solid 1px #19a7ce;
+  /*枠線・左*/
+}
+
 form {
   display: flex;
   margin-left: 5px;
