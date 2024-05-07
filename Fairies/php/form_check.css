@@ -27,8 +27,8 @@ nav{
     padding: 1em 2em; /* 相対的な余白を指定 */
     border: none;
     background-color: white;
-    border-left: 0.3em solid aqua; /* 相対的なボーダーの太さに変更 */
-    border-right: 0.3em solid aqua; /* 相対的なボーダーの太さに変更 */
+    border-left: 0.2em solid #146C94; /* 相対的なボーダーの太さに変更 */
+    border-right: 0.2em solid #146C94; /* 相対的なボーダーの太さに変更 */
     font-family: 'Kiwi Maru', serif;
     transition: transform 0.2s;
 }
@@ -37,7 +37,7 @@ nav{
     transform: translateY(0.1em); /* ボタンがクリックされたときに少し下に移動させる */
 }
 .button:hover{
-    background-color: #b0daff;
+    background-color: #efffff;
 }
 main{
     display: flex;
@@ -48,6 +48,7 @@ main{
     width: 50%; /* 固定の幅を指定 */
     margin-left: auto; /* 左側のマージンを自動にして中央寄せ */
     margin-right: auto; /* 右側のマージンを自動にして中央寄せ */
+    margin-bottom: 1em;
     padding-top: 3em;
     max-width: 800px; /* 最大幅を指定 */
     min-width: 800px; /* 最小幅を指定 */
