@@ -98,16 +98,18 @@
                 </div>
                 <div>
                     <p class=question>出勤可否</p>
-                    <p class=response>□<?=$data["possible"]["$possible"] ?></p>
+                    <p class=response><?=$data["possible"]["$possible"] ?></p>
                 </div>
+                <?php if ($possible == 2) : ?>
                 <div>
                     <p class=question>出勤出来ない期限</p>
-                    <p class=response>□<?= $data["period"]["$period"] ?></p>
+                    <p class=response><?= $data["period"]["$period"] ?></p>
                 </div>
                 <div>
-                    <p class=question>出社出来ない理由</p>
-                    <p class=response>□<?=$data["reason"]["$reason"] ?></p>
+                    <p class=question>出勤出来ない理由</p>
+                    <p class=response><?=$data["reason"]["$reason"] ?></p>
                 </div>
+                <?php endif; ?>
                 <div>
                     <p class=question>連絡事項等</p>
                     <textarea name="options" id="options" cols="30" rows="10" value="" class=response><?=$message ?></textarea>
