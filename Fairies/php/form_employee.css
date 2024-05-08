@@ -26,9 +26,9 @@ header img {
 header a {
   /* テキストサイズ */
   font-size: 5vmin;
-  padding-left: 3px;
-  padding-right: 3px;
-  padding-bottom:50px ;
+  padding-left: 3vmin;
+  padding-right: 3vmin;
+  padding-bottom: 8vmin;
   /*枠線・右*/
   border-right: solid 4px #146C94;
   /*枠線・左*/
@@ -42,7 +42,6 @@ header a {
   align-items: center;
   transition: transform 0.2s;
 }
-
 header a:active {
   transform: translateY(0.1em); /* ボタンがクリックされたときに少し下に移動させる */
 }
