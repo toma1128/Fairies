@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kiwi Maru", serif;
+}
+body {
+  background-color: #fffca8;
+  height: 100vh;
+  overflow: hidden;
+}
+/* header */
+header {
+  background-color: #f8fefe;
+  height: 15%;
+  /* 配置 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header img {
+  /* 高さ */
+  height: 80%;
+  /* 横幅 */
+  width: 35vh;
+  margin-left: 15px;
+}
+header a {
+  /* テキストサイズ */
+  font-size: 5vmin;
+  background-color: #b0daff;
+  /*枠線・上*/
+  border-top: solid 1px #19a7ce;
+  /*枠線・下*/
+  border-bottom: solid 1px #19a7ce;
+  /*枠線・右*/
+  border-right: solid 1px #19a7ce;
+  /*枠線・左*/
+  border-left: solid 1px #19a7ce;
+  /* 下線消す */
+  text-decoration: none;
+  margin-right: 15px;
+  /* 高さ */
+  height: 7vmin;
+  align-items: center;
+}
+/* カーソルの重なったときの処理 */
+header a :hover {
+  background-color: aqua;
+}
+main {
+  height: 85%;
+  position: relative;
+}
+/* 番号、日付、名前の枠*/
+#information {
+  width: 70%;
+  height: 30%;
+  display: flex;
+}
+/* 番号と日付 */
+#status {
+  width: fit-content;
+  height: fit-content;
+  gap: 8px;
+  margin-top: 18px;
+  margin-left: 5%;
+  display: flex;
+  font-size: 4vmin;
+  border-bottom: 3px solid #e9b824;
+  text-underline-offset: 2px;
+}
+
+/*名前欄のデザイン*/
+#name {
+  width: fit-content;
+  height: fit-content;
+  /* 真ん中 */
+  display: flex;
+  align-items: center;
+  margin: auto auto;
+  font-size: 7.5vmin;
+  letter-spacing: 6px;
+  background-color: #f8fefe;
+  border-radius: 5px; /* 角の丸みを指定 */
+}
+/* 選択情報の枠 */
+#word {
+  width: 70%;
+  height: 70%;
+}
+/* 壊れた個所 */
+#home_condition {
+  margin-left: 13%;
+  font-size: 4vmin;
+}
+/* 画像など */
+#home {
+  display: flex;
+  height: 95%;
+  position: relative;
+}
+
+/*理由欄のデザイン*/
+#comment {
+  position: absolute;
+  right: 0;
+  padding: 4vmin;
+  font-size: 4vmin;
+  background-color: #f8fefe;
+  height: 60%;
+  width: 50%;
+  overflow: scroll;
+  /*スクロールバー非表示（Firefox）*/
+  scrollbar-width: none;
+  border: 4px solid #e9b824;
+  border-radius: 5px;
+}
+#comment p {
+  overflow-wrap: break-word;
+}
+/* 画像 */
+#home_image {
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 280px;
+  height: 280px;
+}
+#home_detail {
+  font-size: 4vmin;
+  width: 10%;
+  position: absolute;
+  right: calc(50% + 10px);
+  top: 0;
+}
+
+#folder {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.photo {
+  background-color: #f8fefe;
+  width: 80%;
+  margin: 5px 0;
+  flex-grow: 1;
+}
+
+.photo img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
