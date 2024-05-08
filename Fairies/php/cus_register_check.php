@@ -12,7 +12,6 @@ $username = "fairies";
 $password = "daimonia";
 $dbname = "feya";
 
-
 //データベースに接続するためsqlインスタン生成
 $conn_DB = new mysqli($servername, $username, $password, $dbname);
 if ($conn_DB->connect_error) {
