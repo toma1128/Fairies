@@ -57,23 +57,31 @@ header ul {
 /* 従業員一覧のliタグ */
 header ul li {
   /* テキストサイズ */
-  font-size: 1.8rem;
-  /* 黒丸を消す */
-  list-style: none;
-  padding: 10px 20px;
-  /*余白*/
-  background: #e3f6f5;
-  /*背景色*/
-  border-top: solid 1px #19a7ce;
-  /*枠線・上*/
-  border-bottom: solid 1px #19a7ce;
-  /*枠線・下*/
-  border-right: solid 1px #19a7ce;
+  font-size: 4vmin;
+  padding-left: 3px;
+  padding-right: 3px;
   /*枠線・右*/
-  border-left: solid 1px #19a7ce;
+  border-right: solid 4px #146C94;
   /*枠線・左*/
-
+  border-left: solid 4px #146C94;
+  /* 下線消す */
+  text-decoration: none;
   margin-right: 15px;
+  /* 高さ */
+  height: 7vmin;
+  color: black;
+  align-items: center;
+  transition: transform 0.2s;
+  list-style-type: none;/*liタグの点を消す*/
+  margin-right: 15px;
+}
+header ul li:active {
+  transform: translateY(0.1em); /* ボタンがクリックされたときに少し下に移動させる */
+}
+
+header ul li:hover{
+  background-color: #efffff;
+  color: inherit; /* リンクの色を親要素の色に継承する */
 }
 
 /* mainのスタイル */
